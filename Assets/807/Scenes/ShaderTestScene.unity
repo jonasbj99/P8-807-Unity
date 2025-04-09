@@ -1825,19 +1825,19 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 830749508749913053, guid: db45072c4d883bd4db1a3ae7ba455d03, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -3.089876
+      value: -3
       objectReference: {fileID: 0}
     - target: {fileID: 830749508749913053, guid: db45072c4d883bd4db1a3ae7ba455d03, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.00000017643418
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 830749508749913053, guid: db45072c4d883bd4db1a3ae7ba455d03, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -0.31411624
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 830749508749913053, guid: db45072c4d883bd4db1a3ae7ba455d03, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.7071067
+      value: 0.7071068
       objectReference: {fileID: 0}
     - target: {fileID: 830749508749913053, guid: db45072c4d883bd4db1a3ae7ba455d03, type: 3}
       propertyPath: m_LocalRotation.x
@@ -1849,11 +1849,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 830749508749913053, guid: db45072c4d883bd4db1a3ae7ba455d03, type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 830749508749913053, guid: db45072c4d883bd4db1a3ae7ba455d03, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
+      value: -90
       objectReference: {fileID: 0}
     - target: {fileID: 830749508749913053, guid: db45072c4d883bd4db1a3ae7ba455d03, type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
@@ -1863,6 +1863,22 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5274121563859647462, guid: db45072c4d883bd4db1a3ae7ba455d03, type: 3}
+      propertyPath: m_Materials.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5274121563859647462, guid: db45072c4d883bd4db1a3ae7ba455d03, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: -5081792898505675300, guid: c777e97676f26e24498feead911e137c, type: 3}
+    - target: {fileID: 5274121563859647462, guid: db45072c4d883bd4db1a3ae7ba455d03, type: 3}
+      propertyPath: 'm_Materials.Array.data[1]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 32b3976fd5eeb2b4484902395ad32b75, type: 2}
+    - target: {fileID: 5274121563859647462, guid: db45072c4d883bd4db1a3ae7ba455d03, type: 3}
+      propertyPath: 'm_Materials.Array.data[2]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 32b3976fd5eeb2b4484902395ad32b75, type: 2}
     - target: {fileID: 5844257240886239230, guid: db45072c4d883bd4db1a3ae7ba455d03, type: 3}
       propertyPath: m_Name
       value: NoticeBoard
