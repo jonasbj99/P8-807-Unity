@@ -25,6 +25,7 @@ public class PopupInfoTrigger : MonoBehaviour
         {
             // Calculate the distance between the VR headset and this object
             float distance = Vector3.Distance(vrHeadTransform.position, transform.position);
+            Debug.Log($"Distance to popup: {distance}");  // Log the distance for debugging
 
             // If the distance is less than the trigger distance, show the popup
             if (distance < triggerDistance)
@@ -35,7 +36,7 @@ public class PopupInfoTrigger : MonoBehaviour
                     // Show a new popup and store its reference
                     currentPopup = PopUpInfo.Instance.ShowPopup(transform, message, vrHeadTransform);
                 }
-                Debug.Log("Popup should appear now!");  // Log a message for debugging
+                // Debug.Log("Popup should appear now!");  // Log a message for debugging
             }
             else
             {
