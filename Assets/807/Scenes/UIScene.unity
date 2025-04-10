@@ -3845,6 +3845,21 @@ MonoBehaviour:
       m_SingletonActionBindings: []
       m_Flags: 0
     m_Reference: {fileID: 265287232572525433, guid: c348712bda248c246b8c49b3db54643f, type: 3}
+  highlights: []
+  highlightToggle: 0
+  showHighlights:
+    m_UseReference: 0
+    m_Action:
+      m_Name: 
+      m_Type: 0
+      m_ExpectedControlType: 
+      m_Id: 35b23b7a-a6af-4cf9-997e-185f280809df
+      m_Processors: 
+      m_Interactions: 
+      m_SingletonActionBindings: []
+      m_Flags: 0
+    m_Reference: {fileID: 0}
+  highlightRevealTime: 3
 --- !u!4 &2054714788 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7277802327528778794, guid: 77e7c27b2c5525e4aa8cc9f99d654486, type: 3}
@@ -3945,8 +3960,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   popupPrefab: {fileID: 8567061467047000266, guid: 8a975a32c473b5e4cab690d8c6de33a7, type: 3}
   verticalOffset: 1.5
-  displayTime: 3
-  fadeSpeed: 5
+  fadeDuration: 0.5
 --- !u!4 &2116931087
 Transform:
   m_ObjectHideFlags: 0
@@ -4006,6 +4020,21 @@ MonoBehaviour:
       m_SingletonActionBindings: []
       m_Flags: 0
     m_Reference: {fileID: -5599135982822891163, guid: c348712bda248c246b8c49b3db54643f, type: 3}
+  highlights: []
+  highlightToggle: 0
+  showHighlights:
+    m_UseReference: 0
+    m_Action:
+      m_Name: 
+      m_Type: 0
+      m_ExpectedControlType: 
+      m_Id: f7f81e74-b346-4ba6-98fc-44d16fc4ab25
+      m_Processors: 
+      m_Interactions: 
+      m_SingletonActionBindings: []
+      m_Flags: 0
+    m_Reference: {fileID: 0}
+  highlightRevealTime: 3
 --- !u!4 &2139986734 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7277802326798953675, guid: 77e7c27b2c5525e4aa8cc9f99d654486, type: 3}
