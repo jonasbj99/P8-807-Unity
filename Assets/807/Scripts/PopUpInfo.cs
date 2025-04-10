@@ -9,7 +9,6 @@ public class PopUpInfo : MonoBehaviour
     [Header("Popup Settings")]
     [SerializeField] GameObject popupPrefab;
     [SerializeField] float verticalOffset = 0.1f;
-    [SerializeField] float displayTime = 3.0f;
     [SerializeField] float fadeSpeed = 5.0f;
 
     private Camera mainCamera;
@@ -32,7 +31,7 @@ public class PopUpInfo : MonoBehaviour
     /// <summary>
     /// Call this to show a popup above a target object with a message.
     /// </summary>
-    public GameObject ShowPopup(Transform target, string message)
+    public GameObject ShowPopup(Transform target, string message, Transform vrHeadTransform)
     {
         if (popupPrefab == null || target == null)
             return null;
@@ -54,7 +53,7 @@ public class PopUpInfo : MonoBehaviour
         if (textComponent != null)
             textComponent.text = message;
 
-        FaceCanvasToCamera(popup);
+        FaceCanvasToCamera(popup, vrHeadTransform);
         // Ensure CanvasGroup exists or add one
         if (canvasGroup == null)
         {
@@ -67,14 +66,10 @@ public class PopUpInfo : MonoBehaviour
     }
 
 
-    private void FaceCanvasToCamera(GameObject popup)
+    private void FaceCanvasToCamera(GameObject popup, Transform vrHeadTransform)
     {
-        // Ensure the canvas faces the camera
-        Vector3 directionToCamera = mainCamera.transform.position - popup.transform.position;
-        directionToCamera.y = 0;  // Keep it upright (ignore vertical rotation)
+        popup.transform.rotation = Quaternion.Euler(vrHeadTransform.eulerAngles.x, vrHeadTransform.eulerAngles.y, vrHeadTransform.eulerAngles.z);
 
-        // Set the rotation to face the camera
-        popup.transform.rotation = Quaternion.LookRotation(directionToCamera);
     }
     private Vector3 GetPopupPosition(Transform target)
     {

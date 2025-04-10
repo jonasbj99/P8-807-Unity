@@ -17,22 +17,22 @@ public class PopupInfoTrigger : MonoBehaviour
         if (debugMode && Keyboard.current.bKey.wasPressedThisFrame)
         {
             // Show popup when 'B' is pressed (for debugging in editor)
-            PopUpInfo.Instance.ShowPopup(transform, message);
+            PopUpInfo.Instance.ShowPopup(transform, message, vrHeadTransform);
         }
 
         // === DISTANCE TRIGGER (for VR) ===
         if (vrHeadTransform != null)
         {
             float distance = Vector3.Distance(vrHeadTransform.position, transform.position);
-            Debug.Log($"Distance to popup: {distance}");
-            Debug.Log($"VR Head Position: {vrHeadTransform.position}");
-            Debug.Log($"Target Position: {transform.position}");
+            //Debug.Log($"Distance to popup: {distance}");
+            //Debug.Log($"VR Head Position: {vrHeadTransform.position}");
+            //Debug.Log($"Target Position: {transform.position}");
 
             if (distance < triggerDistance)
             {
                  if (currentPopup == null)
                 {
-                    currentPopup = PopUpInfo.Instance.ShowPopup(transform, message);
+                    currentPopup = PopUpInfo.Instance.ShowPopup(transform, message, vrHeadTransform);
                 }
                 Debug.Log("Popup should appear now!");  // Debugging when it should show
             }

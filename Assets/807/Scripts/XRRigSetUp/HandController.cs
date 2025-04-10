@@ -21,6 +21,7 @@ public class HandController : MonoBehaviour
         foreach (Material material in highlights)
         {
             highlightToggle = material.GetFloat("_HighlightEnable");
+            material.SetFloat("_HighlightEnable", 0);
         }
 
         
@@ -53,7 +54,7 @@ public class HandController : MonoBehaviour
 
         foreach (Material material in highlights)
         {
-            material.SetFloat("_HiglightEnable", 0);
+            material.SetFloat("_HighlightEnable", 0);
         }
     }
 }
