@@ -32,20 +32,21 @@ public class PopUpInfo : MonoBehaviour
     /// <summary>
     /// Call this to show a popup above a target object with a message.
     /// </summary>
-    public void ShowPopup(Transform target, string message)
+    public GameObject ShowPopup(Transform target, string message)
     {
         if (popupPrefab == null || target == null)
-            return;
+            return null;
 
-                    Debug.LogWarning("Popup prefab or target is null!");  // Debugging line
+        //Debug.LogWarning("Popup prefab or target is null!");  // Debugging line
 
 
         Vector3 popupPosition = GetPopupPosition(target);
-        Debug.Log($"Popup Position: {popupPosition}");
+        //Debug.Log($"Popup Position: {popupPosition}");
 
 
         GameObject popup = Instantiate(popupPrefab, popupPosition, Quaternion.identity);
-            Debug.Log("Popup instantiated: " + popup);  // Debugging line
+        //Debug.Log("Popup instantiated: " + popup);  // Debugging line
+
 
         TMP_Text textComponent = popup.GetComponentInChildren<TMP_Text>();
         CanvasGroup canvasGroup = popup.GetComponentInChildren<CanvasGroup>();
@@ -53,10 +54,7 @@ public class PopUpInfo : MonoBehaviour
         if (textComponent != null)
             textComponent.text = message;
 
-        // Face the camera (fix for rotation)
-        Vector3 lookAt = new Vector3(popup.transform.position.x, mainCamera.transform.position.y, popup.transform.position.z);
-        popup.transform.LookAt(lookAt);
-
+        FaceCanvasToCamera(popup);
         // Ensure CanvasGroup exists or add one
         if (canvasGroup == null)
         {
@@ -65,8 +63,19 @@ public class PopUpInfo : MonoBehaviour
 
         // Start fade coroutine
         StartCoroutine(FadePopup(canvasGroup, popup));
+        return popup; // Return the instantiated popup
     }
 
+
+    private void FaceCanvasToCamera(GameObject popup)
+    {
+        // Ensure the canvas faces the camera
+        Vector3 directionToCamera = mainCamera.transform.position - popup.transform.position;
+        directionToCamera.y = 0;  // Keep it upright (ignore vertical rotation)
+
+        // Set the rotation to face the camera
+        popup.transform.rotation = Quaternion.LookRotation(directionToCamera);
+    }
     private Vector3 GetPopupPosition(Transform target)
     {
         Renderer renderer = target.GetComponentInChildren<Renderer>();
@@ -89,7 +98,11 @@ public class PopUpInfo : MonoBehaviour
             yield return null;
         }
 
-        yield return new WaitForSeconds(displayTime);
+        // Wait until the popup is explicitly told to fade out
+        while (popup.activeSelf)
+        {
+            yield return null;
+        }
 
         // Fade out
         while (group.alpha > 0.0f)

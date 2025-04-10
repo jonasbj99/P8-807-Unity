@@ -6,10 +6,10 @@ public class PopupInfoTrigger : MonoBehaviour
     [TextArea]
     [SerializeField] string message = "This is a rule or some info!";
     [SerializeField] Transform vrHeadTransform; // Assign VR camera/player head
-    [SerializeField] float triggerDistance = 2.0f;  // Distance to trigger popup
+    [SerializeField] float triggerDistance = 10.0f;  // Distance to trigger popup
     [SerializeField] bool debugMode = true;
 
-    bool hasShownPopup = false;
+    private GameObject currentPopup; // Reference to the instantiated popup
 
     private void Update()
     {
@@ -21,15 +21,30 @@ public class PopupInfoTrigger : MonoBehaviour
         }
 
         // === DISTANCE TRIGGER (for VR) ===
-        if (!hasShownPopup && vrHeadTransform != null)
+        if (vrHeadTransform != null)
         {
             float distance = Vector3.Distance(vrHeadTransform.position, transform.position);
+            Debug.Log($"Distance to popup: {distance}");
+            Debug.Log($"VR Head Position: {vrHeadTransform.position}");
+            Debug.Log($"Target Position: {transform.position}");
+
             if (distance < triggerDistance)
             {
-                // Show popup when the user is within the trigger distance
-                PopUpInfo.Instance.ShowPopup(transform, message);
-                hasShownPopup = true; // Ensure it only shows once
+                 if (currentPopup == null)
+                {
+                    currentPopup = PopUpInfo.Instance.ShowPopup(transform, message);
+                }
+                Debug.Log("Popup should appear now!");  // Debugging when it should show
             }
+            else
+            {
+                // Hide the popup if outside the trigger distance
+                if (currentPopup != null)
+                {
+                    currentPopup.SetActive(false);
+                    currentPopup = null;
+                }
+            } 
         }
     }
 }

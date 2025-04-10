@@ -2300,8 +2300,20 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: 40fd4e52049cf6d4ead60a68bf11e086, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.25047
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 40fd4e52049cf6d4ead60a68bf11e086, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.25047
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 40fd4e52049cf6d4ead60a68bf11e086, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.25047
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 40fd4e52049cf6d4ead60a68bf11e086, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -3.93
+      value: 10.46
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 40fd4e52049cf6d4ead60a68bf11e086, type: 3}
       propertyPath: m_LocalPosition.y
@@ -2309,7 +2321,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 40fd4e52049cf6d4ead60a68bf11e086, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 30.71
+      value: -4.38
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 40fd4e52049cf6d4ead60a68bf11e086, type: 3}
       propertyPath: m_LocalRotation.w
@@ -3736,9 +3748,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f582d07d0a109c34d9edc33d2f511a4c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  message: lol
+  message: Hello Bitch
   vrHeadTransform: {fileID: 1504141101}
-  triggerDistance: 2
+  triggerDistance: 10
   debugMode: 1
 --- !u!1 &1931297913
 GameObject:
@@ -3932,7 +3944,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   popupPrefab: {fileID: 8567061467047000266, guid: 8a975a32c473b5e4cab690d8c6de33a7, type: 3}
-  verticalOffset: 0.1
+  verticalOffset: 1.5
   displayTime: 3
   fadeSpeed: 5
 --- !u!4 &2116931087
