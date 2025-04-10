@@ -1283,22 +1283,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   handAnimator: {fileID: 1341232216}
   gripAction:
-    m_Name: Grip
-    m_Type: 0
-    m_ExpectedControlType: 
-    m_Id: 0dd7c6b1-e23a-440c-bf39-0e331df43ef7
-    m_Processors: 
-    m_Interactions: 
-    m_SingletonActionBindings:
-    - m_Name: 
-      m_Id: 266e9e25-9cb9-4faa-814f-058515920769
-      m_Path: <XRController>{RightHand}/{Grip}
-      m_Interactions: 
+    m_UseReference: 1
+    m_Action:
+      m_Name: Grip
+      m_Type: 0
+      m_ExpectedControlType: 
+      m_Id: 99532c4c-922a-4ef5-9ac5-d8f51d2a59a4
       m_Processors: 
-      m_Groups: 
-      m_Action: Grip
+      m_Interactions: 
+      m_SingletonActionBindings: []
       m_Flags: 0
-    m_Flags: 0
+    m_Reference: {fileID: 265287232572525433, guid: c348712bda248c246b8c49b3db54643f, type: 3}
 --- !u!1 &594349231
 GameObject:
   m_ObjectHideFlags: 0
@@ -2127,22 +2122,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   handAnimator: {fileID: 1118243752451488968}
   gripAction:
-    m_Name: Grip
-    m_Type: 0
-    m_ExpectedControlType: 
-    m_Id: 529a8986-3748-47cb-94ca-8849f90b8559
-    m_Processors: 
-    m_Interactions: 
-    m_SingletonActionBindings:
-    - m_Name: 
-      m_Id: 15812262-42f4-4ea5-9f56-fe377ff2f5af
-      m_Path: <XRController>{LeftHand}/{Grip}
-      m_Interactions: 
+    m_UseReference: 1
+    m_Action:
+      m_Name: Grip
+      m_Type: 0
+      m_ExpectedControlType: 
+      m_Id: b6bc7dfd-c6d0-48dc-bd11-6870d68532a7
       m_Processors: 
-      m_Groups: 
-      m_Action: Grip
+      m_Interactions: 
+      m_SingletonActionBindings: []
       m_Flags: 0
-    m_Flags: 0
+    m_Reference: {fileID: -5599135982822891163, guid: c348712bda248c246b8c49b3db54643f, type: 3}
 --- !u!114 &1145222951
 MonoBehaviour:
   m_ObjectHideFlags: 0
