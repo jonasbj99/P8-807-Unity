@@ -20,7 +20,6 @@ public class HandController : MonoBehaviour
     {
         foreach (Material material in highlights)
         {
-            highlightToggle = material.GetFloat("_HighlightEnable");
             material.SetFloat("_HighlightEnable", 0);
         }
 
@@ -39,8 +38,6 @@ public class HandController : MonoBehaviour
         {
             StartCoroutine(activateHighlights());
         }
-
-        Debug.Log(highlightToggle);
     }
 
     public IEnumerator activateHighlights()
