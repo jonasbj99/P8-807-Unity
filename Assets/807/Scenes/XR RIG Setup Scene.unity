@@ -1056,6 +1056,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 7277802326798953684, guid: 77e7c27b2c5525e4aa8cc9f99d654486, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1145222950}
+    - targetCorrespondingSourceObject: {fileID: 7277802326798953684, guid: 77e7c27b2c5525e4aa8cc9f99d654486, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1145222951}
     - targetCorrespondingSourceObject: {fileID: 7277802327528778795, guid: 77e7c27b2c5525e4aa8cc9f99d654486, type: 3}
       insertIndex: -1
       addedObject: {fileID: 574040489}
@@ -2140,6 +2143,20 @@ MonoBehaviour:
       m_Action: Grip
       m_Flags: 0
     m_Flags: 0
+--- !u!114 &1145222951
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 267198614}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 017c5e3933235514c9520e1dace2a4b2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_ActionAssets:
+  - {fileID: -944628639613478452, guid: c348712bda248c246b8c49b3db54643f, type: 3}
 --- !u!1 &1220817618
 GameObject:
   m_ObjectHideFlags: 0
@@ -2184,7 +2201,7 @@ GameObject:
   - component: {fileID: 1341232216}
   - component: {fileID: 1341232217}
   m_Layer: 0
-  m_Name: RightHandTest
+  m_Name: RightHand
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2785,7 +2802,7 @@ GameObject:
   - component: {fileID: 1118243752451488968}
   - component: {fileID: 1118243752451488969}
   m_Layer: 0
-  m_Name: LeftHandTest
+  m_Name: LeftHand
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
