@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.XR.Interaction.Toolkit;
@@ -6,6 +7,25 @@ public class HandController : MonoBehaviour
 {
     public Animator handAnimator;         // Reference to the Animator
     public InputActionProperty gripAction;        // The grip action
+
+    public Material[] highlights;
+    public float highlightToggle;
+
+    public InputActionProperty showHighlights;
+
+    public float highlightRevealTime = 3f;
+
+
+    private void Start()
+    {
+        foreach (Material material in highlights)
+        {
+            highlightToggle = material.GetFloat("_HighlightEnable");
+        }
+
+        
+    }
+
     private void Update()
     {
         // Get the grip value (should be between 0 and 1)
@@ -13,5 +33,27 @@ public class HandController : MonoBehaviour
 
         // Pass the grip value to the Animator to control the "Grip" parameter
         handAnimator.SetFloat("Grip", gripValue);
+
+        if (showHighlights.action.WasPressedThisFrame())
+        {
+            StartCoroutine(activateHighlights());
+        }
+
+        Debug.Log(highlightToggle);
+    }
+
+    public IEnumerator activateHighlights()
+    {
+        foreach(Material material in highlights)
+        {
+            material.SetFloat("_HighlightEnable", 1);
+        }
+
+        yield return new WaitForSeconds(highlightRevealTime);
+
+        foreach (Material material in highlights)
+        {
+            material.SetFloat("_HiglightEnable", 0);
+        }
     }
 }

@@ -797,6 +797,14 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3757617331447001322, guid: 77e7c27b2c5525e4aa8cc9f99d654486, type: 3}
+      propertyPath: m_LeftHand
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 3757617331447001322, guid: 77e7c27b2c5525e4aa8cc9f99d654486, type: 3}
+      propertyPath: m_RightHand
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 3757617331447001322, guid: 77e7c27b2c5525e4aa8cc9f99d654486, type: 3}
       propertyPath: m_LeftController
       value: 
       objectReference: {fileID: 0}
@@ -1294,6 +1302,21 @@ MonoBehaviour:
       m_SingletonActionBindings: []
       m_Flags: 0
     m_Reference: {fileID: 265287232572525433, guid: c348712bda248c246b8c49b3db54643f, type: 3}
+  highlights: []
+  highlightToggle: 0
+  showHighlights:
+    m_UseReference: 0
+    m_Action:
+      m_Name: 
+      m_Type: 0
+      m_ExpectedControlType: 
+      m_Id: 5a32ea70-2b44-4cba-a839-522dc3a136cb
+      m_Processors: 
+      m_Interactions: 
+      m_SingletonActionBindings: []
+      m_Flags: 0
+    m_Reference: {fileID: 0}
+  highlightRevealTime: 3
 --- !u!1 &594349231
 GameObject:
   m_ObjectHideFlags: 0
@@ -1544,6 +1567,7 @@ MeshRenderer:
   m_RendererPriority: 0
   m_Materials:
   - {fileID: 7048601247072954131, guid: 47f3b271b50f14d4fbc351a0104e9d46, type: 3}
+  - {fileID: 2100000, guid: 39553c3b4a7177f4f82152317b23e74b, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -2133,6 +2157,23 @@ MonoBehaviour:
       m_SingletonActionBindings: []
       m_Flags: 0
     m_Reference: {fileID: -5599135982822891163, guid: c348712bda248c246b8c49b3db54643f, type: 3}
+  highlights:
+  - {fileID: 2100000, guid: b5f378062be3a12409d5339ccd470c14, type: 2}
+  - {fileID: 2100000, guid: 39553c3b4a7177f4f82152317b23e74b, type: 2}
+  highlightToggle: 0
+  showHighlights:
+    m_UseReference: 1
+    m_Action:
+      m_Name: Show Highlights
+      m_Type: 0
+      m_ExpectedControlType: 
+      m_Id: 748f05ff-30e6-4218-82b9-faeeadb80f4a
+      m_Processors: 
+      m_Interactions: 
+      m_SingletonActionBindings: []
+      m_Flags: 0
+    m_Reference: {fileID: 6850617372178311537, guid: c348712bda248c246b8c49b3db54643f, type: 3}
+  highlightRevealTime: 3
 --- !u!114 &1145222951
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2410,6 +2451,7 @@ MeshRenderer:
   m_RendererPriority: 0
   m_Materials:
   - {fileID: 2100000, guid: bf6a673a7ceb9fd45968b0283b67b5bf, type: 2}
+  - {fileID: 2100000, guid: b5f378062be3a12409d5339ccd470c14, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -2448,7 +2490,7 @@ Transform:
   m_GameObject: {fileID: 1660107201}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 2.93, y: 0.585279, z: -3.21}
+  m_LocalPosition: {x: 2.93, y: 0.897, z: -3.21}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
