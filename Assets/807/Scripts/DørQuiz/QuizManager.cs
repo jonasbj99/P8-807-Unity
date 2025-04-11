@@ -1,6 +1,7 @@
 using UnityEngine;
 using TMPro;
 using System.Collections.Generic;
+using UnityEngine.UI;
 
 public class QuizManager : MonoBehaviour
 {
@@ -28,7 +29,7 @@ public class QuizManager : MonoBehaviour
         // Check if current question index is valid
         if (currentQuestion < QnA.Count)
         {
-            // Increase the score if the answer is correct
+            // Check if the selected answer is correct and update the score
             if (options[currentQuestion].GetComponent<AnswerScript>().isCorrect)
             {
                 score++;
@@ -56,6 +57,12 @@ public class QuizManager : MonoBehaviour
         // Ensure answers are set only if valid options exist
         if (QnA.Count > 0 && options.Length > 0)
         {
+            // Reset all options' colors to default
+            foreach (GameObject option in options)
+            {
+                option.GetComponent<Image>().color = Color.white; // Set to white (default color)
+            }
+
             for (int i = 0; i < options.Length; i++)
             {
                 if (i < QnA[currentQuestion].Answers.Length)
