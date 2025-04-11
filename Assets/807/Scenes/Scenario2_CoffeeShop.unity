@@ -2134,6 +2134,11 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 1030972133, guid: abc00000000012668423437282172797, type: 3}
   m_PrefabInstance: {fileID: 523466038}
   m_PrefabAsset: {fileID: 0}
+--- !u!137 &529112337 stripped
+SkinnedMeshRenderer:
+  m_CorrespondingSourceObject: {fileID: 7500829582323976533, guid: 452b1ec4b65a9eb4ebf1e80bdc543a7b, type: 3}
+  m_PrefabInstance: {fileID: 1387860939}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &557934568
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6614,7 +6619,10 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 452b1ec4b65a9eb4ebf1e80bdc543a7b, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1911940034}
   m_SourcePrefab: {fileID: 100100000, guid: 452b1ec4b65a9eb4ebf1e80bdc543a7b, type: 3}
 --- !u!1001 &1405281653
 PrefabInstance:
@@ -9837,6 +9845,66 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 1030974099, guid: abc00000000007945107163107764089, type: 3}
   m_PrefabInstance: {fileID: 1910863129}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1911940030 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 452b1ec4b65a9eb4ebf1e80bdc543a7b, type: 3}
+  m_PrefabInstance: {fileID: 1387860939}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1911940034
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1911940030}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2163de355e8fd8e4b83b631e07455323, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  updateMethod: 0
+  skinnedMeshRenderer: {fileID: 529112337}
+  blendShapes:
+  - phoneme: A
+    index: -1
+    maxWeight: 1
+    <weight>k__BackingField: 6.869882e-11
+    <weightVelocity>k__BackingField: -5.4763367e-11
+  - phoneme: I
+    index: -1
+    maxWeight: 1
+    <weight>k__BackingField: 0.000000024106335
+    <weightVelocity>k__BackingField: -0.000000019216403
+  - phoneme: U
+    index: -1
+    maxWeight: 1
+    <weight>k__BackingField: 0.000008332973
+    <weightVelocity>k__BackingField: -0.0000066426423
+  - phoneme: E
+    index: -1
+    maxWeight: 1
+    <weight>k__BackingField: 0.0028848052
+    <weightVelocity>k__BackingField: -0.0022996268
+  - phoneme: O
+    index: -1
+    maxWeight: 1
+    <weight>k__BackingField: 0.9971068
+    <weightVelocity>k__BackingField: -0.7948452
+  - phoneme: '-'
+    index: -1
+    maxWeight: 1
+    <weight>k__BackingField: 0
+    <weightVelocity>k__BackingField: 0
+  maxBlendShapeValue: 100
+  minVolume: -2.5
+  maxVolume: -1.5
+  smoothness: 0.05
+  usePhonemeBlend: 0
+  _lipSyncUpdated: 0
+  _volume: 0
+  _openCloseVelocity: 0
+  _isAnimationBaking: 0
+  _animBakeDeltaTime: 0.016666668
 --- !u!1001 &1924339997
 PrefabInstance:
   m_ObjectHideFlags: 0
