@@ -2189,7 +2189,7 @@ MonoBehaviour:
       Data4: 1566307562
     Path: event:/TestMusic
   Event: 
-  EventPlayTrigger: 3
+  EventPlayTrigger: 1
   EventStopTrigger: 4
   AllowFadeout: 1
   TriggerOnce: 0
