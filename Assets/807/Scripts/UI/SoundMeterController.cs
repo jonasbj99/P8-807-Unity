@@ -1,11 +1,13 @@
 using UnityEngine;
 using TMPro;
+using System.Collections;
 
 public class SoundMeterController : MonoBehaviour
 {
     [SerializeField] TMP_Text soundLevelText;
 
     [SerializeField] int sampleSize = 1024;
+    [SerializeField] float dBRange = 80f; // Decibel range 0 - dBRange
     private float[] samples;
     private float rmsValue = 0f;
     private float dbFS = 0f;         // dB relative to full scale (negative)
@@ -30,11 +32,22 @@ public class SoundMeterController : MonoBehaviour
         dbFS = 20f * Mathf.Log10(rmsValue);
 
         if (float.IsNegativeInfinity(dbFS))
-            dbFS = -80f;
+        {
+            dbFS = dBRange;
+        }
 
-        dbPositive = dbFS + 80f; // Now ranges from 0 (quiet) to 80 (loud)
+        dbPositive = dbFS + dBRange;
 
         Debug.Log(dbPositive);
         soundLevelText.text = dbPositive.ToString("F1") + " dB";
     }
+
+    /*
+    IEnumerator SoundLevelReader() 
+    {
+
+
+        yield return new WaitForSeconds(0.5f);
+    }
+    */
 }
