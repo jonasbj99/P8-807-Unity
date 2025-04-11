@@ -32,6 +32,7 @@ public class PopUpInfo : MonoBehaviour
 
         // Calculate the position for the popup
         Vector3 popupPosition = CalculatePopupPosition(target);
+        Debug.Log($"Popup Position: {popupPosition}"); // Log the calculated position for debugging
 
         // Instantiate the popup prefab at the calculated position
         GameObject popup = Instantiate(popupPrefab, popupPosition, Quaternion.identity);
@@ -74,20 +75,20 @@ public class PopUpInfo : MonoBehaviour
     }
 
     // Align the popup to face the user's VR headset
-private void AlignPopupToVRHead(GameObject popup, Transform vrHeadTransform)
-{
-    // Calculate direction from popup to VR head
-    Vector3 directionToUser = vrHeadTransform.position - popup.transform.position;
-    
-    // If you want the popup to maintain an upright orientation (usually better for readability)
-    directionToUser.y = 0; // Remove vertical component to keep popup upright
-    
-    // Create a rotation that faces the popup toward the user
-    if (directionToUser != Vector3.zero)
+    private void AlignPopupToVRHead(GameObject popup, Transform vrHeadTransform)
     {
-        popup.transform.rotation = Quaternion.LookRotation(directionToUser);
+        // Calculate direction from popup to VR head
+        Vector3 directionToUser = vrHeadTransform.position - popup.transform.position;
+
+        // If you want the popup to maintain an upright orientation (usually better for readability)
+        directionToUser.y = 0; // Remove vertical component to keep popup upright
+
+        // Create a rotation that faces the popup toward the user
+        if (directionToUser != Vector3.zero)
+        {
+            popup.transform.rotation = Quaternion.LookRotation(directionToUser);
+        }
     }
-}
 
     // Get or add a CanvasGroup component to the popup for controlling transparency
     private CanvasGroup GetOrAddCanvasGroup(GameObject popup)
