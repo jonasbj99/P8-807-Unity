@@ -9,7 +9,7 @@ public class SoundMeterController : MonoBehaviour
 
     [SerializeField] TMP_Text soundLevelText;
     [SerializeField] int sampleSize = 1024; // Higher samples might provide smaller jitters at the cost of higher processing (Should be a power of two)
-    [SerializeField] float dBRange = 80f;   // Decibel range 0 - dBRange
+    [SerializeField] float dBRange = 140f;   // Decibel range 0 - dBRange
     [SerializeField] float interval = 0.5f; // Seconds between each reading and display of sound level
 
     float[] samples;
@@ -19,6 +19,7 @@ public class SoundMeterController : MonoBehaviour
 
     int exsposureThreshold = 85;
 
+    /*
     private void Start()
     {
         Debug.Log("Sound Meter Started");
@@ -31,6 +32,7 @@ public class SoundMeterController : MonoBehaviour
             Debug.Log("BOOM");
         }
     }
+    */
 
     void OnEnable()
     {
