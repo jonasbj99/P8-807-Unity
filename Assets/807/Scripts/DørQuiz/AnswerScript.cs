@@ -2,19 +2,21 @@ using UnityEngine;
 
 public class AnswerScript : MonoBehaviour
 {
-    public bool isCorrect = false;
-    public QuizManager quizManager;
+    public bool isCorrect = false; // Flag to determine if the answer is correct
+    public QuizManager quizManager; // Reference to the QuizManager
+
     public void Answer()
     {
-        if(isCorrect)
+        if (isCorrect)
         {
             Debug.Log("Correct Answer");
-            quizManager.correct();
         }
         else
         {
             Debug.Log("Wrong Answer");
-            quizManager.correct();
         }
+
+        // Call the 'correct' method in QuizManager after selecting an answer
+        quizManager.correct();
     }
 }

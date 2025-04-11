@@ -6,39 +6,85 @@ public class QuizManager : MonoBehaviour
 {
     public List<QuestionsAndAnswers> QnA; // This will hold all your questions and answers
     public GameObject[] options; // Buttons for the answers
-    public int currentQuestion;
+    public int currentQuestion; // Index of the current question
     public TextMeshProUGUI QuestionTxt; // TextMeshPro component for the question display
+    public int score = 0; // Track score
 
     private void Start()
     {
-        generateQuestion();
+        // Ensure QnA list is populated
+        if (QnA.Count > 0)
+        {
+            generateQuestion(); // Start the quiz by generating the first question
+        }
+        else
+        {
+            Debug.LogError("No questions in the quiz! Please populate the QnA list.");
+        }
     }
 
     public void correct()
     {
-        QnA.RemoveAt(currentQuestion); // Remove the current question after answering
-        generateQuestion(); // Generate the next question
+        // Check if current question index is valid
+        if (currentQuestion < QnA.Count)
+        {
+            // Increase the score if the answer is correct
+            if (options[currentQuestion].GetComponent<AnswerScript>().isCorrect)
+            {
+                score++;
+            }
+
+            // Check if there are more questions
+            if (currentQuestion < QnA.Count - 1)
+            {
+                currentQuestion++; // Move to the next question
+                generateQuestion(); // Generate the next question
+            }
+            else
+            {
+                Debug.Log("Quiz Complete! Final Score: " + score + "/" + QnA.Count);
+            }
+        }
+        else
+        {
+            Debug.LogError("currentQuestion index is out of range: " + currentQuestion);
+        }
     }
 
     void SetAnswers()
     {
-        for (int i = 0; i < options.Length; i++)
+        // Ensure answers are set only if valid options exist
+        if (QnA.Count > 0 && options.Length > 0)
         {
-            options[i].GetComponent<AnswerScript>().isCorrect = false;
-            options[i].transform.GetChild(0).GetComponent<TextMeshProUGUI>().text = QnA[currentQuestion].Answers[i];
-            
-            // Mark the correct answer button
-            if (QnA[currentQuestion].CorrectAnswer == i + 1) // CorrectAnswer is 1-based (1, 2, 3, 4)
+            for (int i = 0; i < options.Length; i++)
             {
-                options[i].GetComponent<AnswerScript>().isCorrect = true;
+                if (i < QnA[currentQuestion].Answers.Length)
+                {
+                    options[i].GetComponent<AnswerScript>().isCorrect = false;
+                    options[i].transform.GetChild(0).GetComponent<TextMeshProUGUI>().text = QnA[currentQuestion].Answers[i];
+
+                    // Mark the correct answer button
+                    if (QnA[currentQuestion].CorrectAnswer == i + 1)
+                    {
+                        options[i].GetComponent<AnswerScript>().isCorrect = true;
+                    }
+                }
             }
         }
     }
 
     void generateQuestion()
     {
-        currentQuestion = Random.Range(0, QnA.Count); // Randomly select a question
-        QuestionTxt.text = QnA[currentQuestion].Question; // Display the question
-        SetAnswers(); // Set the answers on the buttons
+        // Ensure there are still questions available
+        if (currentQuestion < QnA.Count)
+        {
+            // Update the displayed question and set answers
+            QuestionTxt.text = QnA[currentQuestion].Question;
+            SetAnswers();
+        }
+        else
+        {
+            Debug.Log("No more questions left!");
+        }
     }
 }
