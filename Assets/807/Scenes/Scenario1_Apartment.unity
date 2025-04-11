@@ -7877,7 +7877,8 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 2100000, guid: 625ca8b0c9507cd4d8685b336560db6d, type: 2}
     m_RemovedComponents: []
-    m_RemovedGameObjects: []
+    m_RemovedGameObjects:
+    - {fileID: 1107841033882042, guid: b762b04c7fe35704cbdbf1806a638bf1, type: 3}
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b762b04c7fe35704cbdbf1806a638bf1, type: 3}
@@ -9308,7 +9309,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   popupPanel: {fileID: 404957605}
   vrHeadTransform: {fileID: 1594381407}
-  triggerDistance: 1
+  triggerDistance: 2
   debugMode: 1
 --- !u!1001 &1892909693
 PrefabInstance:
