@@ -1270,27 +1270,27 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   QnA:
-  - Question: 
+  - Question: er sofie sej?
     Answers:
-    - 
-    - 
-    - 
-    - 
-    CorrectAnswer: 0
-  - Question: 
+    - ja
+    - nej
+    - nej
+    - nej
+    CorrectAnswer: 1
+  - Question: vil i gerne kysse sofie?
     Answers:
-    - 
-    - 
-    - 
-    - 
-    CorrectAnswer: 0
-  - Question: 
+    - nej
+    - ja
+    - nej
+    - nej
+    CorrectAnswer: 2
+  - Question: har sofie mundherpes?
     Answers:
-    - 
-    - 
-    - 
-    - 
-    CorrectAnswer: 0
+    - ja
+    - "m\xE5ske"
+    - "ja, if\xF8lge markus"
+    - nej
+    CorrectAnswer: 4
   options:
   - {fileID: 1115245033}
   - {fileID: 762123087}
@@ -1298,6 +1298,7 @@ MonoBehaviour:
   - {fileID: 1587001279}
   currentQuestion: 0
   QuestionTxt: {fileID: 1540927258}
+  score: 0
 --- !u!4 &1104954975
 Transform:
   m_ObjectHideFlags: 0
