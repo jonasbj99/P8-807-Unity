@@ -12,16 +12,24 @@ public class SoundMeterController : MonoBehaviour
     [SerializeField] float dBRange = 80f;   // Decibel range 0 - dBRange
     [SerializeField] float interval = 0.5f; // Seconds between each reading and display of sound level
 
-    private float[] samples;
-    private float rmsValue = 0f;
-    private float dbFS = 0f;    
-    private float dbPositive = 0f;
+    float[] samples;
+    float rmsValue = 0f;
+    float dbFS = 0f;    
+    float dbPositive = 0f;
 
+    int exsposureThreshold = 85;
 
+    private void Start()
+    {
+        Debug.Log("Sound Meter Started");
+    }
 
     void Update()
     {
-        //if (dbPositive > )
+        if (dbPositive > exsposureThreshold)
+        {
+            Debug.Log("BOOM");
+        }
     }
 
     void OnEnable()
