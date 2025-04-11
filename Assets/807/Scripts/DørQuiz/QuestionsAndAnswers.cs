@@ -1,9 +1,10 @@
 using UnityEngine;
+
 [System.Serializable]
 public class QuestionsAndAnswers
 {
-    public string Question;
-    public string[] Answers = new string[4]; // 4 answers per question
-    public int CorrectAnswer; // 1 = first answer, 2 = second, etc.
+    public string Question; // The question text
+    public string[] Answers; // Array of possible answers
+    public int CorrectAnswer; // The correct answer index (1-based)
 }
 
