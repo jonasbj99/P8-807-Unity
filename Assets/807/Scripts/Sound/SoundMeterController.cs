@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.UI;
 using TMPro;
 using System.Collections;
 
@@ -20,36 +21,57 @@ public class SoundMeterController : MonoBehaviour
     float dbPositive = 0f;
 
     // Exsposure Meter
-    int exsposureThreshold = 85;
+    [SerializeField] Slider exposureSlider;
+    int exsposureThreshold = 85; // Decibel threshold for increasing exposure level
     float currentExsposure = 0f;
     float targetExsposure = 100f;
     float exsposureSpeed = 1f;
 
+    // Hearing Health
+    [SerializeField] Slider hearingHealthBar;
+    int healthThreshold = 70; // Exposure threshold for decreasing health bar
+    int hearingHealth = 100;
+    int hearingDamage = 5; // Amount of damage done every tick
+    int damageDelay = 1; // Defines the tick delay for health damage
+
     private void Start()
     {
-        Debug.Log("Sound Meter Started");
+        // Exposure Meter
+        exposureSlider.value = currentExsposure;
+        exposureSlider.maxValue = targetExsposure;
+
+        // Hearing Health
+        hearingHealthBar.maxValue = hearingHealth;
+        hearingHealthBar.value = hearingHealth;
     }
 
     void Update()
     {
+        //Exposure Meter
         if (dbPositive > exsposureThreshold)
         {
-            exsposureSpeed = 1f + ((dbPositive - exsposureThreshold)/100);
+            exsposureSpeed = 1f + ((dbPositive - exsposureThreshold)/100); // Adjust Speed
             currentExsposure = Mathf.MoveTowards(currentExsposure, targetExsposure, exsposureSpeed * Time.deltaTime);
         }
         else
         {
-            exsposureSpeed = 1f;
+            exsposureSpeed = 1f; // Adjust Speed
             currentExsposure = Mathf.MoveTowards(currentExsposure, 0f, exsposureSpeed * Time.deltaTime);
         }
+        exposureSlider.value = currentExsposure;
 
+        Debug.Log(hearingHealth);
         Debug.Log(currentExsposure);
     }
 
     void OnEnable()
     {
+        // Sound Level Meter
         samples = new float[sampleSize];
         StartCoroutine(SoundLevelReader());
+
+        // Hearing Health
+        StartCoroutine(HearingHealthDamage());
     }
 
     void OnDisable()
@@ -57,6 +79,7 @@ public class SoundMeterController : MonoBehaviour
         StopAllCoroutines();
     }
 
+    // Sound Level Meter
     IEnumerator SoundLevelReader()
     {
         while (enabled)
@@ -85,6 +108,16 @@ public class SoundMeterController : MonoBehaviour
             }
 
             yield return new WaitForSeconds(interval);
+        }
+    }
+
+    IEnumerator HearingHealthDamage()
+    {
+        while(currentExsposure > healthThreshold)
+        {
+            hearingHealth -= hearingDamage;
+
+            yield return new WaitForSeconds(damageDelay);
         }
     }
 }
