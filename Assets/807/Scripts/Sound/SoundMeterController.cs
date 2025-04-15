@@ -13,7 +13,7 @@ public class SoundMeterController : MonoBehaviour
     // Sound Level Meter
     [SerializeField] TMP_Text soundLevelText;
     [SerializeField] int sampleSize = 1024; // Higher samples might provide smaller jitters at the cost of higher processing (Should be a power of two)
-    [SerializeField] float dBRange = 140f;   // Decibel range 0 - dBRange
+    [SerializeField] float dBRange = 140f;  // Decibel range 0 - dBRange
     [SerializeField] float interval = 0.5f; // Seconds between each reading and display of sound level
     float[] samples;
     float rmsValue = 0f;
@@ -22,46 +22,49 @@ public class SoundMeterController : MonoBehaviour
 
     // Exsposure Meter
     [SerializeField] Slider exposureSlider;
-    int exsposureThreshold = 85; // Decibel threshold for increasing exposure level
-    float currentExsposure = 0f;
-    float targetExsposure = 100f;
-    float exsposureSpeed = 1f;
+    [SerializeField]float exposureUpMultiplier = 5f;    // Multiplier for the speed of moving the exposure level up
+    [SerializeField]float exposureDownMultiplier = 2f;  // Multiplier for the speed of moving the exposure level down
+    int exposureThreshold = 85; // Decibel threshold for increasing exposure level
+    float currentExposure = 0f;
+    float targetExposure = 100f;
+    float exposureSpeed = 1f;
+    
 
     // Hearing Health
-    [SerializeField] Slider hearingHealthBar;
-    int healthThreshold = 70; // Exposure threshold for decreasing health bar
+    [SerializeField] Slider hearingHealthSlider;
+    bool dmgCoroutineOn = false;
+    int healthThreshold = 70;   // Exposure threshold for decreasing health bar
     int hearingHealth = 100;
-    int hearingDamage = 5; // Amount of damage done every tick
-    int damageDelay = 1; // Defines the tick delay for health damage
+    int hearingDamage = 5;  // Amount of damage done every tick
+    float damageDelay = 1f;    // Defines the tick delay for health damage
 
     private void Start()
     {
         // Exposure Meter
-        exposureSlider.value = currentExsposure;
-        exposureSlider.maxValue = targetExsposure;
+        exposureSlider.value = currentExposure;
+        exposureSlider.maxValue = targetExposure;
 
         // Hearing Health
-        hearingHealthBar.maxValue = hearingHealth;
-        hearingHealthBar.value = hearingHealth;
+        hearingHealthSlider.maxValue = hearingHealth;
+        hearingHealthSlider.value = hearingHealth;
     }
 
     void Update()
     {
         //Exposure Meter
-        if (dbPositive > exsposureThreshold)
+        if (dbPositive > exposureThreshold)
         {
-            exsposureSpeed = 1f + ((dbPositive - exsposureThreshold)/100); // Adjust Speed
-            currentExsposure = Mathf.MoveTowards(currentExsposure, targetExsposure, exsposureSpeed * Time.deltaTime);
+            exposureSpeed = (((dbPositive - exposureThreshold)/100) + 1) * exposureUpMultiplier; // Adjust Speed above threshold
+            currentExposure = Mathf.MoveTowards(currentExposure, targetExposure, exposureSpeed * Time.deltaTime);
         }
         else
         {
-            exsposureSpeed = 1f; // Adjust Speed
-            currentExsposure = Mathf.MoveTowards(currentExsposure, 0f, exsposureSpeed * Time.deltaTime);
+            exposureSpeed = 1f * exposureDownMultiplier; // Adjust Speed below threshold
+            currentExposure = Mathf.MoveTowards(currentExposure, 0f, exposureSpeed * Time.deltaTime);
         }
-        exposureSlider.value = currentExsposure;
+        exposureSlider.value = currentExposure;
 
-        Debug.Log(hearingHealth);
-        Debug.Log(currentExsposure);
+        Debug.Log("Health: " + hearingHealth + ", Exposure: " + currentExposure + ", Decibel: " + dbPositive);
     }
 
     void OnEnable()
@@ -111,11 +114,26 @@ public class SoundMeterController : MonoBehaviour
         }
     }
 
+    // Hearing Health
     IEnumerator HearingHealthDamage()
     {
-        while(currentExsposure > healthThreshold)
+        while(enabled)
         {
-            hearingHealth -= hearingDamage;
+            if (currentExposure > healthThreshold)
+            {
+                if (hearingHealth > 0)
+                {
+                    hearingHealth -= hearingDamage;
+                    Debug.Log(hearingHealth + " Oww");
+                }
+                else
+                {
+                    hearingHealth = 0;
+                    Debug.Log("GGs");
+                    // Potential for losing the game here
+                }
+            }
+            hearingHealthSlider.value = hearingHealth;
 
             yield return new WaitForSeconds(damageDelay);
         }

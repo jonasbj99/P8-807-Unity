@@ -2520,7 +2520,9 @@ MonoBehaviour:
   dBRange: 140
   interval: 0.5
   exposureSlider: {fileID: 1469220739}
-  hearingHealthBar: {fileID: 0}
+  exposureUpMultiplier: 5
+  exposureDownMultiplier: 2
+  hearingHealthSlider: {fileID: 440739197}
 --- !u!1 &1699893727
 GameObject:
   m_ObjectHideFlags: 0
