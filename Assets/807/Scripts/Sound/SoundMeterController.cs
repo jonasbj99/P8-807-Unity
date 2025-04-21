@@ -32,7 +32,6 @@ public class SoundMeterController : MonoBehaviour
 
     // Hearing Health
     [SerializeField] Slider hearingHealthSlider;
-    bool dmgCoroutineOn = false;
     int healthThreshold = 70;   // Exposure threshold for decreasing health bar
     int hearingHealth = 100;
     int hearingDamage = 5;  // Amount of damage done every tick
