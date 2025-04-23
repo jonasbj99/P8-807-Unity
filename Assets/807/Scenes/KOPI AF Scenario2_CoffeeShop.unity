@@ -13405,16 +13405,6 @@ MonoBehaviour:
       nextDialogueIndices: 010000000100000000000000
       isCorrectResponse: 
       pointsForCorrectResponse: 0
-  - setName: Stage 2
-    dialogueEntries:
-    - npcAudio: {fileID: 8300000, guid: 16fba6d30ed741d4a9fdd6e79ee2f3ac, type: 3}
-      playerResponses:
-      - Hvordan var oplevelsen?
-      - DET VIRKER
-      - YES
-      nextDialogueIndices: 010000000100000000000000
-      isCorrectResponse: 
-      pointsForCorrectResponse: 0
   npcAudioSource: {fileID: 1911940031}
   playerHead: {fileID: 294179986}
   triggerDistance: 2
@@ -15193,9 +15183,9 @@ SceneRoots:
   - {fileID: 1194396248}
   - {fileID: 1710954605}
   - {fileID: 721366480}
+  - {fileID: 294179982}
   - {fileID: 1387860939}
   - {fileID: 149433821}
-  - {fileID: 294179982}
   - {fileID: 2098531288}
   - {fileID: 1306600096}
   - {fileID: 2116771561}
