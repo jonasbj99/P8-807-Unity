@@ -86,10 +86,7 @@ public class SoundMeterController : MonoBehaviour
     {
         while (enabled)
         {
-            // If not adjusting spread on Audio Source, use this to correct spatial sound problems
-            // If sound needs to be lower when the back is turned to the source, rotate the Audio Listener to fix offset
-            // Adjust both Audio Listener rotation and Spread for a hybrid fix
-            /*
+            // Get left and right output data seperately
             float[] left = new float[sampleSize];
             float[] right = new float[sampleSize];
             AudioListener.GetOutputData(left, 0); // Left ear
@@ -101,14 +98,13 @@ public class SoundMeterController : MonoBehaviour
             {
                 mono[i] = (left[i] + right[i]) * 0.5f;
             }
-            */
 
-            AudioListener.GetOutputData(samples, 0);
+            //AudioListener.GetOutputData(samples, 0);
 
             float sum = 0f;
             for (int i = 0; i < sampleSize; i++)
             {
-                sum += samples[i] * samples[i]; // Change samples to mono, if mono is used
+                sum += mono[i] * mono[i]; // Change mono to samples, if mono is not used
             }
 
             rmsValue = Mathf.Sqrt(sum / sampleSize);
