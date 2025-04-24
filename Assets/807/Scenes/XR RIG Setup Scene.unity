@@ -2183,14 +2183,14 @@ MonoBehaviour:
   CollisionTag: Hand
   EventReference:
     Guid:
-      Data1: 1855863698
-      Data2: 1208481438
-      Data3: -1509266792
-      Data4: 1566307562
-    Path: event:/TestMusic
+      Data1: -1888778873
+      Data2: 1277836362
+      Data3: 1104267651
+      Data4: 1690393494
+    Path: event:/Hearing Loss Simulator
   Event: 
-  EventPlayTrigger: 3
-  EventStopTrigger: 4
+  EventPlayTrigger: 1
+  EventStopTrigger: 2
   AllowFadeout: 1
   TriggerOnce: 0
   Preload: 0
