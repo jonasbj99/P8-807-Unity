@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.03.00">
+	<object class="ParameterPreset" id="{438b5b24-b5c1-4d5b-8260-a7da98fa05df}">
+		<property name="name">
+			<value>FlangerMix</value>
+		</property>
+		<relationship name="folder">
+			<destination>{f295859b-e219-46e9-a190-080305ad5610}</destination>
+		</relationship>
+		<relationship name="parameter">
+			<destination>{8e3a22a2-2151-455a-aa5e-612665703409}</destination>
+		</relationship>
+	</object>
+	<object class="GameParameter" id="{8e3a22a2-2151-455a-aa5e-612665703409}">
+		<property name="initialValue">
+			<value>0</value>
+		</property>
+	</object>
+</objects>

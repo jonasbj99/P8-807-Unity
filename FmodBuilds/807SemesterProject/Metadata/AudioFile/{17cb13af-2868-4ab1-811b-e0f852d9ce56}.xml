@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.03.00">
+	<object class="AudioFile" id="{17cb13af-2868-4ab1-811b-e0f852d9ce56}">
+		<property name="assetPath">
+			<value>people-background-noise.mp3</value>
+		</property>
+		<property name="isStreaming">
+			<value>true</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>48</value>
+		</property>
+		<property name="channelCount">
+			<value>2</value>
+		</property>
+		<property name="length">
+			<value>36.648000000000003</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{c1e05df0-6dd1-4c9d-abb4-3db1312b7fa4}</destination>
+		</relationship>
+	</object>
+</objects>
