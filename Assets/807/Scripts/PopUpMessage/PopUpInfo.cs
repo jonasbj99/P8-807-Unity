@@ -2,6 +2,8 @@ using System.Collections;
 using TMPro;
 using UnityEngine;
 
+//Bliver ikke rigtig brugt.
+
 public class PopUpInfo : MonoBehaviour
 {
     // Singleton instance to ensure only one PopUpInfo exists in the scene
