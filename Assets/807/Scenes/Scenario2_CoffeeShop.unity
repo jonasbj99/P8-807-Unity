@@ -1862,6 +1862,13 @@ MonoBehaviour:
     lockedNPCs:
     - {fileID: 2094467414}
     lockedMessage: Have you ordered yet?
+  - stageName: Stage 1 - Megan
+    activeNPC: {fileID: 2094467414}
+    dialogueSetIndex: 1
+    requireSpecificDialogueCompletion: 1
+    lockedNPCs:
+    - {fileID: 821608554}
+    lockedMessage: I have already given you, your order.
   currentStageIndex: 0
   showDebugLogs: 1
 --- !u!114 &207433819
@@ -2810,7 +2817,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!225 &291544977
 CanvasGroup:
   m_ObjectHideFlags: 0
