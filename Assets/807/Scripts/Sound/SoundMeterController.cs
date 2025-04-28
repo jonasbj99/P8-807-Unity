@@ -22,6 +22,8 @@ public class SoundMeterController : MonoBehaviour
 
     // Exsposure Meter
     [SerializeField] Slider exposureSlider;
+    [SerializeField] GameObject forwardMarker;
+    [SerializeField] GameObject backwardMarker;
     [SerializeField]float exposureUpMultiplier = 5f;    // Multiplier for the speed of moving the exposure level up
     [SerializeField]float exposureDownMultiplier = 2f;  // Multiplier for the speed of moving the exposure level down
     int exposureThreshold = 85; // Decibel threshold for increasing exposure level
@@ -32,6 +34,8 @@ public class SoundMeterController : MonoBehaviour
 
     // Hearing Health
     [SerializeField] Slider hearingHealthSlider;
+    //[SerializeField] Gradient healthGradient; Meant for gradient health color change
+    //RawImage healthFill; Meant for gradient health color change
     int healthThreshold = 70;   // Exposure threshold for decreasing health bar
     int hearingHealth = 100;
     int hearingDamage = 5;  // Amount of damage done every tick
@@ -46,6 +50,8 @@ public class SoundMeterController : MonoBehaviour
         // Hearing Health
         hearingHealthSlider.maxValue = hearingHealth;
         hearingHealthSlider.value = hearingHealth;
+        //healthFill = hearingHealthSlider.fillRect.gameObject.GetComponent<RawImage>();
+        //healthFill.color = healthGradient.Evaluate(hearingHealth / 100);
     }
 
     void Update()
@@ -55,13 +61,25 @@ public class SoundMeterController : MonoBehaviour
         {
             exposureSpeed = (((dbPositive - exposureThreshold)/100) + 1) * exposureUpMultiplier; // Adjust Speed above threshold
             currentExposure = Mathf.MoveTowards(currentExposure, targetExposure, exposureSpeed * Time.deltaTime);
+            forwardMarker.SetActive(true);
+            backwardMarker.SetActive(false);
         }
         else
         {
             exposureSpeed = 1f * exposureDownMultiplier; // Adjust Speed below threshold
             currentExposure = Mathf.MoveTowards(currentExposure, 0f, exposureSpeed * Time.deltaTime);
+            forwardMarker.SetActive(false);
+            backwardMarker.SetActive(true);
         }
         exposureSlider.value = currentExposure;
+
+        if (currentExposure <= 0f)
+        {
+            forwardMarker.SetActive(false);
+            backwardMarker.SetActive(false);
+        }
+
+        //healthFill.color = healthGradient.Evaluate(hearingHealth / 100);
 
         Debug.Log("Health: " + hearingHealth + ", Exposure: " + currentExposure + ", Decibel: " + dbPositive);
     }
@@ -119,7 +137,7 @@ public class SoundMeterController : MonoBehaviour
 
             if (soundLevelText != null)
             {
-                soundLevelText.text = dbPositive.ToString("F1") + " dB";
+                soundLevelText.text = dbPositive.ToString("F1");
             }
 
             yield return new WaitForSeconds(interval);
