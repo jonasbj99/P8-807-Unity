@@ -26,6 +26,8 @@ public class NPCDialogueManager : MonoBehaviour
         public int[] nextDialogueIndices; // Next dialogue entry for each response (-1 to end)
         public bool[] isCorrectResponse; // Which responses are considered "correct"
         public int pointsForCorrectResponse = 1; // Points awarded for correct responses
+        public GameObject[] spawnObjects; // Objects to spawn for each response
+
     }
 
 
@@ -242,6 +244,12 @@ public class NPCDialogueManager : MonoBehaviour
             }
         }
 
+         // Activate the object associated with this response
+    if (responseIndex < entry.spawnObjects.Length && entry.spawnObjects[responseIndex] != null)
+    {
+        entry.spawnObjects[responseIndex].SetActive(true);
+    }
+        
         // Continue with regular dialogue flow
         if (responseIndex < entry.nextDialogueIndices.Length) // Check if the player's chosen response is valid
         {
