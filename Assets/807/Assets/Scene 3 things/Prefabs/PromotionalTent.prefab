@@ -22,15 +22,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: bd4900a8a09548d4d8025d4086d4513f, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 5.67
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: bd4900a8a09548d4d8025d4086d4513f, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.893
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: bd4900a8a09548d4d8025d4086d4513f, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -13.07
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: bd4900a8a09548d4d8025d4086d4513f, type: 3}
       propertyPath: m_LocalRotation.w
@@ -64,9 +64,29 @@ PrefabInstance:
       propertyPath: m_ConstrainProportionsScale
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: -4027870035820042504, guid: bd4900a8a09548d4d8025d4086d4513f, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.0149
+      objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: bd4900a8a09548d4d8025d4086d4513f, type: 3}
       propertyPath: m_Name
-      value: Promotional_Tent
+      value: PromotionalTent
+      objectReference: {fileID: 0}
+    - target: {fileID: 1728839783514498553, guid: bd4900a8a09548d4d8025d4086d4513f, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.014899997
+      objectReference: {fileID: 0}
+    - target: {fileID: 5280326364952150167, guid: bd4900a8a09548d4d8025d4086d4513f, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.0010003648
+      objectReference: {fileID: 0}
+    - target: {fileID: 5415231905870226171, guid: bd4900a8a09548d4d8025d4086d4513f, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.014899997
+      objectReference: {fileID: 0}
+    - target: {fileID: 8891792828147989070, guid: bd4900a8a09548d4d8025d4086d4513f, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.0010003648
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
