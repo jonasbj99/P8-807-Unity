@@ -48,8 +48,10 @@ public class NPCDialogueData : MonoBehaviour
     private Transform mainCamera; // Reference to the main camera transform for positioning the prompt
 
     [Header("Prompt Messages")]
-    public string defaultPromptMessage = "Talk"; // Default message for the prompt when the NPC is active
+    public string defaultPromptMessage = "Hej, hvor er Amandas kop?"; // Default message for the prompt when the NPC is active
     public TextMeshProUGUI promptText; // Reference to text component on prompt
+    private bool isDialogueCompleted = false;
+
 
 
     /// <summary>
@@ -131,6 +133,13 @@ public class NPCDialogueData : MonoBehaviour
     /// </summary>
     void Update()
     {
+        // If dialogue is completed, ensure prompt stays disabled
+        if (isDialogueCompleted)
+        {
+            if (interactionPrompt != null && interactionPrompt.activeSelf)
+                interactionPrompt.SetActive(false);
+            return;
+        }
         // Check if player is in range of the NPC and the trigger distance defined.
         bool playerInRange = Vector3.Distance(playerHead.position, transform.position) < triggerDistance;
 
@@ -295,4 +304,29 @@ public class NPCDialogueData : MonoBehaviour
             }
         }
     }
+
+    /// <summary>
+    /// This method is called when the NPC has reached the end of all dialogue stages.
+    /// It will permanently disable the interaction prompt for this NPC.
+    /// </summary>
+    public void DisableInteractionPromptPermanently()
+    {
+        isDialogueCompleted = true;
+        
+        if (interactionPrompt != null)
+        {
+            interactionPrompt.SetActive(false);
+        }
+        
+        // Remove button click listener to prevent any further interactions
+        if (promptButton != null)
+        {
+            promptButton.onClick.RemoveListener(TriggerDialogue);
+            promptButton.interactable = false;
+        }
+        
+        Debug.Log($"Interaction prompt permanently disabled for NPC: {npcName}");
+    }
+
+
 }

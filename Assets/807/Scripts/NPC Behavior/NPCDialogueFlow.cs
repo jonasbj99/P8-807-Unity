@@ -34,7 +34,7 @@ public class NPCDialogueFlow : MonoBehaviour
 
     // The current index of the active stage in the dialogue flow
     public int currentStageIndex = 0;
-    
+
     // Track completed dialogues by NPC and set index
     // This dictionary maps NPCs to a set of completed dialogue set indices.
     // The HashSet is used to ensure that each set index is unique for each NPC. and which dialogue sets have been completed.
@@ -77,16 +77,16 @@ public class NPCDialogueFlow : MonoBehaviour
         // If the current stage index is out of bounds, it means all stages are completed.
         if (currentStageIndex >= dialogueStages.Count)
             return true; // All stages completed, all NPCs available
-        
+
         // Get the current stage based on the current index
         // and check if the NPC is the active one for this stage.
         DialogueStage currentStage = dialogueStages[currentStageIndex];
-        
+
         // After the new stage is set up, we check if the NPC is the active one for this stage.
         // The designated active NPC for this stage is always available.
         if (npc == currentStage.activeNPC)
             return true;
-            
+
         // NPCs in the locked list are not available
         return !currentStage.lockedNPCs.Contains(npc);
     }
@@ -98,10 +98,10 @@ public class NPCDialogueFlow : MonoBehaviour
     {
         if (customPrompts.TryGetValue(npc, out string customPrompt))
             return customPrompt;
-            
+
         return null; // No custom prompt, use default
     }
-    
+
 
     // This method is called when a dialogue is completed to track the completion of a specific dialogue set for an NPC.
     // It adds the completed dialogue set to the completedDialogueSets dictionary for that NPC.
@@ -115,11 +115,11 @@ public class NPCDialogueFlow : MonoBehaviour
             completedDialogueSets[npc] = new HashSet<int>();
         }
         completedDialogueSets[npc].Add(dialogueSetIndex);
-        
+
         // SLET SENERE
         if (showDebugLogs)
             Debug.Log($"Completed dialogue set {dialogueSetIndex} for NPC {npc.npcName}");
-        
+
         // Check if there are more stages to advance to.
         // If the current stage index is within bounds of the dialogue stages list, 
         // we check if the completed dialogue was with the active NPC and the correct set.
@@ -127,44 +127,61 @@ public class NPCDialogueFlow : MonoBehaviour
         if (currentStageIndex < dialogueStages.Count)
         {
             DialogueStage currentStage = dialogueStages[currentStageIndex];
-            
+
             // Only advance if completed dialogue was with the active NPC and correct set.
             // This is useful for stages that require specific dialogue completion to advance.
-            if (npc == currentStage.activeNPC && 
-                dialogueSetIndex == currentStage.dialogueSetIndex && 
+            if (npc == currentStage.activeNPC &&
+                dialogueSetIndex == currentStage.dialogueSetIndex &&
                 currentStage.requireSpecificDialogueCompletion)
             {
                 AdvanceToNextStage();
             }
         }
     }
-    
+
     // This method is called to advance to the next stage in the dialogue flow.
     // It increments the current stage index and sets up the new stage.
-    public void AdvanceToNextStage()
+public void AdvanceToNextStage()
+{
+    //SLET SENERE
+    if (showDebugLogs)
+        Debug.Log($"Advancing from stage {currentStageIndex} ({dialogueStages[currentStageIndex].stageName}) to next stage");
+
+    // Store reference to the current active NPC before advancing to next stage
+    NPCDialogueData currentActiveNPC = null;
+    if (currentStageIndex < dialogueStages.Count) {
+        currentActiveNPC = dialogueStages[currentStageIndex].activeNPC;
+    }
+
+    // Increment the current stage index and check if it's within bounds of the dialogue stages list.
+    // If it is, we set up the new stage.
+    currentStageIndex++;
+    if (currentStageIndex < dialogueStages.Count)
     {
+        SetupCurrentStage();
         //SLET SENERE
         if (showDebugLogs)
-            Debug.Log($"Advancing from stage {currentStageIndex} ({dialogueStages[currentStageIndex].stageName}) to next stage");
-            
-        // Increment the current stage index and check if it's within bounds of the dialogue stages list.
-        // If it is, we set up the new stage.
-        currentStageIndex++;
-        if (currentStageIndex < dialogueStages.Count)
-        {
-            SetupCurrentStage();
-            //SLET SENERE
-            if (showDebugLogs)
-                Debug.Log($"Advanced to stage {currentStageIndex}: {dialogueStages[currentStageIndex].stageName}");
-        }
-        else
-        {
-            //SLET SENERE
-            if (showDebugLogs)
-                Debug.Log("Reached the end of all dialogue stages");
-        }
+            Debug.Log($"Advanced to stage {currentStageIndex}: {dialogueStages[currentStageIndex].stageName}");
     }
-    
+    else
+    {
+        //SLET SENERE
+        Debug.Log("Reached the end of all dialogue stages");
+        
+        // Disable interaction prompts for ALL NPCs in the game
+        NPCDialogueData[] allNPCs = FindObjectsOfType<NPCDialogueData>();
+        foreach (NPCDialogueData npc in allNPCs)
+        {
+            npc.DisableInteractionPromptPermanently();
+            if (showDebugLogs)
+                Debug.Log($"Disabled interaction prompt for NPC: {npc.npcName}");
+        }
+        
+        if (showDebugLogs)
+            Debug.Log("Reached the end of all dialogue stages");
+    }
+}
+
 
     /// <summary>
     /// This method retrieves the dialogue set index for a specific NPC based on the current stage.
@@ -176,15 +193,15 @@ public class NPCDialogueFlow : MonoBehaviour
         // If it is, we get the current stage and check if the NPC is the active one for this stage.
         if (currentStageIndex >= dialogueStages.Count)
             return 0; // Default to first dialogue set when all stages are complete
-        
+
         // Get the current stage based on the current index
         // and check if the NPC is the active one for this stage.
         DialogueStage currentStage = dialogueStages[currentStageIndex];
-        
+
         // If this is the active NPC for this stage, return the specific dialogue set
         if (npc == currentStage.activeNPC)
             return currentStage.dialogueSetIndex;
-            
+
         // For other NPCs, check if they have completed dialogues and return appropriate set
         if (completedDialogueSets.ContainsKey(npc))
         {
@@ -195,16 +212,16 @@ public class NPCDialogueFlow : MonoBehaviour
                 if (setIndex > highestCompletedSet)
                     highestCompletedSet = setIndex;
             }
-            
+
             // Check if NPC has next dialogue set available
             if (highestCompletedSet + 1 < npc.dialogueSets.Count)
                 return highestCompletedSet + 1;
         }
-        
+
         // Default to first dialogue set
         return 0;
     }
-    
+
     /// <summary>
     /// This method sets up the current stage by clearing any previous custom prompts and initializing the new stage.
     /// It also sets up custom prompts for locked NPCs based on the current stage's configuration.
@@ -215,11 +232,11 @@ public class NPCDialogueFlow : MonoBehaviour
         // Clear any previous custom prompts
         // This is done to ensure that the custom prompts are fresh for the new stage.
         customPrompts.Clear();
-        
+
         // This checks if the current stage index is within bounds of the dialogue stages list.
         // Then access the current stage based on the current index.
         DialogueStage currentStage = dialogueStages[currentStageIndex];
-        
+
         // Set up custom prompts for locked NPCs
         foreach (var npc in currentStage.lockedNPCs)
         {
@@ -227,7 +244,7 @@ public class NPCDialogueFlow : MonoBehaviour
             // The prompt is formatted with the name of the active NPC for this stage.
             // If there is no active NPC, we use a default message.
             // This is useful for providing hints to the player about who they need to talk to next.
-            string message = string.Format(currentStage.lockedMessage, 
+            string message = string.Format(currentStage.lockedMessage,
                 currentStage.activeNPC ? currentStage.activeNPC.npcName : "HELP HEHEH");
             customPrompts[npc] = message;
         }

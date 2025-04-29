@@ -283,6 +283,7 @@ public class NPCDialogueManager : MonoBehaviour
         // Stop the current NPC's audio
         if (currentNPCAudioSource != null)
             currentNPCAudioSource.Stop();
+            
 
         // Start fade out, and then disable canvas when done
         StartCoroutine(FadeDialogueCanvas(1f, 0f, dialogueFadeDuration, () =>
