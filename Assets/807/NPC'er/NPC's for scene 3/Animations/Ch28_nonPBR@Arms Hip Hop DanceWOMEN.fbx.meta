@@ -1,49 +1,9 @@
 fileFormatVersion: 2
-guid: d1e94ef04062614408c463cc4ef27cdb
+guid: c49ac3b1dd9ff704b936997eeaf2a32a
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
-  externalObjects:
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Ch26_body
-    second: {fileID: 2100000, guid: 805fa02c1eecc7946b720ba1b4af4cea, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Ch26_hair
-    second: {fileID: 2100000, guid: 28ce5134932170141af22e79eaadb91f, type: 2}
-  - first:
-      type: UnityEngine:Texture2D
-      assembly: UnityEngine.CoreModule
-      name: Ch26_1001_Diffuse
-    second: {fileID: 2800000, guid: 625bb2d706bb9514995db62bb32425d0, type: 3}
-  - first:
-      type: UnityEngine:Texture2D
-      assembly: UnityEngine.CoreModule
-      name: Ch26_1001_Glossiness
-    second: {fileID: 2800000, guid: 88a5311ee3574ce4a9e71c02130b305e, type: 3}
-  - first:
-      type: UnityEngine:Texture2D
-      assembly: UnityEngine.CoreModule
-      name: Ch26_1001_Normal
-    second: {fileID: 2800000, guid: f605ac83c8d23264b80becf38fedc611, type: 3}
-  - first:
-      type: UnityEngine:Texture2D
-      assembly: UnityEngine.CoreModule
-      name: Ch26_1001_Specular
-    second: {fileID: 2800000, guid: bd7cf1e5511061a47b3acf0c241df810, type: 3}
-  - first:
-      type: UnityEngine:Texture2D
-      assembly: UnityEngine.CoreModule
-      name: Ch26_1002_Diffuse
-    second: {fileID: 2800000, guid: 2d523d10285ee8e4fbddb86d6fe1e7e2, type: 3}
-  - first:
-      type: UnityEngine:Texture2D
-      assembly: UnityEngine.CoreModule
-      name: Ch26_1002_Normal
-    second: {fileID: 2800000, guid: e587601afb545fc4a81d1240c9913a8d, type: 3}
+  externalObjects: {}
   materials:
     materialImportMode: 2
     materialName: 0
@@ -62,7 +22,7 @@ ModelImporter:
     animationDoRetargetingWarnings: 0
     importAnimatedCustomProperties: 0
     importConstraints: 0
-    animationCompression: 3
+    animationCompression: 1
     animationRotationError: 0.5
     animationPositionError: 0.5
     animationScaleError: 0.5
@@ -131,13 +91,13 @@ ModelImporter:
     globalScale: 1
     rootMotionBoneName: 
     hasTranslationDoF: 0
-    hasExtraRoot: 1
+    hasExtraRoot: 0
     skeletonHasParents: 1
   lastHumanDescriptionAvatarSource: {instanceID: 0}
   autoGenerateAvatarMappingIfUnspecified: 1
-  animationType: 3
+  animationType: 2
   humanoidOversampling: 1
-  avatarSetup: 1
+  avatarSetup: 0
   addHumanoidExtraRootOnlyWhenUsingAvatar: 1
   importBlendShapeDeformPercent: 1
   remapMaterialsIfMaterialImportModeIsNone: 0
