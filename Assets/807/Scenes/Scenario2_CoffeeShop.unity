@@ -2150,7 +2150,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 5cd04ac4d07ae924fa7ba6ae6aaae0e6, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -2765,7 +2765,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1030974092, guid: abc00000000009251111458582341467, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1030974093, guid: abc00000000009251111458582341467, type: 3}
       propertyPath: m_LocalPosition.x
@@ -3087,7 +3087,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6791816518937276895, guid: 4caa6851baabe4f40bde9724dafa3b8e, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -4619,7 +4619,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: bb7aa700efde8ab4da4a9fe2d541169d, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -7187,6 +7187,18 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3462052533226231076, guid: 09bd9312ac4813c498f23f6ceb5a4762, type: 3}
+      propertyPath: m_Colors.m_HighlightedColor.b
+      value: 0.814902
+      objectReference: {fileID: 0}
+    - target: {fileID: 3462052533226231076, guid: 09bd9312ac4813c498f23f6ceb5a4762, type: 3}
+      propertyPath: m_Colors.m_HighlightedColor.g
+      value: 0.814902
+      objectReference: {fileID: 0}
+    - target: {fileID: 3462052533226231076, guid: 09bd9312ac4813c498f23f6ceb5a4762, type: 3}
+      propertyPath: m_Colors.m_HighlightedColor.r
+      value: 0.9169811
+      objectReference: {fileID: 0}
     - target: {fileID: 3500512917126475790, guid: 09bd9312ac4813c498f23f6ceb5a4762, type: 3}
       propertyPath: m_Name
       value: ConversationUI
@@ -7199,17 +7211,41 @@ PrefabInstance:
       propertyPath: m_Name
       value: Button 1
       objectReference: {fileID: 0}
+    - target: {fileID: 6624538617344759044, guid: 09bd9312ac4813c498f23f6ceb5a4762, type: 3}
+      propertyPath: m_Colors.m_HighlightedColor.b
+      value: 0.8156863
+      objectReference: {fileID: 0}
+    - target: {fileID: 6624538617344759044, guid: 09bd9312ac4813c498f23f6ceb5a4762, type: 3}
+      propertyPath: m_Colors.m_HighlightedColor.g
+      value: 0.8156863
+      objectReference: {fileID: 0}
+    - target: {fileID: 6624538617344759044, guid: 09bd9312ac4813c498f23f6ceb5a4762, type: 3}
+      propertyPath: m_Colors.m_HighlightedColor.r
+      value: 0.91764706
+      objectReference: {fileID: 0}
+    - target: {fileID: 7048524232120007519, guid: 09bd9312ac4813c498f23f6ceb5a4762, type: 3}
+      propertyPath: m_Colors.m_HighlightedColor.b
+      value: 0.8156863
+      objectReference: {fileID: 0}
+    - target: {fileID: 7048524232120007519, guid: 09bd9312ac4813c498f23f6ceb5a4762, type: 3}
+      propertyPath: m_Colors.m_HighlightedColor.g
+      value: 0.8156863
+      objectReference: {fileID: 0}
+    - target: {fileID: 7048524232120007519, guid: 09bd9312ac4813c498f23f6ceb5a4762, type: 3}
+      propertyPath: m_Colors.m_HighlightedColor.r
+      value: 0.91764706
+      objectReference: {fileID: 0}
     - target: {fileID: 8304446490910689454, guid: 09bd9312ac4813c498f23f6ceb5a4762, type: 3}
       propertyPath: m_Colors.m_HighlightedColor.b
-      value: 0.23519398
+      value: 0.8156863
       objectReference: {fileID: 0}
     - target: {fileID: 8304446490910689454, guid: 09bd9312ac4813c498f23f6ceb5a4762, type: 3}
       propertyPath: m_Colors.m_HighlightedColor.g
-      value: 0.23519398
+      value: 0.8156863
       objectReference: {fileID: 0}
     - target: {fileID: 8304446490910689454, guid: 09bd9312ac4813c498f23f6ceb5a4762, type: 3}
       propertyPath: m_Colors.m_HighlightedColor.r
-      value: 0.87169814
+      value: 0.91764706
       objectReference: {fileID: 0}
     - target: {fileID: 8304446490910689454, guid: 09bd9312ac4813c498f23f6ceb5a4762, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
@@ -7704,7 +7740,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4059473235913210248, guid: 1925bb2fe2bea1c48873454234d200c2, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -8451,7 +8487,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &831738905
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -18565,7 +18601,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 803281365017014796, guid: 6d096d3fc92e3414e81ed7299a149b44, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4431135204082532383, guid: 6d096d3fc92e3414e81ed7299a149b44, type: 3}
       propertyPath: m_LocalScale.x
