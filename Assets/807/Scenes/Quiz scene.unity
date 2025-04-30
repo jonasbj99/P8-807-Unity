@@ -1513,10 +1513,10 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 24
+  m_fontSize: 26.85
   m_fontSizeBase: 24
   m_fontWeight: 400
-  m_enableAutoSizing: 0
+  m_enableAutoSizing: 1
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 0
@@ -2316,10 +2316,10 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 24
+  m_fontSize: 26.85
   m_fontSizeBase: 24
   m_fontWeight: 400
-  m_enableAutoSizing: 0
+  m_enableAutoSizing: 1
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 0
@@ -2484,10 +2484,10 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 24
+  m_fontSize: 26.85
   m_fontSizeBase: 24
   m_fontWeight: 400
-  m_enableAutoSizing: 0
+  m_enableAutoSizing: 1
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 0
@@ -2769,7 +2769,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 170.28, y: -43.000004}
+  m_AnchoredPosition: {x: 170.28, y: -15.000004}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &762123089
@@ -3689,10 +3689,10 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 24
+  m_fontSize: 26.85
   m_fontSizeBase: 24
   m_fontWeight: 400
-  m_enableAutoSizing: 0
+  m_enableAutoSizing: 1
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 0
@@ -3899,27 +3899,43 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   QnA:
-  - Question: er sofie sej?
+  - Question: What is the main cause of noise induced hearing loss (NIHL)?
     Answers:
-    - ja
-    - nej
-    - nej
-    - nej
-    CorrectAnswer: 1
-  - Question: vil i gerne kysse sofie?
+    - Aging
+    - Sudden head injury
+    - Prolonged or sudden exposure to loud noise
+    - Lack of sleep
+    CorrectAnswer: 3
+  - Question: Which of the following is true about earplugs?
     Answers:
-    - nej
-    - ja
-    - nej
-    - nej
-    CorrectAnswer: 2
-  - Question: har sofie mundherpes?
-    Answers:
-    - ja
-    - "m\xE5ske"
-    - "ja, if\xF8lge markus"
-    - nej
+    - They completely block out all sound
+    - They must be worn with external support
+    - They only work in water
+    - They reduce harmful noise levels while still letting you enjoy music
     CorrectAnswer: 4
+  - Question: 'Tinnitus is best described as:'
+    Answers:
+    - An infection in the ear canal
+    - A sensation of ringing or buzzing with no external sound
+    - Temporary balance issues
+    - A type of earwax build up
+    CorrectAnswer: 2
+  - Question: What are the three key factors that determine how damaging a sound
+      can be?
+    Answers:
+    - An Age, gender, and exposure time in the ear canal
+    - Frequency, pitch, and speaker size
+    - Intensity, duration, and frequenct of exposure balance issues
+    - Type of event, weather, and volume
+    CorrectAnswer: 3
+  - Question: According to hearing protection tips, which of the following actions
+      is NOT recommended?
+    Answers:
+    - Take listening breaks in loud environments
+    - Stand close to speakers at concerts
+    - Use earplugs at loud events
+    - Maintain a distance or at least 10 meters from speakers
+    CorrectAnswer: 2
   options:
   - {fileID: 1115245033}
   - {fileID: 762123087}
@@ -3980,7 +3996,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -169, y: -43}
+  m_AnchoredPosition: {x: -169, y: -15}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1115245035
@@ -5002,7 +5018,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 170.28, y: -130.72}
+  m_AnchoredPosition: {x: 170.28, y: -102.72}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1372407645
@@ -5702,7 +5718,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -169, y: -130.72}
+  m_AnchoredPosition: {x: -169, y: -102.72}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1587001281
