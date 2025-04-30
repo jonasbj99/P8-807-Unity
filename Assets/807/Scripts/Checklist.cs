@@ -22,7 +22,11 @@ public class Checklist : MonoBehaviour
     GameObject[] listObjects;
     bool[] checkArr;
 
+<<<<<<< Updated upstream
     bool allCollected = false; // Win condition if true
+=======
+    bool allCollected = false;
+>>>>>>> Stashed changes
 
     void Start()
     {
@@ -110,7 +114,10 @@ public class Checklist : MonoBehaviour
         }
 
         UpdateCheckboxVisuals();
+<<<<<<< Updated upstream
         allCollected = IsAllCollected();
+=======
+>>>>>>> Stashed changes
     }
 
     void UpdateCheckboxVisuals()
