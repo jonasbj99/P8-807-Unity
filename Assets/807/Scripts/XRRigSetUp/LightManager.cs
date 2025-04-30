@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.Experimental.GlobalIllumination;
 
 public class LightManager : MonoBehaviour
 {
@@ -12,8 +13,10 @@ public class LightManager : MonoBehaviour
     [System.Obsolete]
     void Start()
     {
-        // Find all lights in the scene (include inactive objects if needed)
-        sceneLights = FindObjectsOfType<Light>(true); // Pass 'true' to include inactive lights
+        // Find all lights in the scene and filter only spotlights
+        Light[] allLights = FindObjectsOfType<Light>(true); // Include inactive lights
+        sceneLights = System.Array.FindAll(allLights, light => light.type == UnityEngine.LightType.Spot);
+
     }
 
     void Update()
