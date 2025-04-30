@@ -47,6 +47,10 @@ public class NPCDialogueData : MonoBehaviour
     private bool isPlayerInRange = false; // Track if the player is in range for interaction
     private Transform mainCamera; // Reference to the main camera transform for positioning the prompt
 
+    [Header("VR Input")]
+    public InputActionReference interactAction; // Reference to the VR controller input action
+    private bool wasInteractPressed = false; // Track previous input state to detect button press
+
     [Header("Prompt Messages")]
     public string defaultPromptMessage = "Hej, hvor er Amandas kop?"; // Default message for the prompt when the NPC is active
     public TextMeshProUGUI promptText; // Reference to text component on prompt
@@ -122,6 +126,11 @@ public class NPCDialogueData : MonoBehaviour
     {
         if (promptButton != null)
             promptButton.onClick.RemoveListener(TriggerDialogue);
+
+        if (interactAction != null)
+        {
+            interactAction.action.Disable();
+        }
     }
 
 
@@ -158,6 +167,24 @@ public class NPCDialogueData : MonoBehaviour
         if (interactionPrompt != null && interactionPrompt.activeSelf)
         {
             UpdatePromptPosition();
+        }
+
+        // Check for VR controller input if player is in range
+        if (isPlayerInRange && interactAction != null)
+        {
+            bool isInteractPressed = interactAction.action.ReadValue<float>() > 0.5f;
+
+            // Detect button press (transition from not pressed to pressed)
+            if (isInteractPressed && !wasInteractPressed)
+            {
+                TriggerDialogue();
+            }
+
+            wasInteractPressed = isInteractPressed;
+        }
+        else
+        {
+            wasInteractPressed = false; // Reset when out of range
         }
     }
 
@@ -279,7 +306,7 @@ public class NPCDialogueData : MonoBehaviour
             /// a reference to the NPC itself (allowing callbacks), 
             /// and the dialogue set index (enabling the dialogue manager to track which conversation set is active).
             /// </summary>
-            
+
             // Make sure we have a valid dialogue set to play
             if (dialogueSetIndex >= 0 && dialogueSetIndex < dialogueSets.Count)
             {
@@ -312,19 +339,19 @@ public class NPCDialogueData : MonoBehaviour
     public void DisableInteractionPromptPermanently()
     {
         isDialogueCompleted = true;
-        
+
         if (interactionPrompt != null)
         {
             interactionPrompt.SetActive(false);
         }
-        
+
         // Remove button click listener to prevent any further interactions
         if (promptButton != null)
         {
             promptButton.onClick.RemoveListener(TriggerDialogue);
             promptButton.interactable = false;
         }
-        
+
         Debug.Log($"Interaction prompt permanently disabled for NPC: {npcName}");
     }
 

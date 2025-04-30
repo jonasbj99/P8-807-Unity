@@ -358,7 +358,7 @@ public class NPCDialogueManager : MonoBehaviour
             dialogueCanvas.transform.SetParent(playerHead);
 
             // Position the canvas slightly in front of the player's view
-            dialogueCanvas.transform.localPosition = new Vector3(0, 0, 1.0f); // 1.5 meters in front
+            dialogueCanvas.transform.localPosition = new Vector3(0, 0, 0.4f); // 1.5 meters in front
             dialogueCanvas.transform.localRotation = Quaternion.identity; // Reset rotation
         }
     }
