@@ -7,7 +7,8 @@ using TMPro;
 
 public class Checklist : MonoBehaviour
 {
-    [SerializeField] InputActionReference interactButton;
+    [SerializeField] public InputActionReference interactLButton;
+    [SerializeField] public InputActionReference interactRButton;
 
     [SerializeField] Toggle checkboxPrefab;
     [SerializeField] Transform campSection;
@@ -39,15 +40,6 @@ public class Checklist : MonoBehaviour
 
         CreateCheckboxes();
      }
-
-    void OnTriggerStay(Collider other)
-    {
-        if (CheckForObject(other.gameObject, listObjects) && interactButton.action.IsPressed())
-        {
-            other.gameObject.SetActive(false);
-            UpdateChecklist(checkArr, listObjects);
-        }
-    }
 
     bool CheckForObject(GameObject obj, GameObject[] objArr)
     {
@@ -135,5 +127,13 @@ public class Checklist : MonoBehaviour
         }
 
         return collected;
+    }
+
+    public void ObjectInteraction(GameObject obj)
+    {
+        if (CheckForObject(obj, listObjects))
+        {
+
+        }
     }
 }
