@@ -4,13 +4,15 @@ using TMPro; // Required for TextMeshPro elements
 
 public class ScoreTrigger : MonoBehaviour
 {
-    [SerializeField] private GameObject uiElement; // Reference to the UI element you want to show
+    [SerializeField] private GameObject UIScore; // Reference to the UI element you want to show
     [SerializeField] private string targetTag = "Puha"; // Tag of the object that triggers the UI (optional)
     [SerializeField] private TextMeshProUGUI scoreText; // Reference to the TextMeshPro component for the score
-    
     [SerializeField] private string scorePrefix = "Score: "; // Text to display before the score
     [SerializeField] private bool showTotalResponses = true; // Whether to show total responses alongside correct ones
     [SerializeField] private int fixedTotalResponses = 4; // Fixed number for total responses
+    [SerializeField] private TextMeshProUGUI descriptionText; // Reference to the TextMeshPro component for the description
+    [SerializeField] private string scoreDescription = "Your final responses:"; // Descriptive text to display above the score
+    
     
     private bool showUI = false;
 
@@ -18,9 +20,9 @@ public class ScoreTrigger : MonoBehaviour
     void Start()
     {
         // Make sure UI is hidden at start
-        if (uiElement != null)
+        if (UIScore != null)
         {
-            uiElement.SetActive(false);
+            UIScore.SetActive(false);
         }
         else
         {
@@ -28,14 +30,20 @@ public class ScoreTrigger : MonoBehaviour
         }
         
         // Check if scoreText is assigned
-        if (scoreText == null && uiElement != null)
+        if (scoreText == null && UIScore != null)
         {
-            // Try to find a TextMeshProUGUI component in uiElement or its children
-            scoreText = uiElement.GetComponentInChildren<TextMeshProUGUI>();
+            // Try to find a TextMeshProUGUI component in UIElement or its children
+            scoreText = UIScore.GetComponentInChildren<TextMeshProUGUI>();
             if (scoreText == null)
             {
                 Debug.LogWarning("Score Text not assigned in ScoreTrigger and none found in UI Element!");
             }
+        }
+
+        // Set description text if it's assigned
+        if (descriptionText != null)
+        {
+            descriptionText.text = scoreDescription;
         }
     }
 
@@ -46,10 +54,16 @@ public class ScoreTrigger : MonoBehaviour
         if (string.IsNullOrEmpty(targetTag) || other.CompareTag(targetTag))
         {
             // Show the UI
-            if (uiElement != null)
+            if (UIScore != null)
             {
-                uiElement.SetActive(true);
+                UIScore.SetActive(true);
                 showUI = true;
+
+                // Set description text if it's assigned
+                if (descriptionText != null)
+                {
+                    descriptionText.text = scoreDescription;
+                }
                 
                 // Update the score text if available
                 if (scoreText != null)
@@ -85,9 +99,9 @@ public class ScoreTrigger : MonoBehaviour
         if ((string.IsNullOrEmpty(targetTag) || other.CompareTag(targetTag)) && showUI)
         {
             // Hide the UI
-            if (uiElement != null)
+            if (UIScore != null)
             {
-                uiElement.SetActive(false);
+                UIScore.SetActive(false);
                 showUI = false;
             }
         }
