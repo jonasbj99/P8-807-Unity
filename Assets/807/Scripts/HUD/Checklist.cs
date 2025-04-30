@@ -20,19 +20,19 @@ public class Checklist : MonoBehaviour
     [SerializeField] GameObject[] foodObjects;
 
     List<Toggle> toggleList = new List<Toggle>();
-    GameObject[] listObjects;
+    GameObject[] checkObjects;
     bool[] checkArr;
 
     bool allCollected = false; // Win condition if true
 
     void Start()
     {
-        listObjects = new GameObject[campObjects.Length + concertObjects.Length + foodObjects.Length];
-        campObjects.CopyTo(listObjects, 0);
-        concertObjects.CopyTo(listObjects, campObjects.Length);
-        foodObjects.CopyTo(listObjects, concertObjects.Length + campObjects.Length);
+        checkObjects = new GameObject[campObjects.Length + concertObjects.Length + foodObjects.Length];
+        campObjects.CopyTo(checkObjects, 0);
+        concertObjects.CopyTo(checkObjects, campObjects.Length);
+        foodObjects.CopyTo(checkObjects, concertObjects.Length + campObjects.Length);
 
-        checkArr = new bool[listObjects.Length];
+        checkArr = new bool[checkObjects.Length];
         for (int i = 0; i < checkArr.Length; i++)
         {
             checkArr[i] = false;
@@ -107,9 +107,9 @@ public class Checklist : MonoBehaviour
 
     void UpdateCheckboxVisuals()
     {
-        for (int i = 0; i < listObjects.Length; i++)
+        for (int i = 0; i < checkObjects.Length; i++)
         {
-            toggleList[i].isOn = !listObjects[i].activeInHierarchy;
+            toggleList[i].isOn = !checkObjects[i].activeInHierarchy;
         }
     }
 
@@ -131,9 +131,12 @@ public class Checklist : MonoBehaviour
 
     public void ObjectInteraction(GameObject obj)
     {
-        if (CheckForObject(obj, listObjects))
+        if (CheckForObject(obj, checkObjects))
         {
-
+            obj.SetActive(false);
+            UpdateChecklist(checkArr, checkObjects);
+            Debug.Log("Object Interaction IF");
         }
+        Debug.Log("Object Interaction");
     }
 }

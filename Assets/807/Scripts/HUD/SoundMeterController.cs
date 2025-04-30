@@ -81,7 +81,7 @@ public class SoundMeterController : MonoBehaviour
 
         //healthFill.color = healthGradient.Evaluate(hearingHealth / 100);
 
-        Debug.Log("Health: " + hearingHealth + ", Exposure: " + currentExposure + ", Decibel: " + dbPositive);
+        //Debug.Log("Health: " + hearingHealth + ", Exposure: " + currentExposure + ", Decibel: " + dbPositive);
     }
 
     void OnEnable()
@@ -154,12 +154,10 @@ public class SoundMeterController : MonoBehaviour
                 if (hearingHealth > 0)
                 {
                     hearingHealth -= hearingDamage;
-                    Debug.Log(hearingHealth + " Oww");
                 }
                 else
                 {
                     hearingHealth = 0;
-                    Debug.Log("GGs");
                     // Potential for losing the game here
                 }
             }

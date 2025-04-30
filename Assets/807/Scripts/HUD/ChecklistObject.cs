@@ -11,10 +11,11 @@ public class ChecklistObject : MonoBehaviour
     
     void OnTriggerStay(Collider other)
     {
-        if (other.CompareTag("Hand") && (checklist.interactLButton.action.IsPressed() || checklist.interactRButton.action.IsPressed()))
+        if (other.CompareTag("Hand") && checklist.interactLButton.action.IsPressed())
         {
             gameObject.SetActive(false);
             checklist.ObjectInteraction(gameObject);
+            Debug.Log("OnTrigger Hand tag + IsPressed");
         }
     }
 }
