@@ -23,7 +23,11 @@ public class Checklist : MonoBehaviour
     bool[] checkArr;
 
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
     bool allCollected = false; // Win condition if true
+=======
+    bool allCollected = false;
+>>>>>>> Stashed changes
 =======
     bool allCollected = false;
 >>>>>>> Stashed changes
@@ -115,7 +119,10 @@ public class Checklist : MonoBehaviour
 
         UpdateCheckboxVisuals();
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
         allCollected = IsAllCollected();
+=======
+>>>>>>> Stashed changes
 =======
 >>>>>>> Stashed changes
     }
