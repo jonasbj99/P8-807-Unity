@@ -1,97 +1,103 @@
+using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
-using System.Collections.Generic;
-using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class QuizManager : MonoBehaviour
 {
-    public List<QuestionsAndAnswers> QnA; // This will hold all your questions and answers
-    public GameObject[] options; // Buttons for the answers
-    public int currentQuestion; // Index of the current question
-    public TextMeshProUGUI QuestionTxt; // TextMeshPro component for the question display
-    public int score = 0; // Track score
+    [Header("Quiz Content")]
+    public List<QuestionsAndAnswers> QnA;
+    public GameObject[] options;
+    public TextMeshProUGUI QuestionTxt;
+
+    [Header("UI Panels")]
+    public GameObject QuizPanel;
+    public GameObject EndScreen;
+
+    [Header("Score Display")]
+    public TextMeshProUGUI ScoreText;
+
+    private int currentQuestion;
+    private int score = 0;
 
     private void Start()
     {
-        // Ensure QnA list is populated
+        // Ensure end screen is hidden and quiz panel is shown
+        EndScreen.SetActive(false);
+        QuizPanel.SetActive(true);
+
         if (QnA.Count > 0)
         {
-            generateQuestion(); // Start the quiz by generating the first question
+            generateQuestion();
         }
         else
         {
-            Debug.LogError("No questions in the quiz! Please populate the QnA list.");
+            Debug.LogWarning("QnA list is empty. Please add questions.");
         }
     }
 
-    public void correct()
+    public void AnswerSelected(bool wasCorrect)
     {
-        // Check if current question index is valid
-        if (currentQuestion < QnA.Count)
+        if (wasCorrect)
         {
-            // Check if the selected answer is correct and update the score
-            if (options[currentQuestion].GetComponent<AnswerScript>().isCorrect)
-            {
-                score++;
-            }
+            score++;
+        }
 
-            // Check if there are more questions
-            if (currentQuestion < QnA.Count - 1)
-            {
-                currentQuestion++; // Move to the next question
-                generateQuestion(); // Generate the next question
-            }
-            else
-            {
-                Debug.Log("Quiz Complete! Final Score: " + score + "/" + QnA.Count);
-            }
+        QnA.RemoveAt(currentQuestion);
+
+        if (QnA.Count > 0)
+        {
+            generateQuestion();
         }
         else
         {
-            Debug.LogError("currentQuestion index is out of range: " + currentQuestion);
-        }
-    }
-
-    void SetAnswers()
-    {
-        // Ensure answers are set only if valid options exist
-        if (QnA.Count > 0 && options.Length > 0)
-        {
-            // Reset all options' colors to default
-            foreach (GameObject option in options)
-            {
-                option.GetComponent<Image>().color = Color.white; // Set to white (default color)
-            }
-
-            for (int i = 0; i < options.Length; i++)
-            {
-                if (i < QnA[currentQuestion].Answers.Length)
-                {
-                    options[i].GetComponent<AnswerScript>().isCorrect = false;
-                    options[i].transform.GetChild(0).GetComponent<TextMeshProUGUI>().text = QnA[currentQuestion].Answers[i];
-
-                    // Mark the correct answer button
-                    if (QnA[currentQuestion].CorrectAnswer == i + 1)
-                    {
-                        options[i].GetComponent<AnswerScript>().isCorrect = true;
-                    }
-                }
-            }
+            EndQuiz();
         }
     }
 
     void generateQuestion()
     {
-        // Ensure there are still questions available
-        if (currentQuestion < QnA.Count)
+        currentQuestion = Random.Range(0, QnA.Count);
+        QuestionTxt.text = QnA[currentQuestion].Question;
+        SetAnswers();
+    }
+
+    void SetAnswers()
+    {
+        for (int i = 0; i < options.Length; i++)
         {
-            // Update the displayed question and set answers
-            QuestionTxt.text = QnA[currentQuestion].Question;
-            SetAnswers();
+            options[i].GetComponent<AnswerScript>().isCorrect = false;
+
+            if (i < QnA[currentQuestion].Answers.Length)
+            {
+                options[i].transform.GetChild(0).GetComponent<TextMeshProUGUI>().text = QnA[currentQuestion].Answers[i];
+
+                if (QnA[currentQuestion].CorrectAnswer == i + 1)
+                {
+                    options[i].GetComponent<AnswerScript>().isCorrect = true;
+                }
+            }
+            else
+            {
+                options[i].transform.GetChild(0).GetComponent<TextMeshProUGUI>().text = "";
+            }
         }
-        else
-        {
-            Debug.Log("No more questions left!");
-        }
+    }
+
+    void EndQuiz()
+    {
+        QuizPanel.SetActive(false);
+        EndScreen.SetActive(true);
+        ScoreText.text = "Your Score: " + score + " / " + (score + QnA.Count);
+    }
+
+    public void Retry()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+    }
+
+    public void LoadNextScene()
+    {
+        SceneManager.LoadScene("Scenario1_Apartment");
     }
 }
