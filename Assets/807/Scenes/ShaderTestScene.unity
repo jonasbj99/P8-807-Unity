@@ -4461,6 +4461,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nonRigidbodyVelocity: 0
   attenuationObject: {fileID: 0}
+  lastFramePosition: {x: 0, y: 0, z: 0}
+  rigidBody: {fileID: 0}
+  rigidBody2D: {fileID: 0}
 --- !u!65 &822220567
 BoxCollider:
   m_ObjectHideFlags: 0
