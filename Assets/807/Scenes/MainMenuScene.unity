@@ -2198,7 +2198,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b3a08bbf6b51b2f48be6625e46e99cae, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  levelSelectFader: {fileID: 0}
+  levelSelectFader: {fileID: 1867383257}
 --- !u!4 &1157273005
 Transform:
   m_ObjectHideFlags: 0
@@ -3884,7 +3884,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1867383254
 RectTransform:
   m_ObjectHideFlags: 0
