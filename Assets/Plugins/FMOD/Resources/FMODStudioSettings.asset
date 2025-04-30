@@ -560,7 +560,11 @@ MonoBehaviour:
   Plugins: []
   MasterBanks:
   - Master
-  Banks: []
+  Banks:
+  - GeneralSounds
+  - Scenario1
+  - Scenario2
+  - Scenario3
   BanksToLoad: []
   LiveUpdatePort: 9264
   EnableMemoryTracking: 0

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.03.00">
+	<object class="AudioFile" id="{2d5031f0-6e1f-4eef-9bc8-229903612b6d}">
+		<property name="assetPath">
+			<value>Barista 4.mp3</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>44.0999985</value>
+		</property>
+		<property name="channelCount">
+			<value>2</value>
+		</property>
+		<property name="length">
+			<value>2.7167346938775512</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{c1e05df0-6dd1-4c9d-abb4-3db1312b7fa4}</destination>
+		</relationship>
+	</object>
+</objects>
