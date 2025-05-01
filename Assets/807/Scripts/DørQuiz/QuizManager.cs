@@ -20,6 +20,20 @@ public class QuizManager : MonoBehaviour
     private int currentQuestion;
     private int score = 0;
 
+    private List<QuestionsAndAnswers> originalQuestions = new List<QuestionsAndAnswers>();
+
+    private void Awake()
+    {
+        // Store the original questions when the component initializes
+        if (originalQuestions.Count == 0 && QnA.Count > 0)
+        {
+            foreach (QuestionsAndAnswers qa in QnA)
+            {
+                originalQuestions.Add(qa);
+            }
+        }
+    }
+
     private void Start()
     {
         // Ensure end screen is hidden and quiz panel is shown
@@ -88,12 +102,37 @@ public class QuizManager : MonoBehaviour
     {
         QuizPanel.SetActive(false);
         EndScreen.SetActive(true);
-        ScoreText.text = "Your Score: " + score + " / " + (score + QnA.Count);
+        ScoreText.text = "Your Score: " + score + " / 5";
     }
-
     public void Retry()
     {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        // Reset the quiz state instead of reloading the scene
+        score = 0;
+
+        // Reset the QnA list (you'll need to store the original questions)
+        ResetQuestions();
+
+        // Hide end screen and show quiz panel again
+        EndScreen.SetActive(false);
+        QuizPanel.SetActive(true);
+
+        // Generate first question
+        if (QnA.Count > 0)
+        {
+            generateQuestion();
+        }
+    }
+
+    private void ResetQuestions()
+    {
+        // Clear current questions
+        QnA.Clear();
+
+        // Restore from the original questions
+        foreach (QuestionsAndAnswers qa in originalQuestions)
+        {
+            QnA.Add(qa);
+        }
     }
 
     public void LoadNextScene()
