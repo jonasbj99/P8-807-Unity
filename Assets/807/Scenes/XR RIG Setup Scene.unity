@@ -1116,6 +1116,8 @@ PrefabInstance:
     - {fileID: 1782646182773897190, guid: 77e7c27b2c5525e4aa8cc9f99d654486, type: 3}
     - {fileID: 905229015085933311, guid: 77e7c27b2c5525e4aa8cc9f99d654486, type: 3}
     - {fileID: 7277802327414017198, guid: 77e7c27b2c5525e4aa8cc9f99d654486, type: 3}
+    - {fileID: 9069179309448622682, guid: 77e7c27b2c5525e4aa8cc9f99d654486, type: 3}
+    - {fileID: 4396367257308607463, guid: 77e7c27b2c5525e4aa8cc9f99d654486, type: 3}
     m_RemovedGameObjects:
     - {fileID: 3927770863203988191, guid: 77e7c27b2c5525e4aa8cc9f99d654486, type: 3}
     - {fileID: 4523042146035904342, guid: 77e7c27b2c5525e4aa8cc9f99d654486, type: 3}
@@ -1135,7 +1137,7 @@ PrefabInstance:
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 7277802327414017194, guid: 77e7c27b2c5525e4aa8cc9f99d654486, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 1728488874}
+      addedObject: {fileID: 1728488880}
     - targetCorrespondingSourceObject: {fileID: 7277802326798953684, guid: 77e7c27b2c5525e4aa8cc9f99d654486, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1145222950}
@@ -1731,30 +1733,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  CollisionTag: 
-  EventReference:
-    Guid:
-      Data1: 749941559
-      Data2: 1125099351
-      Data3: -1410905943
-      Data4: -1876380624
-    Path: event:/BaristaDialog
-  Event: 
-  EventPlayTrigger: 1
-  EventStopTrigger: 2
-  AllowFadeout: 1
-  TriggerOnce: 0
-  Preload: 0
-  NonRigidbodyVelocity: 0
-  Params: []
-  OverrideAttenuation: 0
-  OverrideMinDistance: 1
-  OverrideMaxDistance: 20
-  hasTriggered: 0
-  isQuitting: 0
-  isOneshot: 0
-  cachedParams: []
-  <IsActive>k__BackingField: 0
 --- !u!1 &753582537
 GameObject:
   m_ObjectHideFlags: 0
@@ -3044,23 +3022,14 @@ Camera:
   m_CorrespondingSourceObject: {fileID: 7277802327414017196, guid: 77e7c27b2c5525e4aa8cc9f99d654486, type: 3}
   m_PrefabInstance: {fileID: 267198612}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1728488874
-MonoBehaviour:
+--- !u!81 &1728488880
+AudioListener:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 267198615}
   m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 86c6556701af9e04380698b89f691b6e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  nonRigidbodyVelocity: 0
-  attenuationObject: {fileID: 0}
-  lastFramePosition: {x: 0, y: 0, z: 0}
-  rigidBody: {fileID: 0}
-  rigidBody2D: {fileID: 0}
 --- !u!1 &1960885590
 GameObject:
   m_ObjectHideFlags: 0
@@ -3472,7 +3441,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8264140102716109825, guid: 21d10ea07cfcb824ba0bddddd1d5527a, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -13.12
+      value: -5.87
       objectReference: {fileID: 0}
     - target: {fileID: 8264140102716109825, guid: 21d10ea07cfcb824ba0bddddd1d5527a, type: 3}
       propertyPath: m_LocalPosition.y
@@ -3509,6 +3478,14 @@ PrefabInstance:
     - target: {fileID: 8264140102716109825, guid: 21d10ea07cfcb824ba0bddddd1d5527a, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9034278552548614614, guid: 21d10ea07cfcb824ba0bddddd1d5527a, type: 3}
+      propertyPath: m_Volume
+      value: 0.467
+      objectReference: {fileID: 0}
+    - target: {fileID: 9034278552548614614, guid: 21d10ea07cfcb824ba0bddddd1d5527a, type: 3}
+      propertyPath: panLevelCustomCurve.m_Curve.Array.data[0].value
+      value: 0.829
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
