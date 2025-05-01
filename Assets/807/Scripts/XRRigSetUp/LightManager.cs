@@ -57,6 +57,21 @@ public class LightManager : MonoBehaviour
         spotlightMat.EnableKeyword("_EMISSION");
     }
 
+    private void ResetEmissionColor()
+    {
+        // Set the emission color to white
+        spotlightMat.SetColor("_EmissionColor", Color.white);
+
+        // Ensure the material's emission is enabled
+        spotlightMat.EnableKeyword("_EMISSION");
+    }
+
+    void OnApplicationQuit()
+    {
+        // Reset the emission color when the game stops running
+        ResetEmissionColor();
+    }
+
 }
 
 
