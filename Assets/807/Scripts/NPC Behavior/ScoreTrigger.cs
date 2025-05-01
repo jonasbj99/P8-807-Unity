@@ -12,8 +12,9 @@ public class ScoreTrigger : MonoBehaviour
     [SerializeField] private int fixedTotalResponses = 4; // Fixed number for total responses
     [SerializeField] private TextMeshProUGUI descriptionText; // Reference to the TextMeshPro component for the description
     [SerializeField] private string scoreDescription = "Your final responses:"; // Descriptive text to display above the score
-    
-    
+    [SerializeField] private GameObject targetObject; // The GameObject to modify when triggered
+    [SerializeField] private Vector3 newPosition; // New position for the target object
+
     private bool showUI = false;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -28,7 +29,7 @@ public class ScoreTrigger : MonoBehaviour
         {
             Debug.LogWarning("UI Element not assigned in ScoreTrigger!");
         }
-        
+
         // Check if scoreText is assigned
         if (scoreText == null && UIScore != null)
         {
@@ -64,7 +65,7 @@ public class ScoreTrigger : MonoBehaviour
                 {
                     descriptionText.text = scoreDescription;
                 }
-                
+
                 // Update the score text if available
                 if (scoreText != null)
                 {
@@ -72,7 +73,7 @@ public class ScoreTrigger : MonoBehaviour
                     if (NPCDialogueManager.Instance != null)
                     {
                         int correctAnswers = NPCDialogueManager.Instance.correctResponsesCount;
-                        
+
                         if (showTotalResponses)
                         {
                             scoreText.text = $"{scorePrefix}{correctAnswers}/{fixedTotalResponses}";
@@ -89,6 +90,17 @@ public class ScoreTrigger : MonoBehaviour
                     }
                 }
             }
+
+            // Modify the transform of the target object
+            if (targetObject != null)
+            {
+                targetObject.transform.position = newPosition;
+            }
+            else
+            {
+                Debug.LogWarning("Target object not assigned in ScoreTrigger!");
+            }
+
         }
     }
 
