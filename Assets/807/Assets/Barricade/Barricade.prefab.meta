@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: d3686da1969823f4b97aa52ca42789f0
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 652
+  packageName: Barricade
+  packageVersion: 2.0
+  assetPath: Assets/Barricade/Barricade.prefab
+  uploadId: 24626

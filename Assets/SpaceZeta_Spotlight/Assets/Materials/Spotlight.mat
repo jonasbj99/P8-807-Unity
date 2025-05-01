@@ -129,7 +129,11 @@ Material:
     m_Colors:
     - _BaseColor: {r: 1, g: 1, b: 1, a: 1}
     - _Color: {r: 1, g: 1, b: 1, a: 1}
+<<<<<<< Updated upstream
     - _EmissionColor: {r: 0.05358983, g: 0.3096936, b: 0.7984264, a: 1}
+=======
+    - _EmissionColor: {r: 0.7458313, g: 0.9636674, b: 0.6080548, a: 1}
+>>>>>>> Stashed changes
     - _SpecColor: {r: 0.19999996, g: 0.19999996, b: 0.19999996, a: 1}
     - _UvOffset: {r: 0, g: 0, b: 0, a: 0}
     - _UvTiling: {r: 1, g: 1, b: 0, a: 0}
