@@ -102,7 +102,7 @@ public class QuizManager : MonoBehaviour
     {
         QuizPanel.SetActive(false);
         EndScreen.SetActive(true);
-        ScoreText.text = "Your Score: " + score + " / 5";
+        ScoreText.text = "Your Score: " + score + " / 6";
     }
     public void Retry()
     {

@@ -25345,7 +25345,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   soundLevelText: {fileID: 491273740}
   sampleSize: 1024
-  dBRange: 140
+  dBRange: 80
   interval: 0.5
 --- !u!1 &2142645675
 GameObject:
@@ -25443,6 +25443,19 @@ PrefabInstance:
       propertyPath: vrCamera
       value: 
       objectReference: {fileID: 921500490}
+    - target: {fileID: 1917751917667908188, guid: e6127dd521ba3b94caba10f7ea6dd756, type: 3}
+      propertyPath: introMessage
+      value: 'In this scene you are going to experience what it is like to live with
+        hearing loss.
+
+
+        If you look at your wrist, you can see a decibel
+        reader. This registers the volume level of the environment.
+
+
+        Remember
+        press "X" to show what you can interact with. And "Grip" to trigger interaction.'
+      objectReference: {fileID: 0}
     - target: {fileID: 3714410898217424615, guid: e6127dd521ba3b94caba10f7ea6dd756, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5

@@ -8311,6 +8311,13 @@ MonoBehaviour:
     - Use earplugs at loud events
     - Maintain a distance or at least 10 meters from speakers
     CorrectAnswer: 2
+  - Question: How many dB on average can be experienced at a concert?
+    Answers:
+    - 85 dB
+    - 90 dB
+    - 70 dB
+    - 100 dB or over
+    CorrectAnswer: 3
   options:
   - {fileID: 1516976334}
   - {fileID: 219177890}
@@ -12957,12 +12964,13 @@ PrefabInstance:
       value: 'In this scene you are going to learn about noise induced hearing loss
         and what causes it. You will also learn about the ears anatomy. All this
         information can be gathered by interacting with different objects in this
-        apartment, by pressing the "x" button on the controller. The information
-        gathered in this area is the key to the next scenario and the quiz at the
-        door.
+        apartment, by pressing the "grip" button on the controller. To see the interactable
+        items press "x". The information gathered in this area is the key to the
+        next scenario and the quiz at the door.
 
-        The objects with yellow highlights is interactable information,
-        while the objects with green highlights is interactable experiences.
+        The objects with yellow
+        highlights is interactable information, while the objects with green highlights
+        is interactable experiences.
 
         Enjoy!
 
@@ -13050,7 +13058,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6729134811959476185, guid: e6127dd521ba3b94caba10f7ea6dd756, type: 3}
       propertyPath: m_fontSize
-      value: 30.15
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 6729134811959476185, guid: e6127dd521ba3b94caba10f7ea6dd756, type: 3}
+      propertyPath: m_fontSizeMax
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 6729134811959476185, guid: e6127dd521ba3b94caba10f7ea6dd756, type: 3}
       propertyPath: m_fontSizeMin
