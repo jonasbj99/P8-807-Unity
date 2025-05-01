@@ -2,13 +2,13 @@ using UnityEngine;
 using UnityEngine.Video;
 using UnityEngine.XR.Interaction.Toolkit;
 
-public class VideoPopUp : MonoBehaviour
+public class VideoPopup : MonoBehaviour
 {
     [Header("Video & Popup")]
     public VideoPlayer videoPlayer;
     public SceneIntroduction sceneIntroduction;
 
-    [Header("XR Movement Locking")]
+    [Header("XR Locomotion Locking")]
     public ActionBasedContinuousMoveProvider moveProvider;
     public ActionBasedContinuousTurnProvider turnProvider;
     public UnityEngine.XR.Interaction.Toolkit.Locomotion.Teleportation.TeleportationProvider teleportationProvider;
@@ -21,7 +21,8 @@ public class VideoPopUp : MonoBehaviour
             videoPlayer.loopPointReached += OnVideoEnd;
         }
 
-        LockMovement(); // Lock immediately if video starts on play
+        // Lock movement at start, assuming video plays immediately
+        LockMovement();
     }
 
     void OnVideoStarted(VideoPlayer vp)
@@ -34,7 +35,9 @@ public class VideoPopUp : MonoBehaviour
         UnlockMovement();
 
         if (sceneIntroduction != null)
+        {
             sceneIntroduction.ShowPopup();
+        }
     }
 
     void LockMovement()
@@ -46,23 +49,10 @@ public class VideoPopUp : MonoBehaviour
 
     void UnlockMovement()
     {
-        if (moveProvider)
-        {
-            moveProvider.enabled = false;
-            moveProvider.enabled = true;
-        }
-
-        if (turnProvider)
-        {
-            turnProvider.enabled = false;
-            turnProvider.enabled = true;
-        }
-
-        if (teleportationProvider)
-        {
-            teleportationProvider.enabled = false;
-            teleportationProvider.enabled = true;
-        }
+        if (moveProvider) moveProvider.enabled = true;
+        if (turnProvider) turnProvider.enabled = true;
+        if (teleportationProvider) teleportationProvider.enabled = true;
     }
 }
+
 
