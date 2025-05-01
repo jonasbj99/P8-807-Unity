@@ -419,7 +419,7 @@ Transform:
   m_GameObject: {fileID: 55168676}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 14.423596, y: 0.96520793, z: 6.6512938}
+  m_LocalPosition: {x: 14.423596, y: 0.96520793, z: 6.538}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -637,7 +637,7 @@ BoxCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
@@ -2128,7 +2128,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: 5cd04ac4d07ae924fa7ba6ae6aaae0e6, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.0134038925
+      value: 0.16900063
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 5cd04ac4d07ae924fa7ba6ae6aaae0e6, type: 3}
       propertyPath: m_LocalPosition.y
@@ -2136,7 +2136,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 5cd04ac4d07ae924fa7ba6ae6aaae0e6, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -0.1013937
+      value: 0.010900021
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 5cd04ac4d07ae924fa7ba6ae6aaae0e6, type: 3}
       propertyPath: m_LocalRotation.w
@@ -2791,7 +2791,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1030974093, guid: abc00000000009251111458582341467, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.15659618
+      value: -0.0009994507
       objectReference: {fileID: 0}
     - target: {fileID: 1030974093, guid: abc00000000009251111458582341467, type: 3}
       propertyPath: m_LocalPosition.y
@@ -2799,7 +2799,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1030974093, guid: abc00000000009251111458582341467, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -0.11245823
+      value: -0.00016450882
       objectReference: {fileID: 0}
     - target: {fileID: 1030974093, guid: abc00000000009251111458582341467, type: 3}
       propertyPath: m_LocalRotation.w
@@ -3065,7 +3065,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6127905471607253861, guid: 4caa6851baabe4f40bde9724dafa3b8e, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.15059662
+      value: 0.005
       objectReference: {fileID: 0}
     - target: {fileID: 6127905471607253861, guid: 4caa6851baabe4f40bde9724dafa3b8e, type: 3}
       propertyPath: m_LocalPosition.y
@@ -3073,7 +3073,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6127905471607253861, guid: 4caa6851baabe4f40bde9724dafa3b8e, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -0.1322937
+      value: -0.02
       objectReference: {fileID: 0}
     - target: {fileID: 6127905471607253861, guid: 4caa6851baabe4f40bde9724dafa3b8e, type: 3}
       propertyPath: m_LocalRotation.w
@@ -4581,7 +4581,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: bb7aa700efde8ab4da4a9fe2d541169d, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.023403168
+      value: 0.1789999
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: bb7aa700efde8ab4da4a9fe2d541169d, type: 3}
       propertyPath: m_LocalPosition.y
@@ -4589,7 +4589,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: bb7aa700efde8ab4da4a9fe2d541169d, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -0.101293564
+      value: 0.011000156
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: bb7aa700efde8ab4da4a9fe2d541169d, type: 3}
       propertyPath: m_LocalRotation.w
@@ -7698,7 +7698,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 3683370322276361010, guid: 1925bb2fe2bea1c48873454234d200c2, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.17359638
+      value: -0.017999649
       objectReference: {fileID: 0}
     - target: {fileID: 3683370322276361010, guid: 1925bb2fe2bea1c48873454234d200c2, type: 3}
       propertyPath: m_LocalPosition.y
@@ -7706,7 +7706,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3683370322276361010, guid: 1925bb2fe2bea1c48873454234d200c2, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -0.11629391
+      value: -0.004000187
       objectReference: {fileID: 0}
     - target: {fileID: 3683370322276361010, guid: 1925bb2fe2bea1c48873454234d200c2, type: 3}
       propertyPath: m_LocalRotation.w
@@ -18743,7 +18743,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4431135204082532383, guid: 6d096d3fc92e3414e81ed7299a149b44, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.019403458
+      value: 0.17500019
       objectReference: {fileID: 0}
     - target: {fileID: 4431135204082532383, guid: 6d096d3fc92e3414e81ed7299a149b44, type: 3}
       propertyPath: m_LocalPosition.y
@@ -18751,7 +18751,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4431135204082532383, guid: 6d096d3fc92e3414e81ed7299a149b44, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -0.094293594
+      value: 0.018000126
       objectReference: {fileID: 0}
     - target: {fileID: 4431135204082532383, guid: 6d096d3fc92e3414e81ed7299a149b44, type: 3}
       propertyPath: m_LocalRotation.w
@@ -23065,17 +23065,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   npcName: Megan
   dialogueSets:
-  - setName: Stage 1 - NOT USED
-    dialogueEntries:
-    - npcAudio: {fileID: 8300000, guid: 16fba6d30ed741d4a9fdd6e79ee2f3ac, type: 3}
-      playerResponses:
-      - Hvordan var oplevelsen?
-      - DET VIRKER
-      - YES
-      nextDialogueIndices: 010000000100000000000000
-      isCorrectResponse: 
-      pointsForCorrectResponse: 0
-      spawnObjects: []
   - setName: Stage 0
     dialogueEntries:
     - npcAudio: {fileID: 8300000, guid: ef419738a7decf649a379673dcb3c1ad, type: 3}
@@ -23109,6 +23098,17 @@ MonoBehaviour:
       - I will order!
       - What?
       nextDialogueIndices: ffffffff03000000
+      isCorrectResponse: 
+      pointsForCorrectResponse: 0
+      spawnObjects: []
+  - setName: Stage 1 - NOT USED
+    dialogueEntries:
+    - npcAudio: {fileID: 8300000, guid: 16fba6d30ed741d4a9fdd6e79ee2f3ac, type: 3}
+      playerResponses:
+      - Hvordan var oplevelsen?
+      - DET VIRKER
+      - YES
+      nextDialogueIndices: 010000000100000000000000
       isCorrectResponse: 
       pointsForCorrectResponse: 0
       spawnObjects: []
