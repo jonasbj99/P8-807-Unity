@@ -4,7 +4,7 @@ using UnityEngine.Video;
 public class VideoEndPopup : MonoBehaviour
 {
     public VideoPlayer videoPlayer;
-    public GameObject popupCanvas;
+    public SceneIntroduction sceneIntroduction; // Reference to your popup logic script
 
     void Start()
     {
@@ -16,7 +16,10 @@ public class VideoEndPopup : MonoBehaviour
 
     void OnVideoEnd(VideoPlayer vp)
     {
-        popupCanvas.SetActive(true);
+        if (sceneIntroduction != null)
+        {
+            sceneIntroduction.ShowPopup(); // Call the VR-aware popup logic
+        }
     }
 }
 
