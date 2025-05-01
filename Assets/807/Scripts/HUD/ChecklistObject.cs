@@ -15,7 +15,6 @@ public class ChecklistObject : MonoBehaviour
         {
             gameObject.SetActive(false);
             checklist.ObjectInteraction(gameObject);
-            Debug.Log("OnTrigger Hand tag + IsPressed");
         }
     }
 }
