@@ -8353,7 +8353,7 @@ MonoBehaviour:
   dialogueSets:
   - setName: Stage 0 Barista
     dialogueEntries:
-    - npcAudio: {fileID: 8300000, guid: 16fba6d30ed741d4a9fdd6e79ee2f3ac, type: 3}
+    - npcAudio: {fileID: 8300000, guid: 8e145442fb81f344383d8d90804345ed, type: 3}
       playerResponses:
       - Scone
       - Cake
@@ -8366,7 +8366,7 @@ MonoBehaviour:
       - {fileID: 1834113928}
       - {fileID: 1565744243}
       - {fileID: 572710308}
-    - npcAudio: {fileID: 8300000, guid: 16fba6d30ed741d4a9fdd6e79ee2f3ac, type: 3}
+    - npcAudio: {fileID: 8300000, guid: 08a186776ac1a91429f7cb5beeb45e65, type: 3}
       playerResponses:
       - Strawberry
       - Lemon
@@ -8376,7 +8376,7 @@ MonoBehaviour:
       isCorrectResponse: 00010000
       pointsForCorrectResponse: 1
       spawnObjects: []
-    - npcAudio: {fileID: 8300000, guid: 16fba6d30ed741d4a9fdd6e79ee2f3ac, type: 3}
+    - npcAudio: {fileID: 8300000, guid: 63c09d01abf90414aaad54d2cf2a14c9, type: 3}
       playerResponses:
       - Coffee
       - Tea
@@ -8389,7 +8389,7 @@ MonoBehaviour:
       - {fileID: 831039914}
       - {fileID: 1152620484}
       - {fileID: 274385569}
-    - npcAudio: {fileID: 8300000, guid: 16fba6d30ed741d4a9fdd6e79ee2f3ac, type: 3}
+    - npcAudio: {fileID: 8300000, guid: c45eb525ef6331342a10342b51a35d15, type: 3}
       playerResponses:
       - Yes
       - No
@@ -10134,7 +10134,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8298045291338814965, guid: 77e7c27b2c5525e4aa8cc9f99d654486, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 11.308
+      value: 10.14
       objectReference: {fileID: 0}
     - target: {fileID: 8298045291338814965, guid: 77e7c27b2c5525e4aa8cc9f99d654486, type: 3}
       propertyPath: m_LocalPosition.y
@@ -22874,7 +22874,7 @@ MonoBehaviour:
   dialogueSets:
   - setName: Stage 0
     dialogueEntries:
-    - npcAudio: {fileID: 8300000, guid: 16fba6d30ed741d4a9fdd6e79ee2f3ac, type: 3}
+    - npcAudio: {fileID: 8300000, guid: ef419738a7decf649a379673dcb3c1ad, type: 3}
       playerResponses:
       - Yes i know!
       - Good to see you
@@ -22883,7 +22883,7 @@ MonoBehaviour:
       isCorrectResponse: 
       pointsForCorrectResponse: 0
       spawnObjects: []
-    - npcAudio: {fileID: 8300000, guid: eeeda5dce5e1d344f8e2f6195f16cb38, type: 3}
+    - npcAudio: {fileID: 8300000, guid: ae428dd05d594ae449193da086d181c6, type: 3}
       playerResponses:
       - Yes of course!
       - Sure!
@@ -22892,7 +22892,7 @@ MonoBehaviour:
       isCorrectResponse: 
       pointsForCorrectResponse: 0
       spawnObjects: []
-    - npcAudio: {fileID: 8300000, guid: eeeda5dce5e1d344f8e2f6195f16cb38, type: 3}
+    - npcAudio: {fileID: 8300000, guid: c75cea2590ef6094380e1ca292bc3607, type: 3}
       playerResponses:
       - Anything else?
       - What?
@@ -22900,7 +22900,7 @@ MonoBehaviour:
       isCorrectResponse: 
       pointsForCorrectResponse: 0
       spawnObjects: []
-    - npcAudio: {fileID: 8300000, guid: eeeda5dce5e1d344f8e2f6195f16cb38, type: 3}
+    - npcAudio: {fileID: 8300000, guid: aff0dfabbb5ed7d47857122d997cd500, type: 3}
       playerResponses:
       - I will order!
       - What?
@@ -22942,7 +22942,7 @@ AudioSource:
   m_audioClip: {fileID: 8300000, guid: 16fba6d30ed741d4a9fdd6e79ee2f3ac, type: 3}
   m_Resource: {fileID: 8300000, guid: 16fba6d30ed741d4a9fdd6e79ee2f3ac, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 0.048
+  m_Volume: 1
   m_Pitch: 1
   Loop: 0
   Mute: 0
