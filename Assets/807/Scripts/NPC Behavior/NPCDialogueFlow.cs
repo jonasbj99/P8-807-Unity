@@ -169,7 +169,7 @@ public void AdvanceToNextStage()
         Debug.Log("Reached the end of all dialogue stages");
         
         // Disable interaction prompts for ALL NPCs in the game
-        NPCDialogueData[] allNPCs = FindObjectsOfType<NPCDialogueData>();
+        NPCDialogueData[] allNPCs = FindObjectsByType<NPCDialogueData>(FindObjectsSortMode.None);
         foreach (NPCDialogueData npc in allNPCs)
         {
             npc.DisableInteractionPromptPermanently();
