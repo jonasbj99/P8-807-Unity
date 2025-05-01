@@ -6399,7 +6399,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   popupPanel: {fileID: 1275504693}
-  vrHeadTransform: {fileID: 921500480}
+  vrHeadTransform: {fileID: 921500490}
   buttonCanvas: {fileID: 956003067}
   triggerButton: {fileID: 886021760}
   canvasAppearDistance: 4
@@ -11103,6 +11103,25 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 70038038615881689, guid: b9b2db66d7dccc44b9235d3482087bd7, type: 3}
   m_PrefabInstance: {fileID: 1724674506}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &986951569
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 986951562}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7951c64acb0fa62458bf30a60089fe2d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_IgnoreReversedGraphics: 0
+  m_CheckFor2DOcclusion: 0
+  m_CheckFor3DOcclusion: 0
+  m_BlockingMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_RaycastTriggerInteraction: 1
 --- !u!1001 &1013083599
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -17732,7 +17751,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   popupPanel: {fileID: 166740593}
-  vrHeadTransform: {fileID: 921500480}
+  vrHeadTransform: {fileID: 921500490}
   buttonCanvas: {fileID: 1188139160}
   triggerButton: {fileID: 1013515151}
   canvasAppearDistance: 2
@@ -18539,7 +18558,10 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 70038038615881689, guid: b9b2db66d7dccc44b9235d3482087bd7, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 986951569}
   m_SourcePrefab: {fileID: 100100000, guid: b9b2db66d7dccc44b9235d3482087bd7, type: 3}
 --- !u!1 &1729408894
 GameObject:

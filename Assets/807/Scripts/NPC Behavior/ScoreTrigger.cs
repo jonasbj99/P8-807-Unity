@@ -96,6 +96,12 @@ public class ScoreTrigger : MonoBehaviour
             {
                 targetObject.transform.position = newPosition;
             }
+
+            var rigidbody = targetObject.GetComponent<Rigidbody>();
+            if (rigidbody != null)
+            {
+                rigidbody.isKinematic = true; // Make the object static to prevent physics interactions
+            }
             else
             {
                 Debug.LogWarning("Target object not assigned in ScoreTrigger!");
