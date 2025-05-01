@@ -135,8 +135,6 @@ public class Checklist : MonoBehaviour
         {
             obj.SetActive(false);
             UpdateChecklist(checkArr, checkObjects);
-            Debug.Log("Object Interaction IF");
         }
-        Debug.Log("Object Interaction");
     }
 }
