@@ -394,7 +394,7 @@
                     "name": "Meta Aim Flags",
                     "type": "Value",
                     "id": "f98e71db-49b4-4882-8991-a0e386733e87",
-                    "expectedControlType": "Axis",
+                    "expectedControlType": "Integer",
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": true
@@ -452,24 +452,6 @@
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": true
-                },
-                {
-                    "name": "Grip",
-                    "type": "Value",
-                    "id": "b0816217-66f3-486f-b670-17d0befb8aad",
-                    "expectedControlType": "Axis",
-                    "processors": "",
-                    "interactions": "",
-                    "initialStateCheck": true
-                },
-                {
-                    "name": "X button",
-                    "type": "Button",
-                    "id": "f73d342e-a006-48a4-a2bc-290256c18c8c",
-                    "expectedControlType": "",
-                    "processors": "",
-                    "interactions": "",
-                    "initialStateCheck": false
                 }
             ],
             "bindings": [
@@ -877,28 +859,6 @@
                     "processors": "",
                     "groups": "",
                     "action": "Thumbstick",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "cd930fff-ccc3-4cda-bc5d-7f97cc2e80fa",
-                    "path": "<XRController>{LeftHand}/{Grip}",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "Grip",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "28f7a8c9-6923-4912-a118-ad626387b7a1",
-                    "path": "*/{PrimaryButton}",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "X button",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }
@@ -1585,15 +1545,6 @@
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": true
-                },
-                {
-                    "name": "Grip",
-                    "type": "Value",
-                    "id": "a87126d4-667d-4d2d-a0fb-10ae90e8435c",
-                    "expectedControlType": "Axis",
-                    "processors": "",
-                    "interactions": "",
-                    "initialStateCheck": true
                 }
             ],
             "bindings": [
@@ -2001,17 +1952,6 @@
                     "processors": "",
                     "groups": "",
                     "action": "Thumbstick",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "eb0a8f55-bb9b-4d1e-a407-f886b0b282b0",
-                    "path": "<XRController>{RightHand}/{Grip}",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "Grip",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }
