@@ -2703,7 +2703,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fbb29aa9e3784a6428a491594710e1ef, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  colorChangeInterval: 0.2
+  colorChangeInterval: 0.355
   spotlightMat: {fileID: 2100000, guid: 7b09d2e28c2823e42a0756653e544774, type: 2}
 --- !u!4 &564869910
 Transform:
