@@ -98,6 +98,6 @@ public class QuizManager : MonoBehaviour
 
     public void LoadNextScene()
     {
-        SceneManager.LoadScene("MainMenuScene");
+        SceneManager.LoadScene("Scenario2_CoffeeShop");
     }
 }
