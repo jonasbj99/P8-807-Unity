@@ -43,6 +43,8 @@ public class NPCDialogueFlow : MonoBehaviour
     // This dictionary is used to store custom prompts for locked NPCs.
     private Dictionary<NPCDialogueData, string> customPrompts = new Dictionary<NPCDialogueData, string>();
 
+    public delegate void DialogueCompletedEvent(NPCDialogueData npc, int dialogueSetIndex);
+    public event DialogueCompletedEvent OnDialogueCompleted;
 
     //SLET EFTER
     [Header("Debug")]
@@ -137,6 +139,8 @@ public class NPCDialogueFlow : MonoBehaviour
                 AdvanceToNextStage();
             }
         }
+            OnDialogueCompleted?.Invoke(npc, dialogueSetIndex);
+
     }
 
     // This method is called to advance to the next stage in the dialogue flow.
