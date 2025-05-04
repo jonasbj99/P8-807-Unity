@@ -31,12 +31,12 @@ public class SceneIntroduction : MonoBehaviour
         // Ensure we have a CanvasGroup if fadeEffect is enabled
         if (fadeEffect && canvasGroup == null)
             canvasGroup = popupPanel.GetComponent<CanvasGroup>() ?? popupPanel.AddComponent<CanvasGroup>();
-        
+
         // Get canvas component
         canvas = GetComponent<Canvas>();
         if (canvas == null)
             canvas = GetComponentInParent<Canvas>();
-        
+
         // If no VR camera is set, try to find main camera
         if (vrCamera == null)
             vrCamera = Camera.main?.transform;
@@ -47,20 +47,20 @@ public class SceneIntroduction : MonoBehaviour
         // Hide popup initially
         if (popupPanel != null)
             popupPanel.SetActive(false);
-        
+
         // Set message text if available
         if (messageText != null)
             messageText.text = introMessage;
-        
+
         // Show popup when scene starts
         ShowPopup();
-        
+
         // Setup close button if available
         if (closeButton != null)
             closeButton.onClick.AddListener(HidePopup);
-        
+
         // Make sure the canvas is set to world space for VR
-        if (canvas != null) 
+        if (canvas != null)
             canvas.renderMode = RenderMode.WorldSpace;
     }
 
@@ -75,20 +75,23 @@ public class SceneIntroduction : MonoBehaviour
     public void ShowPopup()
     {
         if (popupPanel == null) return;
-        
+
         // Position in front of player before showing
         if (vrCamera != null)
             PositionCanvasInFrontOfPlayer();
-            
+
         popupPanel.SetActive(true);
         isVisible = true;
-        
+
         if (fadeEffect && canvasGroup != null)
         {
             StopAllCoroutines();
             StartCoroutine(FadeIn());
         }
-        
+
+         if (closeButton != null)
+        closeButton.interactable = true;
+
         // Auto-hide after displayTime if greater than 0
         //if (displayTime > 0)
         // Invoke(nameof(HidePopup), displayTime);
@@ -97,9 +100,14 @@ public class SceneIntroduction : MonoBehaviour
     public void HidePopup()
     {
         if (popupPanel == null) return;
-        
+
         isVisible = false;
-        
+
+        // Disable the close button to prevent multiple clicks
+        if (closeButton != null)
+            closeButton.interactable = false;
+
+
         if (fadeEffect && canvasGroup != null)
         {
             StopAllCoroutines();
@@ -117,7 +125,7 @@ public class SceneIntroduction : MonoBehaviour
 
         // Position the canvas in front of the player
         transform.position = vrCamera.position + vrCamera.forward * distanceFromPlayer + positionOffset;
-        
+
         // Rotate canvas to face the player
         transform.rotation = Quaternion.LookRotation(transform.position - vrCamera.position);
     }
@@ -125,26 +133,26 @@ public class SceneIntroduction : MonoBehaviour
     private IEnumerator FadeIn()
     {
         canvasGroup.alpha = 0f;
-        
+
         while (canvasGroup.alpha < 1f)
         {
             canvasGroup.alpha += Time.deltaTime * fadeSpeed;
             yield return null;
         }
-        
+
         canvasGroup.alpha = 1f;
     }
 
     private IEnumerator FadeOut()
     {
         canvasGroup.alpha = 1f;
-        
+
         while (canvasGroup.alpha > 0f)
         {
             canvasGroup.alpha -= Time.deltaTime * fadeSpeed;
             yield return null;
         }
-        
+
         popupPanel.SetActive(false);
     }
 }

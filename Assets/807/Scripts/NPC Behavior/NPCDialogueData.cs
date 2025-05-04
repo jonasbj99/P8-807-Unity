@@ -48,8 +48,10 @@ public class NPCDialogueData : MonoBehaviour
     private Transform mainCamera; // Reference to the main camera transform for positioning the prompt
 
     [Header("VR Input")]
-    public InputActionReference interactAction; // Reference to the VR controller input action
-    private bool wasInteractPressed = false; // Track previous input state to detect button press
+    public InputActionReference leftGripAction; // Reference to the left grip input action
+    public InputActionReference rightGripAction; // Reference to the right grip input action
+    private bool wasLeftGripPressed = false; // Track left grip press state
+    private bool wasRightGripPressed = false; // Track right grip press state
 
     [Header("Prompt Messages")]
     public string defaultPromptMessage = "Hej, hvor er Amandas kop?"; // Default message for the prompt when the NPC is active
@@ -111,6 +113,17 @@ public class NPCDialogueData : MonoBehaviour
             npcAudioSource.minDistance = 1.0f;
             npcAudioSource.maxDistance = 15.0f;
         }
+
+        // Enable grip input actions
+        if (leftGripAction != null)
+        {
+            leftGripAction.action.Enable();
+        }
+
+        if (rightGripAction != null)
+        {
+            rightGripAction.action.Enable();
+        }
     }
 
     /// <summary>
@@ -127,9 +140,14 @@ public class NPCDialogueData : MonoBehaviour
         if (promptButton != null)
             promptButton.onClick.RemoveListener(TriggerDialogue);
 
-        if (interactAction != null)
+        if (leftGripAction != null)
         {
-            interactAction.action.Disable();
+            leftGripAction.action.Disable();
+        }
+
+        if (rightGripAction != null)
+        {
+            rightGripAction.action.Disable();
         }
     }
 
@@ -170,22 +188,43 @@ public class NPCDialogueData : MonoBehaviour
         }
 
         // Check for VR controller input if player is in range
-        if (isPlayerInRange && interactAction != null)
+        if (isPlayerInRange)
         {
-            bool isInteractPressed = interactAction.action.ReadValue<float>() > 0.5f;
-
-            // Detect button press (transition from not pressed to pressed)
-            if (isInteractPressed && !wasInteractPressed)
+            // Check left grip
+            if (leftGripAction != null)
             {
-                TriggerDialogue();
+                bool isLeftGripPressed = leftGripAction.action.ReadValue<float>() > 0.5f;
+
+                // Detect button press (transition from not pressed to pressed)
+                if (isLeftGripPressed && !wasLeftGripPressed)
+                {
+                    TriggerDialogue();
+                }
+
+                wasLeftGripPressed = isLeftGripPressed;
             }
 
-            wasInteractPressed = isInteractPressed;
+            // Check right grip
+            if (rightGripAction != null)
+            {
+                bool isRightGripPressed = rightGripAction.action.ReadValue<float>() > 0.5f;
+
+                // Detect button press (transition from not pressed to pressed)
+                if (isRightGripPressed && !wasRightGripPressed)
+                {
+                    TriggerDialogue();
+                }
+
+                wasRightGripPressed = isRightGripPressed;
+            }
         }
         else
         {
-            wasInteractPressed = false; // Reset when out of range
+            // Reset when out of range
+            wasLeftGripPressed = false;
+            wasRightGripPressed = false;
         }
+
     }
 
     /// <summary>

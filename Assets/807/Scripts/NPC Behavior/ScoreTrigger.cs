@@ -52,7 +52,7 @@ public class ScoreTrigger : MonoBehaviour
         {
             descriptionText.text = scoreDescription;
         }
-        
+
         // If we have a target object, and it shouldn't be visible at start, hide it
         if (targetObject != null && !visibleAtStart && npcToWaitFor != null)
         {
@@ -63,7 +63,7 @@ public class ScoreTrigger : MonoBehaviour
         {
             dialogueCompleted = true;
         }
-    
+
         // Register to dialogue completion events
         if (NPCDialogueFlow.Instance != null && npcToWaitFor != null)
         {
@@ -91,7 +91,7 @@ public class ScoreTrigger : MonoBehaviour
             if (requiredDialogueSetIndex == -1 || dialogueSetIndex == requiredDialogueSetIndex)
             {
                 dialogueCompleted = true;
-                
+
                 // Make the target object visible now that dialogue is completed
                 if (targetObject != null)
                 {
@@ -100,14 +100,14 @@ public class ScoreTrigger : MonoBehaviour
             }
         }
     }
-    
+
     // Called when this object's collider enters another collider
     private void OnTriggerEnter(Collider other)
     {
         // Only process trigger if dialogue is completed or no NPC was specified to wait for
         if (!dialogueCompleted)
             return;
-            
+
         // Check if we hit the target object (or any object if targetTag is empty)
         if (string.IsNullOrEmpty(targetTag) || other.CompareTag(targetTag))
         {
@@ -123,27 +123,27 @@ public class ScoreTrigger : MonoBehaviour
                     descriptionText.text = scoreDescription;
                 }
 
-                // Update the score text if available
                 if (scoreText != null)
                 {
                     // Get the score from NPCDialogueManager
+                    int correctAnswers = 0;
                     if (NPCDialogueManager.Instance != null)
                     {
-                        int correctAnswers = NPCDialogueManager.Instance.correctResponsesCount;
-
-                        if (showTotalResponses)
-                        {
-                            scoreText.text = $"{scorePrefix}{correctAnswers}/{fixedTotalResponses}";
-                        }
-                        else
-                        {
-                            scoreText.text = $"{scorePrefix}{correctAnswers}";
-                        }
+                        correctAnswers = NPCDialogueManager.Instance.correctResponsesCount;
+                        Debug.Log($"ScoreTrigger: Retrieved correctResponsesCount = {correctAnswers}");
                     }
                     else
                     {
-                        scoreText.text = $"{scorePrefix}0/{fixedTotalResponses}";
                         Debug.LogWarning("NPCDialogueManager instance not found!");
+                    }
+
+                    if (showTotalResponses)
+                    {
+                        scoreText.text = $"{scorePrefix}{correctAnswers}/{fixedTotalResponses}";
+                    }
+                    else
+                    {
+                        scoreText.text = $"{scorePrefix}{correctAnswers}";
                     }
                 }
             }
@@ -152,12 +152,13 @@ public class ScoreTrigger : MonoBehaviour
             if (targetObject != null)
             {
                 targetObject.transform.position = newPosition;
-            }
 
-            var rigidbody = targetObject?.GetComponent<Rigidbody>();
-            if (rigidbody != null)
-            {
-                rigidbody.isKinematic = true; // Make the object static to prevent physics interactions
+                // Make the object static if it has a Rigidbody
+                var rigidbody = targetObject.GetComponent<Rigidbody>();
+                if (rigidbody != null)
+                {
+                    rigidbody.isKinematic = true; // Make the object static to prevent physics interactions
+                }
             }
         }
     }
