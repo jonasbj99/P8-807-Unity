@@ -37,6 +37,7 @@ public class SoundMeterController : MonoBehaviour
     //[SerializeField] Gradient healthGradient; Meant for gradient health color change
     //RawImage healthFill; Meant for gradient health color change
     int healthThreshold = 70;   // Exposure threshold for decreasing health bar
+    int lowHealthThreshold = 30; // Threshold for indicating low health
     int hearingHealth = 100;
     int hearingDamage = 5;  // Amount of damage done every tick
     float damageDelay = 1f;    // Defines the tick delay for health damage
@@ -154,16 +155,30 @@ public class SoundMeterController : MonoBehaviour
                 if (hearingHealth > 0)
                 {
                     hearingHealth -= hearingDamage;
+
+                    LowHealthIndication();
                 }
                 else
                 {
                     hearingHealth = 0;
-                    // Potential for losing the game here
+                    // Run 
                 }
             }
             hearingHealthSlider.value = hearingHealth;
 
             yield return new WaitForSeconds(damageDelay);
+        }
+    }
+
+    void LowHealthIndication()
+    {
+        if (hearingHealth < lowHealthThreshold)
+        {
+            // Indicate low health here
+        }
+        else
+        {
+            // Disable low health indication here
         }
     }
 }

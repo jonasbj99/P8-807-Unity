@@ -103,6 +103,11 @@ public class Checklist : MonoBehaviour
 
         UpdateCheckboxVisuals();
         allCollected = IsAllCollected();
+
+        if (allCollected)
+        {
+            // Display win Screen and other 
+        }
     }
 
     void UpdateCheckboxVisuals()
