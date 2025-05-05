@@ -7730,7 +7730,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 830749508749913053, guid: db45072c4d883bd4db1a3ae7ba455d03, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 4.312134
+      value: 4.3
       objectReference: {fileID: 0}
     - target: {fileID: 830749508749913053, guid: db45072c4d883bd4db1a3ae7ba455d03, type: 3}
       propertyPath: m_LocalRotation.w
@@ -7760,10 +7760,30 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 90
       objectReference: {fileID: 0}
+    - target: {fileID: 2929291228594544274, guid: db45072c4d883bd4db1a3ae7ba455d03, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: -5081792898505675300, guid: c777e97676f26e24498feead911e137c, type: 3}
+    - target: {fileID: 4906149792629986312, guid: db45072c4d883bd4db1a3ae7ba455d03, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.02147464
+      objectReference: {fileID: 0}
+    - target: {fileID: 4906149792629986312, guid: db45072c4d883bd4db1a3ae7ba455d03, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.031179285
+      objectReference: {fileID: 0}
+    - target: {fileID: 4906149792629986312, guid: db45072c4d883bd4db1a3ae7ba455d03, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -0.00033
+      objectReference: {fileID: 0}
     - target: {fileID: 5274121563859647462, guid: db45072c4d883bd4db1a3ae7ba455d03, type: 3}
       propertyPath: m_Materials.Array.size
       value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: 5274121563859647462, guid: db45072c4d883bd4db1a3ae7ba455d03, type: 3}
+      propertyPath: 'm_Materials.Array.data[1]'
+      value: 
+      objectReference: {fileID: 3850466104811336786, guid: c777e97676f26e24498feead911e137c, type: 3}
     - target: {fileID: 5274121563859647462, guid: db45072c4d883bd4db1a3ae7ba455d03, type: 3}
       propertyPath: 'm_Materials.Array.data[2]'
       value: 
@@ -7771,6 +7791,10 @@ PrefabInstance:
     - target: {fileID: 5844257240886239230, guid: db45072c4d883bd4db1a3ae7ba455d03, type: 3}
       propertyPath: m_Name
       value: NoticeBoard
+      objectReference: {fileID: 0}
+    - target: {fileID: 7129710196599866130, guid: db45072c4d883bd4db1a3ae7ba455d03, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
