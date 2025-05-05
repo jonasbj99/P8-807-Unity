@@ -2,6 +2,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI; // Added for Button
+using System.Collections; // Added for IEnumerator
 
 public class QuizManager : MonoBehaviour
 {
@@ -19,6 +21,11 @@ public class QuizManager : MonoBehaviour
 
     private int currentQuestion;
     private int score = 0;
+
+    [Header("Feedback")]
+    public TextMeshProUGUI feedbackText;
+    public float feedbackDisplayTime = 3f; // How long to show the feedback
+    private bool isShowingFeedback = false;
 
     private List<QuestionsAndAnswers> originalQuestions = new List<QuestionsAndAnswers>();
 
@@ -54,19 +61,50 @@ public class QuizManager : MonoBehaviour
     {
         if (wasCorrect)
         {
+
+            // Hide any feedback that might be showing
+            if (feedbackText != null)
+                feedbackText.gameObject.SetActive(false);
             score++;
-        }
 
-        QnA.RemoveAt(currentQuestion);
+            // Only remove and proceed to next question if answer was correct
+            QnA.RemoveAt(currentQuestion);
 
-        if (QnA.Count > 0)
-        {
-            generateQuestion();
+            if (QnA.Count > 0)
+            {
+                generateQuestion();
+            }
+            else
+            {
+                EndQuiz();
+            }
         }
         else
         {
-            EndQuiz();
+            // For wrong answers, show feedback specific to this question
+            Debug.Log("Wrong answer! Try again.");
+
+            if (feedbackText != null && !isShowingFeedback)
+            {
+                // Use the custom feedback message for this question
+                feedbackText.text = QnA[currentQuestion].FeedbackMessage;
+                feedbackText.gameObject.SetActive(true);
+                isShowingFeedback = true;
+
+                // Hide the feedback after a delay
+                StartCoroutine(HideFeedbackAfterDelay());
+            }
+
+            // Reset the answer buttons
+            SetAnswers();
         }
+    }
+
+    private System.Collections.IEnumerator HideFeedbackAfterDelay()
+    {
+        yield return new WaitForSeconds(feedbackDisplayTime);
+        feedbackText.gameObject.SetActive(false);
+        isShowingFeedback = false;
     }
 
     void generateQuestion()
