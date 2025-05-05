@@ -11,7 +11,9 @@ public class IntroVideo : MonoBehaviour
     public Canvas endVideoCanvas; // Reference to the end video canvas
     public float delay; // Delay before showing the end video canvas
 
-    public MonoBehaviour moveScript;     
+    public MonoBehaviour moveScript;
+
+    public Canvas remoteCanvas; // Reference to the remote canvas
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -37,7 +39,8 @@ public class IntroVideo : MonoBehaviour
     {
         yield return new WaitForSeconds(delay); // Wait for the specified delay
 
-        endVideoCanvas.gameObject.SetActive(true); // Show the end video canvas      
+        endVideoCanvas.gameObject.SetActive(true); // Show the end video canvas
+        remoteCanvas.gameObject.SetActive(true);
     }
 
     public void OnVideoEnd()
@@ -55,5 +58,10 @@ public class IntroVideo : MonoBehaviour
     public void StopVideo()
     {
         videoPlayer.Stop(); // Stop the video playback
+    }
+
+    public void PauseVideo()
+    {
+        videoPlayer.Pause(); // Pause the video playback
     }
 }
