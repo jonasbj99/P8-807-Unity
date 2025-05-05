@@ -34,7 +34,7 @@ public class HandController : MonoBehaviour
         // Pass the grip value to the Animator to control the "Grip" parameter
         handAnimator.SetFloat("Grip", gripValue);
 
-        if (showHighlights.action.WasPressedThisFrame())
+        if (showHighlights.action.IsPressed())
         {
             StartCoroutine(activateHighlights());
         }
