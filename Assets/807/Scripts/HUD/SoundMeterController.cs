@@ -41,6 +41,10 @@ public class SoundMeterController : MonoBehaviour
     int hearingHealth = 100;
     int hearingDamage = 5;  // Amount of damage done every tick
     float damageDelay = 1f;    // Defines the tick delay for health damage
+    int healthPickUpAmount = 10; // Health gain when pick up is taken
+    float earplugEffect = 1f;
+    int earplugSubtract = 0;
+    float earplugTime = 15f; // Time that earplugs last
 
     private void Start()
     {
@@ -105,6 +109,8 @@ public class SoundMeterController : MonoBehaviour
     {
         while (enabled)
         {
+            AudioListener.volume = earplugEffect;
+
             // Get left and right output data seperately
             float[] left = new float[sampleSize];
             float[] right = new float[sampleSize];
@@ -135,6 +141,8 @@ public class SoundMeterController : MonoBehaviour
             }
 
             dbPositive = dbFS + dBRange;
+
+            dbPositive -= earplugSubtract;
 
             if (soundLevelText != null)
             {
@@ -180,5 +188,34 @@ public class SoundMeterController : MonoBehaviour
         {
             // Disable low health indication here
         }
+    }
+
+    public void OnHealthPickUp()
+    {
+        if (hearingHealth <= 90)
+        {
+            hearingHealth += healthPickUpAmount;
+        }
+        else
+        {
+            hearingHealth = 100;
+        }
+    }
+
+    public void OnEarplugPickUp()
+    {
+        StartCoroutine(EarplugActive());
+    }
+
+    // Effect of earplugs must be changed here
+    IEnumerator EarplugActive()
+    {
+        earplugEffect = 0.4f;
+        earplugSubtract = 15;
+
+        yield return new WaitForSeconds(earplugTime);
+
+        earplugEffect = 1f;
+        earplugSubtract = 0;
     }
 }
