@@ -1976,7 +1976,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Press the button to interact
+  m_text: Press or Use Grip to interact
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -2041,7 +2041,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 0, y: 0, z: 0, w: 0}
+  m_margin: {x: -8.960739, y: 0, z: -5.3574677, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
@@ -2401,7 +2401,7 @@ MonoBehaviour:
     requireSpecificDialogueCompletion: 1
     lockedNPCs:
     - {fileID: 821608554}
-    lockedMessage: Sorry you have to talk to Megan First
+    lockedMessage: Sorry you have to talk to your friend first
   - stageName: Stage 1 - Barista
     activeNPC: {fileID: 821608554}
     dialogueSetIndex: 0
@@ -3595,7 +3595,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Press the button to interact
+  m_text: Press or Use Grip to interact
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -3660,7 +3660,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 0, y: 0, z: 0, w: 0}
+  m_margin: {x: -9.83783, y: 0, z: -3.5724182, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
@@ -5506,7 +5506,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Press the button to interact OR Grab
+  m_text: Press or Use Grip to interact
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -5571,7 +5571,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 0, y: 0, z: 0, w: 0}
+  m_margin: {x: -6.0683136, y: 0, z: 0, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
@@ -7045,7 +7045,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Press the button to interact
+  m_text: Press or Use Grip to interact
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -7110,7 +7110,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 0, y: 0, z: 0, w: 0}
+  m_margin: {x: -13.052444, y: 0, z: -2.3652496, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
@@ -7766,11 +7766,15 @@ PrefabInstance:
       objectReference: {fileID: -5081792898505675300, guid: c777e97676f26e24498feead911e137c, type: 3}
     - target: {fileID: 4906149792629986312, guid: db45072c4d883bd4db1a3ae7ba455d03, type: 3}
       propertyPath: m_LocalScale.x
-      value: 0.02147464
+      value: 0.019971415
       objectReference: {fileID: 0}
     - target: {fileID: 4906149792629986312, guid: db45072c4d883bd4db1a3ae7ba455d03, type: 3}
       propertyPath: m_LocalScale.z
-      value: 0.031179285
+      value: 0.028453467
+      objectReference: {fileID: 0}
+    - target: {fileID: 4906149792629986312, guid: db45072c4d883bd4db1a3ae7ba455d03, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.00007
       objectReference: {fileID: 0}
     - target: {fileID: 4906149792629986312, guid: db45072c4d883bd4db1a3ae7ba455d03, type: 3}
       propertyPath: m_LocalPosition.z
@@ -10028,7 +10032,7 @@ MonoBehaviour:
   promptButton: {fileID: 1893292476}
   leftGripAction: {fileID: -5599135982822891163, guid: c348712bda248c246b8c49b3db54643f, type: 3}
   rightGripAction: {fileID: 265287232572525433, guid: c348712bda248c246b8c49b3db54643f, type: 3}
-  defaultPromptMessage: Press the button to interact
+  defaultPromptMessage: Press or Use Grip to interact
   promptText: {fileID: 183978635}
 --- !u!114 &821608555
 MonoBehaviour:
@@ -22491,7 +22495,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Press the button to interact
+  m_text: Press or Use Grip to interact
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -22556,7 +22560,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 0, y: 0, z: 0, w: 0}
+  m_margin: {x: -11.237946, y: 0, z: 0, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
@@ -25460,7 +25464,7 @@ MonoBehaviour:
   promptButton: {fileID: 652410283}
   leftGripAction: {fileID: -5599135982822891163, guid: c348712bda248c246b8c49b3db54643f, type: 3}
   rightGripAction: {fileID: 265287232572525433, guid: c348712bda248c246b8c49b3db54643f, type: 3}
-  defaultPromptMessage: Press the button to interact
+  defaultPromptMessage: Press or Use Grip to interact
   promptText: {fileID: 283911771}
 --- !u!82 &2094467415
 AudioSource:
