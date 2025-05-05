@@ -15,6 +15,8 @@ public class HandController : MonoBehaviour
 
     public float highlightRevealTime = 3f;
 
+    private bool isHighlightActive = false; // Flag to track if the coroutine is running
+
 
     private void Start()
     {
@@ -34,7 +36,7 @@ public class HandController : MonoBehaviour
         // Pass the grip value to the Animator to control the "Grip" parameter
         handAnimator.SetFloat("Grip", gripValue);
 
-        if (showHighlights.action.IsPressed())
+        if (showHighlights.action.IsPressed() && !isHighlightActive)
         {
             StartCoroutine(activateHighlights());
         }
@@ -42,7 +44,9 @@ public class HandController : MonoBehaviour
 
     public IEnumerator activateHighlights()
     {
-        foreach(Material material in highlights)
+        isHighlightActive = true; // Set the flag to true
+
+        foreach (Material material in highlights)
         {
             material.SetFloat("_HighlightEnable", 1);
         }
@@ -53,5 +57,7 @@ public class HandController : MonoBehaviour
         {
             material.SetFloat("_HighlightEnable", 0);
         }
+
+        isHighlightActive = false; // Reset the flag after the coroutine finishes
     }
 }
