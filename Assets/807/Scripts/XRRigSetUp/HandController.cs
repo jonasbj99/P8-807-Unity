@@ -51,7 +51,24 @@ public class HandController : MonoBehaviour
             material.SetFloat("_HighlightEnable", 1);
         }
 
-        yield return new WaitForSeconds(highlightRevealTime);
+        float elapsedTime = 0f;
+
+        // Keep checking if the button is still pressed
+        while (elapsedTime < highlightRevealTime || showHighlights.action.IsPressed())
+        {
+            if (showHighlights.action.IsPressed())
+            {
+                // Reset the timer if the button is still pressed
+                elapsedTime = 0f;
+            }
+            else
+            {
+                // Increment the timer if the button is not pressed
+                elapsedTime += Time.deltaTime;
+            }
+
+            yield return null; // Wait for the next frame
+        }
 
         foreach (Material material in highlights)
         {
