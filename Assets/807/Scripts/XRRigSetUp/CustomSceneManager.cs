@@ -40,11 +40,7 @@ public class CustomSceneManager : MonoBehaviour
 
         if (keyboard.digit1Key.wasPressedThisFrame) // Check if the "1" key was pressed
         {
-            StartCoroutine(SceneChanger("XR RIG Setup Scene"));
-        }
-        else if (keyboard.digit2Key.wasPressedThisFrame) // Check if the "2" key was pressed
-        {
-            StartCoroutine(SceneChanger("ShaderTestScene"));
+            NextScene();
         }
     }
 
@@ -54,6 +50,11 @@ public class CustomSceneManager : MonoBehaviour
         yield return new WaitForSeconds(fade.TimeToFade);
         SceneManager.LoadScene(sceneName, LoadSceneMode.Single);
         
+    }
+
+    public void NextScene()
+    {
+        StartCoroutine(SceneChanger("Scenario3_Festival"));
     }
 }
 
