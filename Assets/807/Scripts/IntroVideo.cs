@@ -51,4 +51,9 @@ public class IntroVideo : MonoBehaviour
         // Kode der låser bevægelse op.
         moveScript.enabled = true; // Enable the movement script
     }
+
+    public void StopVideo()
+    {
+        videoPlayer.Stop(); // Stop the video playback
+    }
 }
