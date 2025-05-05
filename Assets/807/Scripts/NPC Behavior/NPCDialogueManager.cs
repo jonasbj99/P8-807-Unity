@@ -27,7 +27,7 @@ public class NPCDialogueManager : MonoBehaviour
         public bool[] isCorrectResponse; // Which responses are considered "correct"
         public int pointsForCorrectResponse = 1; // Points awarded for correct responses
         public GameObject[] spawnObjects; // Objects to spawn for each response
-
+        
     }
 
 
@@ -63,6 +63,8 @@ public class NPCDialogueManager : MonoBehaviour
     public bool trackCorrectResponses = false; // Flag to enable tracking of correct responses
     public int correctResponsesCount = 0; // Count of correct responses given by the player
     public int totalResponsesGiven = 0; // Total responses given by the player
+
+    public Transform foodPos;
 
     // This method is called when the script instance is being loaded
     // It ensures that only one instance of the NPCDialogueManager exists in the scene
@@ -248,7 +250,8 @@ public class NPCDialogueManager : MonoBehaviour
     if (responseIndex < entry.spawnObjects.Length && entry.spawnObjects[responseIndex] != null)
     {
         entry.spawnObjects[responseIndex].SetActive(true);
-    }
+            InstantiateFoodCopy();
+        }
         
         // Continue with regular dialogue flow
         if (responseIndex < entry.nextDialogueIndices.Length) // Check if the player's chosen response is valid
@@ -360,6 +363,17 @@ public class NPCDialogueManager : MonoBehaviour
             // Position the canvas slightly in front of the player's view
             dialogueCanvas.transform.localPosition = new Vector3(0, 0, 0.7f); // xx meters in front
             dialogueCanvas.transform.localRotation = Quaternion.identity; // Reset rotation
+        }
+    }
+
+    void InstantiateFoodCopy()
+    {
+        foreach (var obj in currentDialogueEntries[currentDialogueIndex].spawnObjects)
+        {
+            if (obj != null) // Ensure the object is not null
+            {
+                Instantiate(obj, foodPos.position, foodPos.rotation);
+            }
         }
     }
 
