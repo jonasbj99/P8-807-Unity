@@ -25989,6 +25989,7 @@ GameObject:
   - component: {fileID: 2137099273}
   - component: {fileID: 2137099272}
   - component: {fileID: 2137099274}
+  - component: {fileID: 2137099275}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -26041,6 +26042,20 @@ MonoBehaviour:
   sampleSize: 1024
   dBRange: 80
   interval: 0.5
+--- !u!114 &2137099275
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2137099271}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bf88f8ca63e9100479543664e04ffbac, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  targetPosition: {fileID: 978200757}
+  foodObjects: {fileID: 55168676}
 --- !u!1 &2142645675
 GameObject:
   m_ObjectHideFlags: 0

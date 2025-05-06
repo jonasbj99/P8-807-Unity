@@ -250,7 +250,7 @@ public class NPCDialogueManager : MonoBehaviour
     if (responseIndex < entry.spawnObjects.Length && entry.spawnObjects[responseIndex] != null)
     {
         entry.spawnObjects[responseIndex].SetActive(true);
-            InstantiateFoodCopy();
+            // InstantiateFoodCopy();
         }
         
         // Continue with regular dialogue flow
@@ -366,15 +366,18 @@ public class NPCDialogueManager : MonoBehaviour
         }
     }
 
-    void InstantiateFoodCopy()
+    /*void InstantiateFoodCopy()
     {
         foreach (var obj in currentDialogueEntries[currentDialogueIndex].spawnObjects)
         {
             if (obj != null) // Ensure the object is not null
             {
-                Instantiate(obj, foodPos.position, foodPos.rotation);
+                // Instantiate the object at its original position and rotation
+                GameObject foodCopy = Instantiate(obj, obj.transform.position, obj.transform.rotation);
+
+                foodCopy.transform.position = foodPos.position;
             }
         }
-    }
+    }*/
 
 }
