@@ -140,6 +140,7 @@ public class Checklist : MonoBehaviour
     {
         if (CheckForObject(obj, checkObjects))
         {
+            // KRISTO, spil pcik up lyd her
             obj.SetActive(false);
             UpdateChecklist(checkArr, checkObjects);
         }

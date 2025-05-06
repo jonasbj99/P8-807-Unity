@@ -232,6 +232,7 @@ public class SoundMeterController : MonoBehaviour
     public void GameWon()
     {
         // Freeze character
+        scoreText.text = hearingHealth.ToString();
         winScreen.SetActive(true);
     }
 }
