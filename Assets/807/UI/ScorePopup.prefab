@@ -117,7 +117,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   popupPanel: {fileID: 70038038615881689}
-  messageText: {fileID: 6729134811959476185}
   introMessage: 'This is your score:'
   fadeEffect: 1
   fadeSpeed: 0.5
