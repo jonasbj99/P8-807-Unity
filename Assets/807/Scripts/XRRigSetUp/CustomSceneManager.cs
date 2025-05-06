@@ -38,7 +38,7 @@ public class CustomSceneManager : MonoBehaviour
     {
         var keyboard = Keyboard.current; // Access the keyboard using the new Input System
 
-        if (keyboard.digit1Key.wasPressedThisFrame) // Check if the "1" key was pressed
+        if (keyboard.digit7Key.wasPressedThisFrame) // Check if the "1" key was pressed
         {
             NextScene();
         }

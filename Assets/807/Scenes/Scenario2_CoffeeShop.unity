@@ -702,7 +702,7 @@ MonoBehaviour:
   scoreDescription: 'Your final responses:'
   targetObject: {fileID: 55168676}
   newPosition: {x: 8.748, y: 0.884, z: -0.364}
-  visibleAtStart: 0
+  visibleAtStart: 1
   npcToWaitFor: {fileID: 821608554}
   requiredDialogueSetIndex: 0
 --- !u!65 &55168682
@@ -2523,7 +2523,7 @@ MonoBehaviour:
     lockedNPCs:
     - {fileID: 2094467414}
     lockedMessage: Have you ordered yet?
-  currentStageIndex: 0
+  currentStageIndex: 1
   showDebugLogs: 0
 --- !u!114 &207433819
 MonoBehaviour:

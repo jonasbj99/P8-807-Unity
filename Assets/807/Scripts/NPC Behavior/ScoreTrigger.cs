@@ -111,6 +111,20 @@ public class ScoreTrigger : MonoBehaviour
         // Check if we hit the target object (or any object if targetTag is empty)
         if (string.IsNullOrEmpty(targetTag) || other.CompareTag(targetTag))
         {
+            // Find the GameObject named "FoodObjects(Clone)" and enable it
+            GameObject clonedFoodObject = GameObject.Find("FoodObjects(Clone)");
+            if (clonedFoodObject != null)
+            {
+                clonedFoodObject.SetActive(true);
+            }
+
+            // Find the GameObject named "FoodObjects" and disable it
+            GameObject originalFoodObject = GameObject.Find("FoodObjects");
+            if (originalFoodObject != null)
+            {
+                originalFoodObject.SetActive(false);
+            }
+
             // Show the UI
             if (UIScore != null)
             {
