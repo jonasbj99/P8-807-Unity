@@ -23,10 +23,12 @@ public class Checklist : MonoBehaviour
     GameObject[] checkObjects;
     bool[] checkArr;
 
+    SoundMeterController soundMeterController;
     bool allCollected = false; // Win condition if true
 
     void Start()
     {
+        soundMeterController = FindAnyObjectByType<SoundMeterController>();
         checkObjects = new GameObject[campObjects.Length + concertObjects.Length + foodObjects.Length];
         campObjects.CopyTo(checkObjects, 0);
         concertObjects.CopyTo(checkObjects, campObjects.Length);
@@ -106,7 +108,7 @@ public class Checklist : MonoBehaviour
 
         if (allCollected)
         {
-            // Display win Screen and other 
+            soundMeterController.GameWon();
         }
     }
 

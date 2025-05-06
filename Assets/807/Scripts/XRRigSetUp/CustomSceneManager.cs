@@ -56,5 +56,15 @@ public class CustomSceneManager : MonoBehaviour
     {
         StartCoroutine(SceneChanger("Scenario3_Festival"));
     }
+
+    public void MainMenu()
+    {
+        SceneManager.LoadScene("MainMenu");
+    }
+
+    public void RestartScene()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+    }
 }
 

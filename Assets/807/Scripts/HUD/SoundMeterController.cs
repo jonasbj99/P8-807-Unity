@@ -46,8 +46,16 @@ public class SoundMeterController : MonoBehaviour
     int earplugSubtract = 0;
     float earplugTime = 15f; // Time that earplugs last
 
+    // Win Lose
+    [SerializeField] GameObject winScreen;
+    [SerializeField] GameObject lossScreen;
+    [SerializeField] TMP_Text scoreText;
+
     private void Start()
     {
+        lossScreen.SetActive(false);
+        winScreen.SetActive(false);
+
         // Exposure Meter
         exposureSlider.value = currentExposure;
         exposureSlider.maxValue = targetExposure;
@@ -169,7 +177,7 @@ public class SoundMeterController : MonoBehaviour
                 else
                 {
                     hearingHealth = 0;
-                    // Run 
+                    GameLost();
                 }
             }
             hearingHealthSlider.value = hearingHealth;
@@ -183,10 +191,6 @@ public class SoundMeterController : MonoBehaviour
         if (hearingHealth < lowHealthThreshold)
         {
             // Indicate low health here
-        }
-        else
-        {
-            // Disable low health indication here
         }
     }
 
@@ -217,5 +221,16 @@ public class SoundMeterController : MonoBehaviour
 
         earplugEffect = 1f;
         earplugSubtract = 0;
+    }
+
+    void GameLost()
+    {
+        // Freeze character
+        lossScreen.SetActive(true);
+    }
+
+    public void GameWon()
+    {
+        winScreen.SetActive(true);
     }
 }
