@@ -231,6 +231,7 @@ public class SoundMeterController : MonoBehaviour
 
     public void GameWon()
     {
+        // Freeze character
         winScreen.SetActive(true);
     }
 }
