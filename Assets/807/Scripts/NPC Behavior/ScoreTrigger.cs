@@ -23,6 +23,9 @@ public class ScoreTrigger : MonoBehaviour
     private bool showUI = false;
     private bool dialogueCompleted = false;
 
+    public Transform targetPosition; // The position to move the instantiated copy to
+    public GameObject foodObjects; // The prefab to instantiate
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -111,6 +114,8 @@ public class ScoreTrigger : MonoBehaviour
         // Check if we hit the target object (or any object if targetTag is empty)
         if (string.IsNullOrEmpty(targetTag) || other.CompareTag(targetTag))
         {
+            CloneFoodPos(); // Call the function to instantiate and move the object
+
             // Find the GameObject named "FoodObjects(Clone)" and enable it
             GameObject clonedFoodObject = GameObject.Find("FoodObjects(Clone)");
             if (clonedFoodObject != null)
@@ -190,5 +195,16 @@ public class ScoreTrigger : MonoBehaviour
                 showUI = false;
             }
         }
+    }
+
+    public void CloneFoodPos()
+    {
+        // Instantiate a copy of this object (including children) at the same position and rotation
+        GameObject foodCopy = Instantiate(foodObjects, transform.position, transform.rotation);
+
+        foodCopy.SetActive(true);
+
+        // Move the instantiated copy to the target position
+        foodCopy.transform.position = targetPosition.position;
     }
 }
