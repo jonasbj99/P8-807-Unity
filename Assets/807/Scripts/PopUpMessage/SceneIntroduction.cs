@@ -7,7 +7,7 @@ public class SceneIntroduction : MonoBehaviour
 {
     [Header("Popup Settings")]
     [SerializeField] private GameObject popupPanel;
-    [SerializeField] private TextMeshProUGUI messageText;
+    // [SerializeField] private TextMeshProUGUI messageText;
     [SerializeField, TextArea(3, 10)] private string introMessage = "Welcome to the environment!";
     //[SerializeField] private float displayTime = 5f;
     [SerializeField] private bool fadeEffect = true;
@@ -49,8 +49,8 @@ public class SceneIntroduction : MonoBehaviour
             popupPanel.SetActive(false);
 
         // Set message text if available
-        if (messageText != null)
-            messageText.text = introMessage;
+        // if (messageText != null)
+        // messageText.text = introMessage;
 
         // Show popup when scene starts
         ShowPopup();
@@ -89,8 +89,8 @@ public class SceneIntroduction : MonoBehaviour
             StartCoroutine(FadeIn());
         }
 
-         if (closeButton != null)
-        closeButton.interactable = true;
+        if (closeButton != null)
+            closeButton.interactable = true;
 
         // Auto-hide after displayTime if greater than 0
         //if (displayTime > 0)

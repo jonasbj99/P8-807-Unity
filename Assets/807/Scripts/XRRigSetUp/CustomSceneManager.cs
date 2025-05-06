@@ -15,9 +15,9 @@ public class CustomSceneManager : MonoBehaviour
         get
         {
             if (_instance == null)
-            {                             
+            {
                 GameObject obj = new GameObject("CustomSceneManager");
-                obj.AddComponent<CustomSceneManager>();               
+                obj.AddComponent<CustomSceneManager>();
             }
             return _instance;
         }
@@ -49,7 +49,7 @@ public class CustomSceneManager : MonoBehaviour
         fade.FadeIn(); // Start fading in before changing the scene
         yield return new WaitForSeconds(fade.TimeToFade);
         SceneManager.LoadScene(sceneName, LoadSceneMode.Single);
-        
+
     }
 
     public void NextScene()

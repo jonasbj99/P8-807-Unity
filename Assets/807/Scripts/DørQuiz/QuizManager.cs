@@ -17,7 +17,7 @@ public class QuizManager : MonoBehaviour
     public GameObject EndScreen;
 
     [Header("Score Display")]
-    public TextMeshProUGUI ScoreText;
+    // public TextMeshProUGUI ScoreText;
 
     private int currentQuestion;
     private int score = 0;
@@ -140,7 +140,7 @@ public class QuizManager : MonoBehaviour
     {
         QuizPanel.SetActive(false);
         EndScreen.SetActive(true);
-        ScoreText.text = "Your Score: " + score + " / 6";
+        // ScoreText.text = "Your Score: " + score + " / 6";
     }
     public void Retry()
     {
