@@ -50,6 +50,7 @@ public class SoundMeterController : MonoBehaviour
     [SerializeField] GameObject winScreen;
     [SerializeField] GameObject lossScreen;
     [SerializeField] TMP_Text scoreText;
+    [SerializeField] TMP_Text winText;
 
     private void Start()
     {
@@ -232,7 +233,27 @@ public class SoundMeterController : MonoBehaviour
     public void GameWon()
     {
         // Freeze character
-        scoreText.text = hearingHealth.ToString();
+
+        string wText;
+
+        switch (hearingHealth)
+        {
+            case >= 75:
+                wText = "You are a hearing hero!";      // Text when scoring between 75 and 100 health
+                break;
+            case >= 50:
+                wText = "You are a noise ninja!";       // Text when scoring between 50 and 75 health
+                break;
+            case >= 25:
+                wText = "You are a volume rookie..";    // Text when scoring between 25 and 50 health 
+                break;
+            case < 25:
+                wText = "You are lost in static...";    // Text when scoring between 0 and 25 health
+                break;
+        }
+
+        winText.text = wText;
+        scoreText.text =  hearingHealth.ToString() + " / 100";
         winScreen.SetActive(true);
     }
 }
