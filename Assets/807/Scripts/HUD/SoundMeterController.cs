@@ -52,6 +52,9 @@ public class SoundMeterController : MonoBehaviour
     [SerializeField] TMP_Text scoreText;
     [SerializeField] TMP_Text winText;
 
+    public AudioSource tinnitusSource;
+    private bool tinnitusPlaying = false;
+
     private void Start()
     {
         lossScreen.SetActive(false);
@@ -180,6 +183,12 @@ public class SoundMeterController : MonoBehaviour
                     hearingHealth = 0;
                     GameLost();
                 }
+                tinnitusPlaying = true;
+                if (!tinnitusSource.isPlaying && tinnitusPlaying)
+                {
+                    StartCoroutine(StartTinnitus());
+                }
+               
             }
             hearingHealthSlider.value = hearingHealth;
 
@@ -255,5 +264,17 @@ public class SoundMeterController : MonoBehaviour
         winText.text = wText;
         scoreText.text = hearingHealth.ToString() + " / 100";
         winScreen.SetActive(true);
+    }
+
+    IEnumerator StartTinnitus()
+    {
+        yield return new WaitForSeconds(2f);
+
+        tinnitusSource.Play();
+
+        yield return new WaitForSeconds(2f);
+
+        tinnitusSource.Stop();
+        tinnitusPlaying = false;
     }
 }
