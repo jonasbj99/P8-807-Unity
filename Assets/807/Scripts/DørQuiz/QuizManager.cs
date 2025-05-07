@@ -63,8 +63,8 @@ public class QuizManager : MonoBehaviour
         {
 
             // Hide any feedback that might be showing
-            if (feedbackText != null)
-                feedbackText.gameObject.SetActive(false);
+            // if (feedbackText != null)
+                // feedbackText.gameObject.SetActive(false);
             score++;
 
             // Only remove and proceed to next question if answer was correct
@@ -103,7 +103,8 @@ public class QuizManager : MonoBehaviour
     private System.Collections.IEnumerator HideFeedbackAfterDelay()
     {
         yield return new WaitForSeconds(feedbackDisplayTime);
-        feedbackText.gameObject.SetActive(false);
+        //feedbackText.gameObject.SetActive(false);
+        QuestionTxt.text = QnA[currentQuestion].Question;
         isShowingFeedback = false;
     }
 

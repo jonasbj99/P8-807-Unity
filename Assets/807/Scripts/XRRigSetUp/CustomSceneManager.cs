@@ -44,17 +44,21 @@ public class CustomSceneManager : MonoBehaviour
         }
     }
 
-    public IEnumerator SceneChanger(string sceneName)
+    public IEnumerator SceneChanger()
     {
         fade.FadeIn(); // Start fading in before changing the scene
         yield return new WaitForSeconds(fade.TimeToFade);
-        SceneManager.LoadScene(sceneName, LoadSceneMode.Single);
+
+        // Get the current scene's build index and calculate the next scene's index
+        int nextSceneIndex = SceneManager.GetActiveScene().buildIndex + 1;
+        // Load the next scene
+        SceneManager.LoadScene(nextSceneIndex, LoadSceneMode.Single);
 
     }
 
     public void NextScene()
     {
-        StartCoroutine(SceneChanger("Scenario3_Festival"));
+        StartCoroutine(SceneChanger());
     }
 
     public void MainMenu()
