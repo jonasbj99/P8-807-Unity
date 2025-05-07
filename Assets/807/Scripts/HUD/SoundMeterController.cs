@@ -6,8 +6,8 @@ using System.Collections;
 public class SoundMeterController : MonoBehaviour
 {
     // These comments are somewaht outdated
-       // This script tries to mimic a real Sound Level Meter
-        // It converts the digital full scale decibel to a defined ranged similar to real world sound pressure level scales
+    // This script tries to mimic a real Sound Level Meter
+    // It converts the digital full scale decibel to a defined ranged similar to real world sound pressure level scales
 
 
     // Sound Level Meter
@@ -17,20 +17,20 @@ public class SoundMeterController : MonoBehaviour
     [SerializeField] float interval = 0.5f; // Seconds between each reading and display of sound level
     float[] samples;
     float rmsValue = 0f;
-    float dbFS = 0f;    
+    float dbFS = 0f;
     float dbPositive = 0f;
 
     // Exsposure Meter
     [SerializeField] Slider exposureSlider;
     [SerializeField] GameObject forwardMarker;
     [SerializeField] GameObject backwardMarker;
-    [SerializeField]float exposureUpMultiplier = 5f;    // Multiplier for the speed of moving the exposure level up
-    [SerializeField]float exposureDownMultiplier = 2f;  // Multiplier for the speed of moving the exposure level down
+    [SerializeField] float exposureUpMultiplier = 5f;    // Multiplier for the speed of moving the exposure level up
+    [SerializeField] float exposureDownMultiplier = 2f;  // Multiplier for the speed of moving the exposure level down
     int exposureThreshold = 85; // Decibel threshold for increasing exposure level
     float currentExposure = 0f;
     float targetExposure = 100f;
     float exposureSpeed = 1f;
-    
+
 
     // Hearing Health
     [SerializeField] Slider hearingHealthSlider;
@@ -73,7 +73,7 @@ public class SoundMeterController : MonoBehaviour
         //Exposure Meter
         if (dbPositive > exposureThreshold)
         {
-            exposureSpeed = (((dbPositive - exposureThreshold)/100) + 1) * exposureUpMultiplier; // Adjust Speed above threshold
+            exposureSpeed = (((dbPositive - exposureThreshold) / 100) + 1) * exposureUpMultiplier; // Adjust Speed above threshold
             currentExposure = Mathf.MoveTowards(currentExposure, targetExposure, exposureSpeed * Time.deltaTime);
             forwardMarker.SetActive(true);
             backwardMarker.SetActive(false);
@@ -165,7 +165,7 @@ public class SoundMeterController : MonoBehaviour
     // Hearing Health
     IEnumerator HearingHealthDamage()
     {
-        while(enabled)
+        while (enabled)
         {
             if (currentExposure > healthThreshold)
             {
@@ -239,21 +239,21 @@ public class SoundMeterController : MonoBehaviour
         switch (hearingHealth)
         {
             case >= 75:
-                wText = "You are a hearing hero!";      // Text when scoring between 75 and 100 health
+                wText = "You are a Hearing Hero!";      // Text when scoring between 75 and 100 health
                 break;
             case >= 50:
-                wText = "You are a noise ninja!";       // Text when scoring between 50 and 75 health
+                wText = "You are a Noise Ninja!";       // Text when scoring between 50 and 75 health
                 break;
             case >= 25:
-                wText = "You are a volume rookie..";    // Text when scoring between 25 and 50 health 
+                wText = "You are a Volume Rookie...";    // Text when scoring between 25 and 50 health 
                 break;
             case < 25:
-                wText = "You are lost in static...";    // Text when scoring between 0 and 25 health
+                wText = "You are Lost in Static...";    // Text when scoring between 0 and 25 health
                 break;
         }
 
         winText.text = wText;
-        scoreText.text =  hearingHealth.ToString() + " / 100";
+        scoreText.text = hearingHealth.ToString() + " / 100";
         winScreen.SetActive(true);
     }
 }
