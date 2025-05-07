@@ -10749,7 +10749,7 @@ MonoBehaviour:
     - Prolonged or sudden exposure to loud noise
     - Lack of sleep
     CorrectAnswer: 3
-    FeedbackMessage: Wrong answer! Try again.
+    FeedbackMessage: Wrong answer! Try again or look around the apartment for answers
   - Question: Which of the following is true about earplugs?
     Answers:
     - They completely block out all sound
@@ -10757,7 +10757,7 @@ MonoBehaviour:
     - They only work in water
     - They reduce harmful noise levels while still letting you enjoy music
     CorrectAnswer: 4
-    FeedbackMessage: Wrong answer! Try again.
+    FeedbackMessage: Wrong answer! Try again or look around the apartment for answers
   - Question: 'Tinnitus is best described as:'
     Answers:
     - An infection in the ear canal
@@ -10765,7 +10765,7 @@ MonoBehaviour:
     - Temporary balance issues
     - A type of earwax build up
     CorrectAnswer: 2
-    FeedbackMessage: Wrong answer! Try again.
+    FeedbackMessage: Wrong answer! Try again or look around the apartment for answers
   - Question: What are the three key factors that determine how damaging a sound
       can be?
     Answers:
@@ -10774,7 +10774,7 @@ MonoBehaviour:
     - Intensity, duration, and frequency of exposure balance issues
     - Type of event, weather, and volume
     CorrectAnswer: 3
-    FeedbackMessage: Wrong answer! Try again.
+    FeedbackMessage: Wrong answer! Try again or look around the apartment for answers
   - Question: According to hearing protection tips, which of the following actions
       is NOT recommended?
     Answers:
@@ -10783,7 +10783,7 @@ MonoBehaviour:
     - Use earplugs at loud events
     - Maintain a distance or at least 10 meters from speakers
     CorrectAnswer: 2
-    FeedbackMessage: Wrong answer! Try again.
+    FeedbackMessage: Wrong answer! Try again or look around the apartment for answers
   - Question: How many dB on average can be experienced at a concert?
     Answers:
     - 85 dB
@@ -10791,7 +10791,7 @@ MonoBehaviour:
     - 70 dB
     - 100 dB or more
     CorrectAnswer: 4
-    FeedbackMessage: Wrong answer! Try again.
+    FeedbackMessage: Wrong answer! Try again or look around the apartment for answers
   options:
   - {fileID: 1516976334}
   - {fileID: 219177890}
@@ -10801,7 +10801,7 @@ MonoBehaviour:
   QuizPanel: {fileID: 1555286565}
   EndScreen: {fileID: 644308693}
   feedbackText: {fileID: 1047475879}
-  feedbackDisplayTime: 1.5
+  feedbackDisplayTime: 2.5
 --- !u!4 &894361732
 Transform:
   m_ObjectHideFlags: 0
