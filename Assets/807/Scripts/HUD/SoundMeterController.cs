@@ -13,7 +13,7 @@ public class SoundMeterController : MonoBehaviour
     // Sound Level Meter
     [SerializeField] TMP_Text soundLevelText;
     [SerializeField] int sampleSize = 1024; // Higher samples might provide smaller jitters at the cost of higher processing (Should be a power of two)
-    [SerializeField] float dBRange = 140f;  // Decibel range 0 - dBRange
+    [SerializeField] float dBRange = 110f;  // Decibel range 0 - dBRange
     [SerializeField] float interval = 0.5f; // Seconds between each reading and display of sound level
     float[] samples;
     float rmsValue = 0f;
@@ -25,7 +25,7 @@ public class SoundMeterController : MonoBehaviour
     [SerializeField] GameObject forwardMarker;
     [SerializeField] GameObject backwardMarker;
     [SerializeField] float exposureUpMultiplier = 5f;    // Multiplier for the speed of moving the exposure level up
-    [SerializeField] float exposureDownMultiplier = 2f;  // Multiplier for the speed of moving the exposure level down
+    [SerializeField] float exposureDownMultiplier = 5f;  // Multiplier for the speed of moving the exposure level down
     int exposureThreshold = 85; // Decibel threshold for increasing exposure level
     float currentExposure = 0f;
     float targetExposure = 100f;
@@ -36,15 +36,15 @@ public class SoundMeterController : MonoBehaviour
     [SerializeField] Slider hearingHealthSlider;
     //[SerializeField] Gradient healthGradient; Meant for gradient health color change
     //RawImage healthFill; Meant for gradient health color change
-    int healthThreshold = 70;   // Exposure threshold for decreasing health bar
+    int healthThreshold = 75;   // Exposure threshold for decreasing health bar
     int lowHealthThreshold = 30; // Threshold for indicating low health
     int hearingHealth = 100;
-    int hearingDamage = 5;  // Amount of damage done every tick
-    float damageDelay = 1f;    // Defines the tick delay for health damage
+    [SerializeField] int hearingDamage = 5;  // Amount of damage done every tick
+    [SerializeField] float damageDelay = 1f;    // Defines the tick delay for health damage
     int healthPickUpAmount = 10; // Health gain when pick up is taken
     float earplugEffect = 1f;
     int earplugSubtract = 0;
-    float earplugTime = 15f; // Time that earplugs last
+    float earplugTime = 10f; // Time that earplugs last
 
     // Win Lose
     [SerializeField] GameObject winScreen;
@@ -235,13 +235,15 @@ public class SoundMeterController : MonoBehaviour
 
     void GameLost()
     {
-        // Freeze character
+        // Freeze character??
+        AudioListener.volume = 0;
         lossScreen.SetActive(true);
     }
 
     public void GameWon()
     {
-        // Freeze character
+        // Freeze character??
+        AudioListener.volume = 0;
 
         string wText;
 
