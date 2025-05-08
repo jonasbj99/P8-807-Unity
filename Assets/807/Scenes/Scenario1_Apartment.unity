@@ -10626,6 +10626,12 @@ MonoBehaviour:
   volumeSlider: {fileID: 1933719609}
   audioSource: {fileID: 2067096561}
   volumeText: {fileID: 1921392195}
+  thirtydB: {fileID: 1005637825}
+  fiftyB: {fileID: 605934926}
+  sixtydB: {fileID: 1458352826}
+  eightyfivedB: {fileID: 540910877}
+  hundreddB: {fileID: 1263155687}
+  hundredtenPlusdB: {fileID: 1498254348}
 --- !u!1001 &893725969
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -11508,7 +11514,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1005637824
 RectTransform:
   m_ObjectHideFlags: 0
