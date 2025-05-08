@@ -7,7 +7,7 @@ public class WristUI : MonoBehaviour
     Camera mainCam;
 
     float wristDot;
-    float wristThreshold = 0.7f;
+    float wristThreshold = 0.6f;
 
     void Start()
     {

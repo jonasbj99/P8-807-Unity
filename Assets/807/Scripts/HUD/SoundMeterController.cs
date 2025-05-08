@@ -235,13 +235,15 @@ public class SoundMeterController : MonoBehaviour
 
     void GameLost()
     {
-        // Freeze character
+        // Freeze character??
+        AudioListener.volume = 0;
         lossScreen.SetActive(true);
     }
 
     public void GameWon()
     {
-        // Freeze character
+        // Freeze character??
+        AudioListener.volume = 0;
 
         string wText;
 
