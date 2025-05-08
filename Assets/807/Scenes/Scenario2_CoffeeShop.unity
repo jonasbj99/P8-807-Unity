@@ -2664,7 +2664,7 @@ MonoBehaviour:
     lockedNPCs:
     - {fileID: 2094467414}
     lockedMessage: Have you ordered yet?
-  currentStageIndex: 1
+  currentStageIndex: 0
   showDebugLogs: 0
 --- !u!114 &207433819
 MonoBehaviour:
