@@ -2723,7 +2723,8 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 2227830138725769510, guid: 252cc1d947dc9f34fa0d633f87bbcfc0, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -3868,7 +3869,8 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 2227830138725769510, guid: 252cc1d947dc9f34fa0d633f87bbcfc0, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -18566,6 +18568,14 @@ PrefabInstance:
     - target: {fileID: 3578302895701358882, guid: 339af60aba47cba459f763bee7ddb43f, type: 3}
       propertyPath: m_Name
       value: Frame_Apt_02
+      objectReference: {fileID: 0}
+    - target: {fileID: 3578302895701358882, guid: 339af60aba47cba459f763bee7ddb43f, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3578302895703287776, guid: 339af60aba47cba459f763bee7ddb43f, type: 3}
+      propertyPath: m_Enabled
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
