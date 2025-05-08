@@ -26,6 +26,7 @@ public class QuizManager : MonoBehaviour
     public TextMeshProUGUI feedbackText;
     public float feedbackDisplayTime = 3f; // How long to show the feedback
     private bool isShowingFeedback = false;
+    public GameObject feedbackObject;
 
     private List<QuestionsAndAnswers> originalQuestions = new List<QuestionsAndAnswers>();
 
@@ -84,6 +85,8 @@ public class QuizManager : MonoBehaviour
             // For wrong answers, show feedback specific to this question
             Debug.Log("Wrong answer! Try again.");
 
+            feedbackObject.SetActive(true);
+
             if (feedbackText != null && !isShowingFeedback)
             {
                 // Use the custom feedback message for this question
@@ -92,7 +95,7 @@ public class QuizManager : MonoBehaviour
                 isShowingFeedback = true;
 
                 // Hide the feedback after a delay
-                StartCoroutine(HideFeedbackAfterDelay());
+                //StartCoroutine(HideFeedbackAfterDelay());
             }
 
             // Reset the answer buttons
@@ -177,5 +180,11 @@ public class QuizManager : MonoBehaviour
     public void LoadNextScene()
     {
         SceneManager.LoadScene("Scenario2_CoffeeShop");
+    }
+
+    public void HideFeedback()
+    {
+        feedbackObject.SetActive(false);
+        isShowingFeedback = false;
     }
 }
