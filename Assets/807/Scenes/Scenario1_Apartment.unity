@@ -2667,6 +2667,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1578943406}
     m_Modifications:
+    - target: {fileID: 2227830138725769510, guid: 252cc1d947dc9f34fa0d633f87bbcfc0, type: 3}
+      propertyPath: m_Convex
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2227830138725769510, guid: 252cc1d947dc9f34fa0d633f87bbcfc0, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2227830138725803908, guid: 252cc1d947dc9f34fa0d633f87bbcfc0, type: 3}
       propertyPath: m_Name
       value: Int_Apt_01_Wall_Double_01
@@ -11149,8 +11157,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 896304343}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 7.4077244, y: -0.743, z: -5.281}
+  m_LocalRotation: {x: -0, y: 0.26912802, z: -0, w: 0.9631044}
+  m_LocalPosition: {x: 6.896, y: -0.743, z: -5.332}
   m_LocalScale: {x: 0.07, y: 0.02, z: 0.17}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -11158,7 +11166,7 @@ Transform:
   - {fileID: 1170273388}
   - {fileID: 1707965831}
   m_Father: {fileID: 1633405529}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 31.225, z: 0}
 --- !u!65 &896304345
 BoxCollider:
   m_ObjectHideFlags: 0
