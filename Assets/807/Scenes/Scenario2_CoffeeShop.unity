@@ -11390,7 +11390,7 @@ MonoBehaviour:
       - {fileID: 917509897}
   npcAudioSource: {fileID: 821608553}
   playerHead: {fileID: 921500490}
-  triggerDistance: 3
+  triggerDistance: 2
   interactionPrompt: {fileID: 1108178515}
   promptHeightOffset: 1.85
   promptFaceCamera: 1
