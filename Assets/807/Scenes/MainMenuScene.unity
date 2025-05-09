@@ -3031,6 +3031,10 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5518899284880179293, guid: 77e7c27b2c5525e4aa8cc9f99d654486, type: 3}
+      propertyPath: m_DefaultParameters.m_ApertureSize
+      value: 0.75
+      objectReference: {fileID: 0}
+    - target: {fileID: 5518899284880179293, guid: 77e7c27b2c5525e4aa8cc9f99d654486, type: 3}
       propertyPath: m_LocomotionVignetteProviders.Array.size
       value: 5
       objectReference: {fileID: 0}
