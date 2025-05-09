@@ -202,7 +202,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &12081151
 RectTransform:
   m_ObjectHideFlags: 0
@@ -11394,11 +11394,10 @@ MonoBehaviour:
   interactionPrompt: {fileID: 1108178515}
   promptHeightOffset: 1.85
   promptFaceCamera: 1
-  promptButton: {fileID: 1893292476}
+  promptButton: {fileID: 0}
   leftGripAction: {fileID: -5599135982822891163, guid: c348712bda248c246b8c49b3db54643f, type: 3}
   rightGripAction: {fileID: 265287232572525433, guid: c348712bda248c246b8c49b3db54643f, type: 3}
-  defaultPromptMessage: Press or Use Grip to interact
-  promptText: {fileID: 0}
+  promptText: {fileID: 1968889259}
 --- !u!114 &821608555
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -26227,7 +26226,9 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "Use the\t\t      \nto interact"
+  m_text: 'Use the Grab Button
+
+    to interact'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -28266,10 +28267,9 @@ MonoBehaviour:
   interactionPrompt: {fileID: 1030271488}
   promptHeightOffset: 1.41
   promptFaceCamera: 1
-  promptButton: {fileID: 652410283}
+  promptButton: {fileID: 0}
   leftGripAction: {fileID: -5599135982822891163, guid: c348712bda248c246b8c49b3db54643f, type: 3}
   rightGripAction: {fileID: 265287232572525433, guid: c348712bda248c246b8c49b3db54643f, type: 3}
-  defaultPromptMessage: Press or Use Grip to interact
   promptText: {fileID: 0}
 --- !u!82 &2094467415
 AudioSource:

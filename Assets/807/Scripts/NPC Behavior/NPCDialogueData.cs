@@ -54,7 +54,6 @@ public class NPCDialogueData : MonoBehaviour
     private bool wasRightGripPressed = false; // Track right grip press state
 
     [Header("Prompt Messages")]
-    public string defaultPromptMessage = "Hej, hvor er Amandas kop?"; // Default message for the prompt when the NPC is active
     public TextMeshProUGUI promptText; // Reference to text component on prompt
     private bool isDialogueCompleted = false;
 
@@ -256,7 +255,7 @@ public class NPCDialogueData : MonoBehaviour
                     {
                         // NPC is active, show default prompt
                         if (promptText != null)
-                            promptText.text = defaultPromptMessage;
+                            
                         // Enable button interaction if the NPC is active to trigger dialogue
                         if (promptButton != null)
                         {
