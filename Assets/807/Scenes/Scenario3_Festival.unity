@@ -2768,8 +2768,8 @@ MonoBehaviour:
   exposureSlider: {fileID: 1304366354}
   forwardMarker: {fileID: 2063400279}
   backwardMarker: {fileID: 1728752599}
-  exposureUpMultiplier: 7
-  exposureDownMultiplier: 5
+  exposureUpMultiplier: 10
+  exposureDownMultiplier: 8
   hearingHealthSlider: {fileID: 1711451926}
   hearingDamage: 3
   damageDelay: 1

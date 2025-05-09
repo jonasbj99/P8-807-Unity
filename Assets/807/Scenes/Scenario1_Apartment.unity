@@ -12133,7 +12133,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   QnA:
-  - Question: 6. Which part of the ear is most vulnerable to noise damage?
+  - Question: Which part of the ear is most vulnerable to noise damage?
     Answers:
     - 'Eustachian tube '
     - Ear canal
