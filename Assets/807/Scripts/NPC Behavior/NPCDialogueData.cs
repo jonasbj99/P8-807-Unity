@@ -29,8 +29,8 @@ public class NPCDialogueData : MonoBehaviour
 
     [Header("Dialogue")] //Used to display a header in the inspector for better organization.
     public List<DialogueSet> dialogueSets = new List<DialogueSet>(); // The new List<DialogueSet> ensures that the list is initialized. And that the list is not null.
-                                                                     //This takes the form of a list of DialogueSet objects, which are defined above.
-                                                                     //This allows you to have multiple sets of dialogue for the same NPC, which can be useful for branching dialogue or different stages of a quest.
+    //This takes the form of a list of DialogueSet objects, which are defined above.
+    //This allows you to have multiple sets of dialogue for the same NPC, which can be useful for branching dialogue or different stages of a quest.
 
     [Header("Audio Settings")]
     public AudioSource npcAudioSource; // Attach audio source as each NPC has its own.

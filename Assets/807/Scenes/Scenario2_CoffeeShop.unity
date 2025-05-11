@@ -2908,7 +2908,7 @@ MonoBehaviour:
     lockedNPCs:
     - {fileID: 2094467414}
     lockedMessage: Have you                                        ordered yet?
-  currentStageIndex: 1
+  currentStageIndex: 0
   showDebugLogs: 0
 --- !u!114 &207433819
 MonoBehaviour:
@@ -28297,17 +28297,6 @@ MonoBehaviour:
       - I will order!
       - What?
       nextDialogueIndices: ffffffff03000000
-      isCorrectResponse: 
-      pointsForCorrectResponse: 0
-      spawnObjects: []
-  - setName: Stage 1 - NOT USED
-    dialogueEntries:
-    - npcAudio: {fileID: 8300000, guid: 16fba6d30ed741d4a9fdd6e79ee2f3ac, type: 3}
-      playerResponses:
-      - Hvordan var oplevelsen?
-      - DET VIRKER
-      - YES
-      nextDialogueIndices: 010000000100000000000000
       isCorrectResponse: 
       pointsForCorrectResponse: 0
       spawnObjects: []
