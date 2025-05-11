@@ -11389,7 +11389,7 @@ MonoBehaviour:
       - {fileID: 917509897}
       - {fileID: 917509897}
   npcAudioSource: {fileID: 821608553}
-  playerHead: {fileID: 921500490}
+  playerHead: {fileID: 962959667}
   triggerDistance: 2
   interactionPrompt: {fileID: 1108178515}
   promptHeightOffset: 1.85
@@ -12823,7 +12823,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 73949512329761232, guid: 77e7c27b2c5525e4aa8cc9f99d654486, type: 3}
       propertyPath: m_Enabled
-      value: 0
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 73949512329761232, guid: 77e7c27b2c5525e4aa8cc9f99d654486, type: 3}
+      propertyPath: m_TurnAmount
+      value: 30
       objectReference: {fileID: 0}
     - target: {fileID: 73949512329761232, guid: 77e7c27b2c5525e4aa8cc9f99d654486, type: 3}
       propertyPath: m_EnableTurnAround
@@ -12995,7 +12999,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3055063298189651089, guid: 77e7c27b2c5525e4aa8cc9f99d654486, type: 3}
       propertyPath: m_SmoothTurnEnabled
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3055063298189651089, guid: 77e7c27b2c5525e4aa8cc9f99d654486, type: 3}
       propertyPath: m_TeleportInteractor
@@ -26247,8 +26251,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0.015000105}
-  m_SizeDelta: {x: 376.01, y: 50}
+  m_AnchoredPosition: {x: -0.001, y: 0.014}
+  m_SizeDelta: {x: 281.9438, y: 87.7481}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1968889259
 MonoBehaviour:
@@ -26299,7 +26303,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 22.05
+  m_fontSize: 28.15
   m_fontSizeBase: 30
   m_fontWeight: 400
   m_enableAutoSizing: 1
