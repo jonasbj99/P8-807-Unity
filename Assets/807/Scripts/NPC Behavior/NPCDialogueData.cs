@@ -46,6 +46,8 @@ public class NPCDialogueData : MonoBehaviour
     public Button promptButton; // Reference to the button on the prompt canvas
     private bool isPlayerInRange = false; // Track if the player is in range for interaction
     private Transform mainCamera; // Reference to the main camera transform for positioning the prompt
+    private string defaultPromptMessage;
+
 
     [Header("VR Input")]
     public InputActionReference leftGripAction; // Reference to the left grip input action
@@ -113,6 +115,10 @@ public class NPCDialogueData : MonoBehaviour
             npcAudioSource.maxDistance = 15.0f;
         }
 
+        if (promptText != null)
+        {
+            defaultPromptMessage = promptText.text;
+        }
         // Enable grip input actions
         if (leftGripAction != null)
         {
@@ -253,9 +259,10 @@ public class NPCDialogueData : MonoBehaviour
                     // This allows the system to see which NPC is being interacted with.
                     if (NPCDialogueFlow.Instance.IsNPCActive(this))
                     {
-                        // NPC is active, show default prompt
+
                         if (promptText != null)
-                            
+                            promptText.text = defaultPromptMessage;
+
                         // Enable button interaction if the NPC is active to trigger dialogue
                         if (promptButton != null)
                         {
