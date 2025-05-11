@@ -5,6 +5,11 @@ public class MainMenuManager : MonoBehaviour
 {
     public UIFader levelSelectFader;
 
+    void Start()
+    {
+        AudioListener.volume = 1f;
+    }
+
     public void StartGame()
     {
         SceneManager.LoadScene("Scenario1_Apartment");

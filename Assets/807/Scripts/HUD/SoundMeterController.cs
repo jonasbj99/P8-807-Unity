@@ -5,11 +5,6 @@ using System.Collections;
 
 public class SoundMeterController : MonoBehaviour
 {
-    // These comments are somewaht outdated
-    // This script tries to mimic a real Sound Level Meter
-    // It converts the digital full scale decibel to a defined ranged similar to real world sound pressure level scales
-
-
     // Sound Level Meter
     [SerializeField] TMP_Text soundLevelText;
     [SerializeField] int sampleSize = 1024; // Higher samples might provide smaller jitters at the cost of higher processing (Should be a power of two)
@@ -57,6 +52,8 @@ public class SoundMeterController : MonoBehaviour
 
     private void Start()
     {
+        AudioListener.volume = 1f;
+
         lossScreen.SetActive(false);
         winScreen.SetActive(false);
 
@@ -229,7 +226,7 @@ public class SoundMeterController : MonoBehaviour
     IEnumerator EarplugActive()
     {
         earplugEffect = 0.4f;
-        earplugSubtract = 15;
+        earplugSubtract = 10;
 
         yield return new WaitForSeconds(earplugTime);
 
@@ -240,6 +237,7 @@ public class SoundMeterController : MonoBehaviour
     void GameLost()
     {
         // Freeze character??
+        StopAllCoroutines();
         tinnitusSource.Stop();
         AudioListener.volume = 0;
         lossScreen.SetActive(true);
@@ -248,6 +246,7 @@ public class SoundMeterController : MonoBehaviour
     public void GameWon()
     {
         // Freeze character??
+        StopAllCoroutines();
         tinnitusSource.Stop();
         AudioListener.volume = 0;
 
