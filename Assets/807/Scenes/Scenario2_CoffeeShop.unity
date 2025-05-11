@@ -8762,7 +8762,7 @@ MonoBehaviour:
   vrHeadTransform: {fileID: 921500490}
   buttonCanvas: {fileID: 956003067}
   triggerButton: {fileID: 886021760}
-  canvasAppearDistance: 4
+  canvasAppearDistance: 2.5
   enableGripInput: 1
   leftGripAction: {fileID: -5599135982822891163, guid: c348712bda248c246b8c49b3db54643f, type: 3}
   rightGripAction: {fileID: 265287232572525433, guid: c348712bda248c246b8c49b3db54643f, type: 3}
@@ -11392,7 +11392,7 @@ MonoBehaviour:
       - {fileID: 917509897}
   npcAudioSource: {fileID: 821608553}
   playerHead: {fileID: 962959667}
-  triggerDistance: 2
+  triggerDistance: 2.5
   interactionPrompt: {fileID: 1108178515}
   promptHeightOffset: 1.85
   promptFaceCamera: 1
@@ -24696,7 +24696,7 @@ MonoBehaviour:
   vrHeadTransform: {fileID: 921500490}
   buttonCanvas: {fileID: 1313256371}
   triggerButton: {fileID: 756526130}
-  canvasAppearDistance: 2
+  canvasAppearDistance: 1.5
   enableGripInput: 1
   leftGripAction: {fileID: -5599135982822891163, guid: c348712bda248c246b8c49b3db54643f, type: 3}
   rightGripAction: {fileID: 265287232572525433, guid: c348712bda248c246b8c49b3db54643f, type: 3}
@@ -28438,7 +28438,7 @@ Transform:
   m_GameObject: {fileID: 2110426420}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0.25384226, z: -0, w: 0.96724564}
-  m_LocalPosition: {x: -4.939, y: -0.0449, z: 1.081556}
+  m_LocalPosition: {x: -4.842, y: -0.0449, z: 1.4}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -28463,7 +28463,7 @@ MonoBehaviour:
   vrHeadTransform: {fileID: 921500490}
   buttonCanvas: {fileID: 622137532}
   triggerButton: {fileID: 234291830}
-  canvasAppearDistance: 2
+  canvasAppearDistance: 1.2
   enableGripInput: 1
   leftGripAction: {fileID: -5599135982822891163, guid: c348712bda248c246b8c49b3db54643f, type: 3}
   rightGripAction: {fileID: 265287232572525433, guid: c348712bda248c246b8c49b3db54643f, type: 3}
