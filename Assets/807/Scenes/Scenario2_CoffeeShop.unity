@@ -28266,7 +28266,7 @@ MonoBehaviour:
   dialogueSets:
   - setName: Stage 0
     dialogueEntries:
-    - npcAudio: {fileID: 8300000, guid: ef419738a7decf649a379673dcb3c1ad, type: 3}
+    - npcAudio: {fileID: 8300000, guid: 95d67fca3d4ce10499416399a1f9579b, type: 3}
       playerResponses:
       - Yes i know!
       - Good to see you
@@ -28275,7 +28275,7 @@ MonoBehaviour:
       isCorrectResponse: 
       pointsForCorrectResponse: 0
       spawnObjects: []
-    - npcAudio: {fileID: 8300000, guid: ae428dd05d594ae449193da086d181c6, type: 3}
+    - npcAudio: {fileID: 8300000, guid: 643f3794f4ea1f94689247bb6c9f5dc5, type: 3}
       playerResponses:
       - Yes of course!
       - Sure!

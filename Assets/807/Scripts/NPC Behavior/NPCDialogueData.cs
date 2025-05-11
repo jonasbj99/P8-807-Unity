@@ -114,7 +114,8 @@ public class NPCDialogueData : MonoBehaviour
             npcAudioSource.minDistance = 1.0f;
             npcAudioSource.maxDistance = 15.0f;
         }
-
+        // Set default prompt message if not assigned
+        // This is where i save the default message for the prompt. So it can be used later.
         if (promptText != null)
         {
             defaultPromptMessage = promptText.text;
