@@ -10160,6 +10160,13 @@ PrefabInstance:
       value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 8590027139198545593, guid: 09bd9312ac4813c498f23f6ceb5a4762, type: 3}
+      propertyPath: m_text
+      value: 'Try to understand what she says...
+
+
+'
+      objectReference: {fileID: 0}
+    - target: {fileID: 8590027139198545593, guid: 09bd9312ac4813c498f23f6ceb5a4762, type: 3}
       propertyPath: m_fontStyle
       value: 33
       objectReference: {fileID: 0}
@@ -11347,7 +11354,7 @@ MonoBehaviour:
       - Scone
       - Cake
       - Pie
-      - What
+      - Repeat
       nextDialogueIndices: 01000000010000000100000000000000
       isCorrectResponse: 01000000
       pointsForCorrectResponse: 1
@@ -11360,7 +11367,7 @@ MonoBehaviour:
       - Strawberry
       - Lemon
       - Pear
-      - What
+      - Repeat
       nextDialogueIndices: 02000000020000000200000001000000
       isCorrectResponse: 00010000
       pointsForCorrectResponse: 1
@@ -11370,7 +11377,7 @@ MonoBehaviour:
       - Coffee
       - Tea
       - Soda
-      - What
+      - Repeat
       nextDialogueIndices: 03000000030000000300000002000000
       isCorrectResponse: 01000000
       pointsForCorrectResponse: 1
@@ -11382,7 +11389,7 @@ MonoBehaviour:
       playerResponses:
       - Yes
       - No
-      - What
+      - Repeat
       nextDialogueIndices: ffffffffffffffff03000000
       isCorrectResponse: 010000
       pointsForCorrectResponse: 1
@@ -15646,7 +15653,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6447489188282255246, guid: 5f635d348fad9f742a95c45e8aceda58, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 10.217
+      value: 10.25
       objectReference: {fileID: 0}
     - target: {fileID: 6447489188282255246, guid: 5f635d348fad9f742a95c45e8aceda58, type: 3}
       propertyPath: m_LocalPosition.y
@@ -28266,20 +28273,20 @@ MonoBehaviour:
   dialogueSets:
   - setName: Stage 0
     dialogueEntries:
-    - npcAudio: {fileID: 8300000, guid: 95d67fca3d4ce10499416399a1f9579b, type: 3}
+    - npcAudio: {fileID: 8300000, guid: ef419738a7decf649a379673dcb3c1ad, type: 3}
       playerResponses:
       - Yes i know!
       - Good to see you
-      - What?
+      - Repeat
       nextDialogueIndices: 010000000100000000000000
       isCorrectResponse: 
       pointsForCorrectResponse: 0
       spawnObjects: []
-    - npcAudio: {fileID: 8300000, guid: 643f3794f4ea1f94689247bb6c9f5dc5, type: 3}
+    - npcAudio: {fileID: 8300000, guid: ae428dd05d594ae449193da086d181c6, type: 3}
       playerResponses:
       - Yes of course!
       - Sure!
-      - What?
+      - Repeat
       nextDialogueIndices: 020000000200000001000000
       isCorrectResponse: 
       pointsForCorrectResponse: 0
@@ -28287,7 +28294,7 @@ MonoBehaviour:
     - npcAudio: {fileID: 8300000, guid: c75cea2590ef6094380e1ca292bc3607, type: 3}
       playerResponses:
       - Anything else?
-      - What?
+      - Repeat
       nextDialogueIndices: 0300000002000000
       isCorrectResponse: 
       pointsForCorrectResponse: 0
@@ -28295,7 +28302,7 @@ MonoBehaviour:
     - npcAudio: {fileID: 8300000, guid: aff0dfabbb5ed7d47857122d997cd500, type: 3}
       playerResponses:
       - I will order!
-      - What?
+      - Repeat
       nextDialogueIndices: ffffffff03000000
       isCorrectResponse: 
       pointsForCorrectResponse: 0
