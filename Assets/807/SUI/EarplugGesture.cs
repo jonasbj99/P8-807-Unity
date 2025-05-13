@@ -9,8 +9,12 @@ public class EarplugGesture : MonoBehaviour
     private XRHandSubsystem handSubsystem;
     private Camera mainCamera;
 
+    bool earplugsOn = false;
+
     void Start()
     {
+        AudioListener.volume = 1.0f;
+
         mainCamera = Camera.main;
 
         // Get the running XRHandSubsystem
@@ -37,8 +41,16 @@ public class EarplugGesture : MonoBehaviour
 
         if (IsHandNearHead(leftHand) && IsHandNearHead(rightHand))
         {
-            Debug.Log("Earplug gesture detected!");
-            // Trigger audio effect or logic here
+            earplugsOn = !earplugsOn;
+        }
+
+        if (earplugsOn)
+        {
+            AudioListener.volume = 0.2f;
+        }
+        else
+        {
+            AudioListener.volume = 1f;
         }
     }
 
