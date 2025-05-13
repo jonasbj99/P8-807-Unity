@@ -3186,7 +3186,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a1072e99546f66c40a04399c8c0a7b70, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  proximityThreshold: 0.1
+  proximityThreshold: 0.19
 --- !u!4 &1357537626
 Transform:
   m_ObjectHideFlags: 0
