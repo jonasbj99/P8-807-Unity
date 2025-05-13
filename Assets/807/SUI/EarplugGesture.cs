@@ -1,16 +1,18 @@
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.XR.Hands;
-using System.Collections.Generic;
-using UnityEngine.XR.Management;
+using UnityEngine.UI;
 
 public class EarplugGesture : MonoBehaviour
 {
-    [SerializeField] private float proximityThreshold = 0.1f; // 10 cm
+    [SerializeField] private float proximityThreshold = 0.2f;
     private XRHandSubsystem handSubsystem;
     private Camera mainCamera;
 
     private bool earplugsOn = false;
     private bool gesturePreviouslyDetected = false;
+
+    [SerializeField] private Toggle earplugToggle;
 
     void Start()
     {
@@ -49,7 +51,16 @@ public class EarplugGesture : MonoBehaviour
 
         gesturePreviouslyDetected = gestureNowDetected;
 
-        AudioListener.volume = earplugsOn ? 0.2f : 1f;
+        if (earplugsOn)
+        {
+            AudioListener.volume = 0.2f;
+            earplugToggle.isOn = true;
+        }
+        else
+        {
+            AudioListener.volume = 1f;
+            earplugToggle.isOn = false;
+        }
     }
 
     private bool IsHandNearHead(XRHand hand)
@@ -65,4 +76,3 @@ public class EarplugGesture : MonoBehaviour
         return false;
     }
 }
-

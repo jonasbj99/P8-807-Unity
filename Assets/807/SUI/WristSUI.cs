@@ -32,8 +32,6 @@ public class WristSUI : MonoBehaviour
     int hearingHealth = 100;
     [SerializeField] int hearingDamage = 5;  // Amount of damage done every tick
     [SerializeField] float damageDelay = 1f;    // Defines the tick delay for health damage
-    float earplugEffect = 1f;
-    int earplugSubtract = 0;
 
     // Wrist UI
     [SerializeField] GameObject wristCanvas;
@@ -120,8 +118,6 @@ public class WristSUI : MonoBehaviour
     {
         while (enabled)
         {
-            AudioListener.volume = earplugEffect;
-
             // Get left and right output data seperately
             float[] left = new float[sampleSize];
             float[] right = new float[sampleSize];
@@ -152,8 +148,6 @@ public class WristSUI : MonoBehaviour
             }
 
             dbPositive = dbFS + dBRange;
-
-            dbPositive -= earplugSubtract;
 
             if (soundLevelText != null)
             {
