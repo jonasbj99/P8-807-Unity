@@ -1,46 +1,60 @@
 using UnityEngine;
 using UnityEngine.UI;
 
-public class ControllerEarplugToggle : MonoBehaviour
+namespace SUI
 {
-    public Toggle uiToggle;
-    private bool earplugsOn = false;
-
-    void Start()
+    /// <summary>
+    /// Controls audio volume when a toggle button is pressed.
+    /// Can be used to mute/unmute audio or switch between different volume levels.
+    /// </summary>
+    public class ControllerEarplugToggle : MonoBehaviour
     {
-        // Reset audio volume at start exactly like EarplugGesture
-        AudioListener.volume = 1.0f;
+        [Header("Toggle Reference")]
+        [SerializeField] private Toggle toggle;
+
+        [Header("Audio Settings")]
+        [SerializeField] private AudioSource targetAudio; // The audio source to control
+
+        [Header("Volume Levels")]
+        [SerializeField] private float onVolume = 1.0f; // Volume when toggle is on
+        [SerializeField] private float offVolume = 0.0f; // Volume when toggle is off
         
-        if (uiToggle != null)
+        private void Awake()
         {
-            uiToggle.onValueChanged.AddListener(OnToggleChanged);
-            // Set initial UI state
-            uiToggle.isOn = earplugsOn;
+            // Find toggle on this GameObject if not assigned
+            if (toggle == null)
+                toggle = GetComponent<Toggle>();
+            
+            if (toggle == null)
+            {
+                Debug.LogError("Toggle component missing for ControllerEarplugToggle!");
+                return;
+            }
+            
+            // Add listener to the toggle
+            toggle.onValueChanged.AddListener(OnToggleValueChanged);
         }
-    }
-
-    void OnToggleChanged(bool isOn)
-    {
-        // Toggle earplug state when UI toggle changes
-        earplugsOn = isOn;
         
-        // Apply appropriate volume based on earplug state
-        // Using exactly the same volume values as in EarplugGesture
-        if (earplugsOn)
+        private void Start()
         {
-            AudioListener.volume = 0.2f;
+            // Initialize with current toggle state
+            OnToggleValueChanged(toggle.isOn);
         }
-        else
+        
+        private void OnToggleValueChanged(bool isOn)
         {
-            AudioListener.volume = 1.0f;
+            if (targetAudio == null)
+                return;
+                
+            // Set volume based on toggle state
+            targetAudio.volume = isOn ? onVolume : offVolume;
         }
-    }
-
-    void OnDestroy()
-    {
-        if (uiToggle != null)
+        
+        private void OnDestroy()
         {
-            uiToggle.onValueChanged.RemoveListener(OnToggleChanged);
+            // Remove listener when destroyed
+            if (toggle != null)
+                toggle.onValueChanged.RemoveListener(OnToggleValueChanged);
         }
     }
 }
