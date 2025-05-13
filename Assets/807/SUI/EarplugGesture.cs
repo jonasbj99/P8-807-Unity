@@ -9,15 +9,14 @@ public class EarplugGesture : MonoBehaviour
     private XRHandSubsystem handSubsystem;
     private Camera mainCamera;
 
-    bool earplugsOn = false;
+    private bool earplugsOn = false;
+    private bool gesturePreviouslyDetected = false;
 
     void Start()
     {
         AudioListener.volume = 1.0f;
-
         mainCamera = Camera.main;
 
-        // Get the running XRHandSubsystem
         List<XRHandSubsystem> handSubsystems = new List<XRHandSubsystem>();
         SubsystemManager.GetSubsystems(handSubsystems);
 
@@ -39,26 +38,24 @@ public class EarplugGesture : MonoBehaviour
         XRHand leftHand = handSubsystem.leftHand;
         XRHand rightHand = handSubsystem.rightHand;
 
-        if (IsHandNearHead(leftHand) && IsHandNearHead(rightHand))
+        bool gestureNowDetected = IsHandNearHead(leftHand) && IsHandNearHead(rightHand);
+
+        // Toggle only on the rising edge (gesture just started)
+        if (gestureNowDetected && !gesturePreviouslyDetected)
         {
             earplugsOn = !earplugsOn;
+            Debug.Log("Earplug gesture toggled: " + (earplugsOn ? "ON" : "OFF"));
         }
 
-        if (earplugsOn)
-        {
-            AudioListener.volume = 0.2f;
-        }
-        else
-        {
-            AudioListener.volume = 1f;
-        }
+        gesturePreviouslyDetected = gestureNowDetected;
+
+        AudioListener.volume = earplugsOn ? 0.2f : 1f;
     }
 
     private bool IsHandNearHead(XRHand hand)
     {
         if (!hand.isTracked) return false;
 
-        // Get the joint directly using the joints dictionary and the joint ID
         if (hand.GetJoint(XRHandJointID.IndexTip).TryGetPose(out Pose jointPose))
         {
             float distance = Vector3.Distance(jointPose.position, mainCamera.transform.position);
