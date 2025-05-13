@@ -2995,6 +2995,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 657184243640684908, guid: d6878e1999eb4b44a9f5a263af86c185, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1416836061}
+    - targetCorrespondingSourceObject: {fileID: 657184243640684908, guid: d6878e1999eb4b44a9f5a263af86c185, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1416836062}
   m_SourcePrefab: {fileID: 100100000, guid: d6878e1999eb4b44a9f5a263af86c185, type: 3}
 --- !u!4 &1416836052 stripped
 Transform:
@@ -3047,6 +3050,32 @@ MonoBehaviour:
       m_Flags: 0
     m_Reference: {fileID: 6850617372178311537, guid: c348712bda248c246b8c49b3db54643f, type: 3}
   highlightRevealTime: 3
+--- !u!114 &1416836062
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1416836053}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9c8a41d02b669f749a637d2023a8b059, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  uiElement: {fileID: 572140503}
+  activateButton:
+    m_UseReference: 1
+    m_Action:
+      m_Name: Activate Button
+      m_Type: 0
+      m_ExpectedControlType: 
+      m_Id: 3a983f4d-b4cd-41ee-a722-0a2fddc2b444
+      m_Processors: 
+      m_Interactions: 
+      m_SingletonActionBindings: []
+      m_Flags: 0
+    m_Reference: {fileID: 1307652899461780891, guid: c348712bda248c246b8c49b3db54643f, type: 3}
+  toggleMode: 1
 --- !u!1 &1439478056
 GameObject:
   m_ObjectHideFlags: 0
