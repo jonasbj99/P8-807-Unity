@@ -2645,7 +2645,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 70038038615881689, guid: e6127dd521ba3b94caba10f7ea6dd756, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1917751917667908188, guid: e6127dd521ba3b94caba10f7ea6dd756, type: 3}
       propertyPath: m_Enabled
@@ -2801,7 +2801,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6729134811959476185, guid: e6127dd521ba3b94caba10f7ea6dd756, type: 3}
       propertyPath: m_text
-      value: Now try and grab the item.
+      value: 'Now try and grab the item.
+
+        Try with the right then the left
+        hand.'
       objectReference: {fileID: 0}
     - target: {fileID: 6729134811959476185, guid: e6127dd521ba3b94caba10f7ea6dd756, type: 3}
       propertyPath: m_fontStyle
