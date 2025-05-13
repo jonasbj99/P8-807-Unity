@@ -3472,7 +3472,7 @@ Transform:
   m_GameObject: {fileID: 1208533892}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 1, z: 0.8}
+  m_LocalPosition: {x: -0.3, y: 1, z: 0.8}
   m_LocalScale: {x: 0.2, y: 0.2, z: 0.2}
   m_ConstrainProportionsScale: 1
   m_Children: []
@@ -3904,7 +3904,7 @@ Transform:
   m_GameObject: {fileID: 1324805115}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.3, y: 1, z: 0.8}
+  m_LocalPosition: {x: 0, y: 1, z: 0.8}
   m_LocalScale: {x: 0.2, y: 0.2, z: 0.2}
   m_ConstrainProportionsScale: 1
   m_Children: []
@@ -5878,7 +5878,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a1072e99546f66c40a04399c8c0a7b70, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  proximityThreshold: 0.2
+  proximityThreshold: 0.22
   earplugToggle: {fileID: 1836428470}
 --- !u!4 &1945437687
 Transform:
@@ -5938,7 +5938,6 @@ MonoBehaviour:
   thumbExtendThreshold: 0.06
   highlights:
   - {fileID: 2100000, guid: 5007b00f94a7f5b48879a345e0bfa04d, type: 2}
-  highlightRevealTime: 3
 --- !u!1 &1967661214 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 6904011426227351235, guid: 1d62ffddd45eeba4799ca3d73cd0e0c4, type: 3}

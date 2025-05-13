@@ -15,20 +15,9 @@ public class HighlightSUI : MonoBehaviour
     private bool wasThumbsUpLastFrame = false;
 
     public Material[] highlights;
-    public float highlightRevealTime = 3f;
-    bool isHighlightActive = false; // Flag to track if the coroutine is running
-
-    //[SerializeField] private float proximityThreshold = 0.1f; // 10 cm
-    //private Camera mainCamera;
-
-    //bool earplugsOn = false;
 
     void Start()
     {
-        //AudioListener.volume = 1.0f;
-
-        //mainCamera = Camera.main;
-
         List<XRHandSubsystem> handSubsystems = new List<XRHandSubsystem>();
         SubsystemManager.GetSubsystems(handSubsystems);
 
@@ -69,23 +58,6 @@ public class HighlightSUI : MonoBehaviour
         }
 
         wasThumbsUpLastFrame = isThumbsUp;
-
-
-        /*
-        if (IsHandNearHead(leftHand) && IsHandNearHead(rightHand))
-        {
-            earplugsOn = !earplugsOn;
-        }
-
-        if (earplugsOn)
-        {
-            AudioListener.volume = 0.2f;
-        }
-        else
-        {
-            AudioListener.volume = 1f;
-        }
-        */
     }
 
     private bool IsThumbsUp(XRHand hand)
@@ -132,20 +104,4 @@ public class HighlightSUI : MonoBehaviour
             material.SetFloat("_HighlightEnable", 0);
         }
     }
-
-    /*
-    private bool IsHandNearHead(XRHand hand)
-    {
-        if (!hand.isTracked) return false;
-
-        // Get the joint directly using the joints dictionary and the joint ID
-        if (hand.GetJoint(XRHandJointID.IndexTip).TryGetPose(out Pose jointPose))
-        {
-            float distance = Vector3.Distance(jointPose.position, mainCamera.transform.position);
-            return distance < proximityThreshold;
-        }
-
-        return false;
-    }
-    */
 }
