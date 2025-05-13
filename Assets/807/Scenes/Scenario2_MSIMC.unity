@@ -11349,7 +11349,7 @@ MonoBehaviour:
   dialogueSets:
   - setName: Stage 0 Barista
     dialogueEntries:
-    - npcAudio: {fileID: 8300000, guid: 8e145442fb81f344383d8d90804345ed, type: 3}
+    - npcAudio: {fileID: 8300000, guid: 5c226555814b0d5499c5de1f4222f6b1, type: 3}
       playerResponses:
       - Scone
       - Cake
@@ -11362,7 +11362,7 @@ MonoBehaviour:
       - {fileID: 1834113928}
       - {fileID: 1565744243}
       - {fileID: 572710308}
-    - npcAudio: {fileID: 8300000, guid: 08a186776ac1a91429f7cb5beeb45e65, type: 3}
+    - npcAudio: {fileID: 8300000, guid: fe800200319072342ad462150abada35, type: 3}
       playerResponses:
       - Strawberry
       - Lemon
@@ -11372,7 +11372,7 @@ MonoBehaviour:
       isCorrectResponse: 00010000
       pointsForCorrectResponse: 1
       spawnObjects: []
-    - npcAudio: {fileID: 8300000, guid: 63c09d01abf90414aaad54d2cf2a14c9, type: 3}
+    - npcAudio: {fileID: 8300000, guid: 0518f242ff297b144bee2f0be0d935eb, type: 3}
       playerResponses:
       - Coffee
       - Tea
@@ -11385,7 +11385,7 @@ MonoBehaviour:
       - {fileID: 831039914}
       - {fileID: 1152620484}
       - {fileID: 274385569}
-    - npcAudio: {fileID: 8300000, guid: c45eb525ef6331342a10342b51a35d15, type: 3}
+    - npcAudio: {fileID: 8300000, guid: 1d61e402ef827374186d8e489abcd732, type: 3}
       playerResponses:
       - Yes
       - No
@@ -28277,7 +28277,7 @@ MonoBehaviour:
   dialogueSets:
   - setName: Stage 0
     dialogueEntries:
-    - npcAudio: {fileID: 8300000, guid: ef419738a7decf649a379673dcb3c1ad, type: 3}
+    - npcAudio: {fileID: 8300000, guid: 95d67fca3d4ce10499416399a1f9579b, type: 3}
       playerResponses:
       - Yes i know!
       - Good to see you
@@ -28286,7 +28286,7 @@ MonoBehaviour:
       isCorrectResponse: 
       pointsForCorrectResponse: 0
       spawnObjects: []
-    - npcAudio: {fileID: 8300000, guid: ae428dd05d594ae449193da086d181c6, type: 3}
+    - npcAudio: {fileID: 8300000, guid: 643f3794f4ea1f94689247bb6c9f5dc5, type: 3}
       playerResponses:
       - Yes of course!
       - Sure!
@@ -28295,7 +28295,7 @@ MonoBehaviour:
       isCorrectResponse: 
       pointsForCorrectResponse: 0
       spawnObjects: []
-    - npcAudio: {fileID: 8300000, guid: c75cea2590ef6094380e1ca292bc3607, type: 3}
+    - npcAudio: {fileID: 8300000, guid: b50a310b1a99fb44ea7df9bbb5137381, type: 3}
       playerResponses:
       - Anything else?
       - Repeat
@@ -28303,7 +28303,7 @@ MonoBehaviour:
       isCorrectResponse: 
       pointsForCorrectResponse: 0
       spawnObjects: []
-    - npcAudio: {fileID: 8300000, guid: aff0dfabbb5ed7d47857122d997cd500, type: 3}
+    - npcAudio: {fileID: 8300000, guid: 0ede7dcc004b84d479627b8f12434d3b, type: 3}
       playerResponses:
       - I will order!
       - Repeat
