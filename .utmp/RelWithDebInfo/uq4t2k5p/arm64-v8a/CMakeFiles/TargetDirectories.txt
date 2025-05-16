@@ -1,0 +1,5 @@
+C:/Users/jonas/Desktop/AAU/MED8/P8/P8-807-Unity/.utmp/RelWithDebInfo/uq4t2k5p/arm64-v8a/CMakeFiles/edit_cache.dir
+C:/Users/jonas/Desktop/AAU/MED8/P8/P8-807-Unity/.utmp/RelWithDebInfo/uq4t2k5p/arm64-v8a/CMakeFiles/rebuild_cache.dir
+C:/Users/jonas/Desktop/AAU/MED8/P8/P8-807-Unity/.utmp/RelWithDebInfo/uq4t2k5p/arm64-v8a/GameActivity/CMakeFiles/game.dir
+C:/Users/jonas/Desktop/AAU/MED8/P8/P8-807-Unity/.utmp/RelWithDebInfo/uq4t2k5p/arm64-v8a/GameActivity/CMakeFiles/edit_cache.dir
+C:/Users/jonas/Desktop/AAU/MED8/P8/P8-807-Unity/.utmp/RelWithDebInfo/uq4t2k5p/arm64-v8a/GameActivity/CMakeFiles/rebuild_cache.dir
