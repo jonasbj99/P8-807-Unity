@@ -24,7 +24,7 @@ EditorBuildSettings:
     path: Assets/807/Scenes/Scenario1_Apartment.unity
     guid: ce435813422c4a346bc9bf90b9539c01
   - enabled: 1
-    path: Assets/807/Scenes/Scenario2_CoffeeShop.unity
+    path: Assets/MSIMC/Scenes/HearingLoss_MSIMC.unity
     guid: 353e7f8932ece4f7d86956a67f62f79f
   - enabled: 1
     path: Assets/807/Scenes/Scenario3_Festival.unity
