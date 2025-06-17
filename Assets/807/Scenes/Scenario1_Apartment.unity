@@ -12327,7 +12327,7 @@ MonoBehaviour:
   introCanvas: {fileID: 1588189239}
   videoPlayer: {fileID: 1151552102}
   endVideoCanvas: {fileID: 1691074996}
-  delay: 36
+  delay: 5
   moveScript: {fileID: 1846668281}
   remoteCanvas: {fileID: 224720600}
 --- !u!1 &911302354

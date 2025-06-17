@@ -42,6 +42,11 @@ public class CustomSceneManager : MonoBehaviour
         {
             NextScene();
         }
+
+        if(keyboard.rightArrowKey.wasPressedThisFrame)
+        {
+            NextSceneButton();
+        }
     }
 
     public IEnumerator SceneChanger()
@@ -69,6 +74,11 @@ public class CustomSceneManager : MonoBehaviour
     public void RestartScene()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+    }
+
+    public void NextSceneButton()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
 }
 
