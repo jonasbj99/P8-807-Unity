@@ -1,0 +1,2 @@
+C:\Users\Opstart\Desktop\PianoRat-403-P4-Ny\P8-807-Unity\Library\Bee\Android\Prj\IL2CPP\Gradle\unityLibrary\src\main\cpp\CMakeLists.txt
+C:\Users\Opstart\Desktop\PianoRat-403-P4-Ny\P8-807-Unity\Library\Bee\Android\Prj\IL2CPP\Gradle\unityLibrary\src\main\cpp\GameActivity\CMakeLists.txt
