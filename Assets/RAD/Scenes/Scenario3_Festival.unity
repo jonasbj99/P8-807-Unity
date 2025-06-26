@@ -17216,7 +17216,13 @@ PrefabInstance:
       propertyPath: rolloffCustomCurve.m_Curve.Array.data[2].outWeight
       value: 0.2595395
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 2289081305779855725, guid: 21d10ea07cfcb824ba0bddddd1d5527a, type: 3}
+    - {fileID: 5210789440355528521, guid: 21d10ea07cfcb824ba0bddddd1d5527a, type: 3}
+    - {fileID: 8152664958839753877, guid: 21d10ea07cfcb824ba0bddddd1d5527a, type: 3}
+    - {fileID: 6114544609193970670, guid: 21d10ea07cfcb824ba0bddddd1d5527a, type: 3}
+    - {fileID: 7755252078008596840, guid: 21d10ea07cfcb824ba0bddddd1d5527a, type: 3}
+    - {fileID: 5012979135289890973, guid: 21d10ea07cfcb824ba0bddddd1d5527a, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents:
