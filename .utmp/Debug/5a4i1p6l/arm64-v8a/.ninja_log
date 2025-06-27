@@ -1,10 +1,10 @@
 # ninja log v5
-25	2806	7726715017274252	GameActivity/CMakeFiles/game.dir/UGAConfiguration.cpp.o	acde648f76ea72a7
-49	2865	7726715017880005	GameActivity/CMakeFiles/game.dir/UGAEntry.cpp.o	bd76c65797cb7c19
-62	2867	7726715017427499	GameActivity/CMakeFiles/game.dir/UGAInputKeyEvent.cpp.o	39a13cffd9fca761
-84	2882	7726715018258065	GameActivity/CMakeFiles/game.dir/UGASoftKeyboard.cpp.o	36612927af44b5b5
-16	3004	7726715019538114	GameActivity/CMakeFiles/game.dir/UGADebug.cpp.o	b33a2e8b1fafca46
-72	3045	7726715020001724	GameActivity/CMakeFiles/game.dir/UGAInputMotionEvent.cpp.o	cc8a53d0156b9d9a
-36	3167	7726715021191222	GameActivity/CMakeFiles/game.dir/UGAInput.cpp.o	dae974361a1ee0f0
-2	3311	7726715022112400	GameActivity/CMakeFiles/game.dir/UGAApplication.cpp.o	dcccabd1eb20d9a1
-3312	3639	7726715026082494	C:/Users/Opstart/Desktop/PianoRat-403-P4-Ny/P8-807-Unity/Library/Bee/Android/Prj/IL2CPP/Gradle/unityLibrary/build/intermediates/cxx/Debug/5a4i1p6l/obj/arm64-v8a/libgame.so	1c94abd9a1758254
+39	3141	7727658177817397	GameActivity/CMakeFiles/game.dir/UGAInputKeyEvent.cpp.o	a6f1a98b03eeafda
+12	3146	7727658177928294	GameActivity/CMakeFiles/game.dir/UGAConfiguration.cpp.o	7e11057d76ae740b
+122	3157	7727658178351057	GameActivity/CMakeFiles/game.dir/UGASoftKeyboard.cpp.o	afb3c4b3ae2dd8e1
+105	3163	7727658178050483	GameActivity/CMakeFiles/game.dir/UGAInputMotionEvent.cpp.o	5a245fffedd2aa94
+63	3186	7727658178637777	GameActivity/CMakeFiles/game.dir/UGAEntry.cpp.o	54bb15584f8dab38
+27	3218	7727658178957499	GameActivity/CMakeFiles/game.dir/UGADebug.cpp.o	e0010553bd9f5147
+50	3297	7727658179784391	GameActivity/CMakeFiles/game.dir/UGAInput.cpp.o	3ee931f24ab9356f
+1	3378	7727658180488171	GameActivity/CMakeFiles/game.dir/UGAApplication.cpp.o	c7b6659a97714a9c
+3378	3601	7727658182843397	C:/Users/Opstart/Desktop/PianoRat-403-P4-Ny/P8-807-Unity/Library/PramData/AndroidApplicationController/Cache/com.unity.template.vr/gradle-project/unityLibrary/build/intermediates/cxx/Debug/5a4i1p6l/obj/arm64-v8a/libgame.so	5c94e43c1f4ec475
