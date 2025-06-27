@@ -31,8 +31,18 @@ public class IntroVideo : MonoBehaviour
 
     public void StartVideo()
     {
+        Debug.Log("Starting video...");
         introCanvas.gameObject.SetActive(false); // Hide the intro canvas
         videoPlayer.Play();
+
+        if (videoPlayer.isPlaying)
+        {
+            Debug.Log("Video is playing.");
+        }
+        else
+        {
+            Debug.LogWarning("Video is not playing.");
+        }
     }
 
     public IEnumerator EndOfVideo(float delay)
